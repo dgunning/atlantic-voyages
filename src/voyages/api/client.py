@@ -8,6 +8,7 @@ import duckdb
 import pandas as pd
 
 from voyages.api import db, views
+from voyages.api.query import Query
 from voyages.schema import VOYAGE_DATASETS
 
 
@@ -85,6 +86,21 @@ class Voyages:
             ).fetchall()
         )
 
+    # ---------------------------------------------------------- fluent query
+    @property
+    def transatlantic(self) -> Query:
+        """Trans-Atlantic voyages, ready to filter. See :class:`Query`."""
+        return Query(self, ("transatlantic",))
+
+    @property
+    def intraamerican(self) -> Query:
+        """Intra-American voyages, ready to filter. See :class:`Query`."""
+        return Query(self, ("intraamerican",))
+
+    def query(self, *datasets: str) -> Query:
+        """Voyages from the given datasets (default: both)."""
+        return Query(self, tuple(_check_dataset(d) for d in datasets) or VOYAGE_DATASETS)
+
     # -------------------------------------------------------------- map data
     def endpoints(self, dataset: str | None = None, drawable_only: bool = False) -> pd.DataFrame:
         """Where each voyage embarked and disembarked captives, with map points.
@@ -95,12 +111,8 @@ class Voyages:
         points differently. ``drawable_only`` keeps voyages with both points;
         use :meth:`endpoint_coverage` to count the ones left out.
         """
-        rel = self.con.table("voyage_endpoints")
-        if dataset is not None:
-            rel = rel.filter(f"dataset = '{_check_dataset(dataset)}'")
-        if drawable_only:
-            rel = rel.filter("drawable")
-        return rel.df()
+        q = self.query(dataset) if dataset is not None else self.query()
+        return q.endpoints(drawable_only=drawable_only)
 
     def endpoint_coverage(self) -> pd.DataFrame:
         """Voyages by dataset, endpoint and point status.

@@ -6,8 +6,6 @@ VOYAGES_DATA_DIR and a completed `voyages build`.
 """
 
 import os
-import warnings
-from pathlib import Path
 
 import pyarrow as pa
 import pytest
@@ -15,26 +13,6 @@ import pytest
 from voyages import Voyages, schema
 from voyages.api import DataNotBuilt, connect
 from voyages.api.db import parquet_tables
-from voyages.ingest import estimates, intraamerican, transatlantic
-
-FIXTURES = Path(__file__).parent / "fixtures"
-
-
-@pytest.fixture(scope="module")
-def built(tmp_path_factory) -> Path:
-    out = tmp_path_factory.mktemp("built")
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore")
-        transatlantic.build(FIXTURES / "transatlantic_sample.sav", out)
-        intraamerican.build(FIXTURES / "intraamerican_sample.sav", out)
-        estimates.build(FIXTURES / "estimates_sample.sav", out)
-    return out
-
-
-@pytest.fixture(scope="module")
-def v(built):
-    with Voyages(built) as v:
-        yield v
 
 
 @pytest.fixture(scope="module")

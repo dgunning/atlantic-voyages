@@ -2,5 +2,6 @@
 
 from voyages.api.client import Result, Voyages
 from voyages.api.db import DataNotBuilt, connect
+from voyages.api.query import Query
 
-__all__ = ["DataNotBuilt", "Result", "Voyages", "connect"]
+__all__ = ["DataNotBuilt", "Query", "Result", "Voyages", "connect"]

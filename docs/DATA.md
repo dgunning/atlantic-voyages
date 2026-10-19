@@ -121,5 +121,27 @@ voyages checked (2026-10-19), unlike the Trans-Atlantic pages (below).
   and whether the 2020 `.sav` is the canonical current release.
 - The People / African Names data has its own downloads page; add entries once
   the Phase 1 ingest reaches it.
-- The newer API (now `IQSS/voyages-api`; `rice-crc/voyages-api` redirects) may expose a bulk export that supersedes
-  the legacy files. Check before Phase 2.
+- **Is there a newer bulk export? Checked 2026-10-19: no official export matches the live
+  site, but there is a 2023 release on Harvard Dataverse.** Decided 2026-10-19: stay on the
+  2020 `.sav` for now; revisit the 2023 release later.
+  - Dataverse deposits by the project, anonymous download, MD5 on each record; terms point
+    to https://www.slavevoyages.org/about/about#legal/9/en/ (not yet read):
+    Trans-Atlantic https://doi.org/10.7910/DVN/DGIHX9 (v1.0, 2023-05-30) and Intra-American
+    https://doi.org/10.7910/DVN/QD3JSH (v2.0, 2023-05-30). They also hold the older
+    releases and `SPSS_Codebook_2022.pdf`.
+  - `Voyages-TSTD-May2023` (file id 7103680, `?format=original` is CSV, 22,832,996 bytes,
+    MD5 `36a2517c6a48b249709d62ef06bc517d`, SHA-256
+    `5b26b9489216e6cdd4332e28cb32119f4d878be2c7a0a821c5651f5c531c1f29`): 36,079 voyages,
+    314 columns, same SPSS variable names. Against our 2020 build: 42 voyages new, 71 gone,
+    401 of the 36,037 shared voyages with different imputed totals. Voyages 17223 and 11408
+    still have the 2020 values (273/236, 303/279), so it is not the live site's data either.
+    Place codes not yet compared with the Oct 2023 recode.
+  - `Voyages-IAm-May2023` (file id 7103685, MD5 `515f5a3b01067742de91b1a50df6bad8`): same
+    header style; values not yet compared.
+  - The live site's download button posts to `IQSS/voyages-api`
+    `voyage/VoyageDownload/` (`src/api/voyage/views.py:102-148`), which needs an API token
+    and returns the new API schema, not SPSS names. Not usable as a reproducible raw source,
+    and CLAUDE.md rules out the live API at runtime.
+  - Options: stay on 2020; switch to the 2023 Dataverse files (CSV, needs a CSV ingest path
+    and a fresh site check); or offer both as versions. Asking the SlaveVoyages team for a
+    current bulk export goes with the coordinates licence question.

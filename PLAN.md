@@ -1,6 +1,6 @@
 # PLAN.md
 
-Status: Phase 3 started — notebook tooling (jupytext pairs, `notebooks` dependency group, full-data notebook test) and notebook 1 (Jamaica arrivals) done. Next: notebook 2, re-exports from Jamaica. African Names (Phase 1) still to do.
+Status: Phase 3 — notebooks 01 (Jamaica arrivals) and 02 (Calabar to Jamaica, with maps) done. Next: re-exports from Jamaica. African Names (Phase 1) still to do.
 
 ## Goal
 
@@ -77,6 +77,7 @@ before writing ingest code.
 Each is a notebook under `notebooks/`, executed in CI, and the basis of a README section.
 
 - [x] Arrivals into Jamaica by African embarkation region, by decade, recorded vs imputed vs Estimates (`notebooks/01_jamaica_arrivals`; Estimates Jamaica total 1,019,588 not yet checked against the site)
+- [x] Calabar to Jamaica: voyages, landing places, deaths at sea, maps (`notebooks/02_calabar_to_jamaica`; added 2026-10-19)
 - [ ] Re-exports from Jamaica via the Intra-American data
 - [ ] Bight of Biafra vs Gold Coast vs Bight of Benin: destinations over time
 - [ ] Mortality and voyage duration by route and period
@@ -112,3 +113,4 @@ Append one line per Claude Code session: date, phase, what landed, what's next.
 - 2026-10-19 — Phase 2 — `voyages query` CLI (filters, `--by` decade/region/summary/endpoints/any column, CSV/Parquet, clear errors with exit 2); `column_provenance()` fixes a lookup that hit Estimates fields of the same name; 15 CLI tests. Next: field helpers.
 - 2026-10-19 — Phase 2 — field helpers: `v.fields()`, `v.describe()`; recorded-only mode (`recorded_only=True`, `.recorded_only()`, `--recorded-only`): recorded principal places via new `voyage_endpoints_recorded` view, recorded dates for years, recorded totals by name, imputed columns refused. Year groupings (YEAR5/10/25/100) found to group YEARAM for every voyage: `derived_from` in the registry, licensed as imputed. Phase 2 complete. Next: merge branch, Phase 3.
 - 2026-10-19 — Phase 3 — notebook tooling: `.py` percent source paired with executed `.ipynb` (jupytext), `notebooks` dependency group, figures in notebooks/figures, `tests/test_notebooks.py` (fulldata). `by_decade(by=...)`. Notebook 1: Jamaica arrivals by region and decade from three sources; every figure quoted in the text asserted in a cell. Next: notebook 2.
+- 2026-10-19 — Phase 3 — notebook 02, Calabar to Jamaica: 185 voyages, 46,967 people landed 1663–1807; Kingston 103 voyages; 20% of Bight of Biafra arrivals; higher losses than Bonny on imputed and recorded figures; Atlantic route map and port maps (cartopy, Natural Earth). Ruff skips generated .ipynb. Next: re-exports from Jamaica.

@@ -71,6 +71,11 @@ Notebooks in `notebooks/`, each a `.py` source paired with an executed `.ipynb`
 
 ![People disembarked in Jamaica by decade](notebooks/figures/01_jamaica_by_decade.png)
 
+- [Calabar to Jamaica](notebooks/02_calabar_to_jamaica.ipynb): the voyages from Old Calabar,
+  where their captives were landed, and how many died on the way, with maps.
+
+![Routes from Calabar](notebooks/figures/02_calabar_routes.png)
+
 ## Data and license
 
 The library code is Apache-2.0. The data belongs to SlaveVoyages: records

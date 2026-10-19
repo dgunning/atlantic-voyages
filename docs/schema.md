@@ -1,6 +1,6 @@
 # Schema design: field registry and Parquet tables
 
-Phase 1 design, agreed 2026-10-19. `schema/fields.yaml` is authoritative once written; this file explains why it looks the way it does.
+Phase 1 design, agreed 2026-10-19. `src/voyages/schema/fields.yaml` is authoritative; this file explains why it looks the way it does.
 
 ## What the raw files contain (measured 2026-10-19)
 

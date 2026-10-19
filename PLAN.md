@@ -1,6 +1,6 @@
 # PLAN.md
 
-Status: Phase 0 done — all raw files fetched and checksummed (2026-10-19); `voyages verify` reports ok for every file. Phase 1 schema design agreed (docs/schema.md). Next: generate schema/fields.yaml and schema/reference/*.csv from the .sav labels + codebook index.
+Status: Phase 0 done — all raw files fetched and checksummed (2026-10-19); `voyages verify` reports ok for every file. Phase 1 schema design agreed (docs/schema.md). fields.yaml done. Next: reference tables (places with coordinates, nations, rigs, outcomes, ...) in src/voyages/schema/reference/.
 
 ## Goal
 
@@ -53,7 +53,7 @@ before writing ingest code.
 
 - [x] `voyages fetch`: download with checksum verification, cache outside repo (stdlib urllib; checksums pending first run)
 - [ ] `ingest/transatlantic.py`: load `.sav`, coerce types, decode coded fields using value labels
-- [ ] `schema/fields.yaml`: every column with `name`, `label`, `dtype`, `provenance` (recorded/imputed/derived), `dataset`, `codebook_section`
+- [x] `schema/fields.yaml`: every column with `name`, `label`, `dtype`, `provenance` (recorded/imputed/derived), `dataset`, `codebook_section` (lives in `src/voyages/schema/` so it ships with the package; 278 voyage + 36 Estimates fields; loader `voyages.schema.load()`)
 - [ ] Reference tables in `schema/reference/`: places (port/region/broad region + lat/lon), nationalities, rig types, outcomes, sources
 - [ ] Long-format tables where the wide file is awkward: `voyage_dates`, `voyage_places` (place + role: departure, purchase, landing, return), `voyage_sources`, `voyage_people_counts`
 - [ ] Wide convenience table `voyages_wide` for people who just want a DataFrame
@@ -101,3 +101,4 @@ Each is a notebook under `notebooks/`, executed in CI, and the basis of a README
 Append one line per Claude Code session: date, phase, what landed, what's next.
 - 2026-10-19 — Phase 0 — scaffold, citation, fetch manifest + verify, LICENSE/NOTICE/DATA.md, 15 offline tests passing. Next: fetch raw files locally, record checksums, Phase 1 plan mode on the .sav metadata.
 - 2026-10-19 — Phase 0/1 — fetched + checksummed raw files (codebook 2022: 2023 edition 404s); inspected .sav metadata and codebook; agreed schema design in docs/schema.md (readable column names, long tables, places with coords from SlaveVoyages fixture + GeoNames). Next: fields.yaml + reference tables.
+- 2026-10-19 — Phase 1 — fields.yaml bootstrapped (278 voyage + 36 Estimates fields, all .sav columns covered or dropped with reason), registry loader + 14 tests. Next: reference tables.

@@ -93,6 +93,13 @@ def query(
         Path | None,
         typer.Option("--output", "-o", help="Write a .csv or .parquet file instead of stdout."),
     ] = None,
+    recorded_only: Annotated[
+        bool,
+        typer.Option(
+            help="Read no imputed field: recorded places and years, recorded totals "
+            "(public domain data only)."
+        ),
+    ] = False,
     built: Annotated[
         Path | None,
         typer.Option(help="Built Parquet directory (default: under $VOYAGES_DATA_DIR)."),
@@ -109,7 +116,7 @@ def query(
         raise typer.BadParameter("must end in .csv or .parquet", param_hint="--output")
     try:
         with Voyages(built) as v:
-            q = v.query(*(dataset or []))
+            q = v.query(*(dataset or []), recorded_only=recorded_only)
             if embarked_from:
                 q = q.embarked_from(*embarked_from)
             if disembarked_in:
@@ -128,8 +135,9 @@ def query(
     except (LookupError, ValueError) as e:  # bad place, label, column or option value
         _fail(e.args[0] if e.args else str(e))
 
-    _write(df, output)
-    _notice(df)
+    prov = _provenance(df, recorded_only)
+    _write(df, output, prov)
+    _notice(prov)
 
 
 def _run(q, by, measures, columns, year, drawable_only) -> pd.DataFrame:
@@ -149,7 +157,7 @@ def _run(q, by, measures, columns, year, drawable_only) -> pd.DataFrame:
     return q.by(by, **kw)
 
 
-def _write(df: pd.DataFrame, output: Path | None) -> None:
+def _write(df: pd.DataFrame, output: Path | None, prov: dict[str, str]) -> None:
     if output is None:
         df.to_csv(sys.stdout, index=False)
         return
@@ -163,23 +171,23 @@ def _write(df: pd.DataFrame, output: Path | None) -> None:
         meta = {
             **(table.schema.metadata or {}),
             b"voyages.citation": citation().encode(),
-            b"voyages.provenance": json.dumps(_provenance(df)).encode(),
+            b"voyages.provenance": json.dumps(prov).encode(),
         }
         pq.write_table(table.replace_schema_metadata(meta), output)
     typer.echo(f"wrote {len(df)} rows to {output}", err=True)
 
 
-def _provenance(df: pd.DataFrame) -> dict[str, str]:
+def _provenance(df: pd.DataFrame, recorded: bool) -> dict[str, str]:
     """Provenance for each output column that is a registry field or a known measure."""
     prov = dict(df.attrs.get("provenance", {}))
     for c in df.columns:
-        if c not in prov and (p := column_provenance(c)):
+        if c not in prov and (p := column_provenance(c, recorded=recorded)):
             prov[c] = p
     return prov
 
 
-def _notice(df: pd.DataFrame) -> None:
-    if "imputed" in _provenance(df).values():
+def _notice(prov: dict[str, str]) -> None:
+    if "imputed" in prov.values():
         typer.echo(
             "Includes imputed values (CC BY-NC 4.0, SlaveVoyages). See docs/DATA.md.", err=True
         )

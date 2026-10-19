@@ -7,7 +7,7 @@ from pathlib import Path
 import duckdb
 import pandas as pd
 
-from voyages.api import db, views
+from voyages.api import db, fields, views
 from voyages.api.query import Query
 from voyages.schema import VOYAGE_DATASETS
 
@@ -97,12 +97,34 @@ class Voyages:
         """Intra-American voyages, ready to filter. See :class:`Query`."""
         return Query(self, ("intraamerican",))
 
-    def query(self, *datasets: str) -> Query:
-        """Voyages from the given datasets (default: both)."""
-        return Query(self, tuple(_check_dataset(d) for d in datasets) or VOYAGE_DATASETS)
+    def query(self, *datasets: str, recorded_only: bool = False) -> Query:
+        """Voyages from the given datasets (default: both).
+
+        ``recorded_only`` reads no imputed field: see :meth:`Query.recorded_only`.
+        """
+        q = Query(self, tuple(_check_dataset(d) for d in datasets) or VOYAGE_DATASETS)
+        return q.recorded_only() if recorded_only else q
+
+    # ---------------------------------------------------------------- fields
+    def fields(
+        self,
+        dataset: str | None = None,
+        provenance: str | None = None,
+        table: str | None = None,
+        search: str | None = None,
+    ) -> pd.DataFrame:
+        """Registry fields, e.g. ``v.fields(provenance="recorded", search="captives")``."""
+        return fields.fields(dataset, provenance, table, search)
+
+    def describe(self, name: str, dataset: str | None = None) -> fields.FieldDescription:
+        """One field by name or SPSS name (``v.describe("MAJBUYPT")``): its registry
+        entry, how many voyages have a value, and its commonest values."""
+        return fields.describe(self.con, name, dataset)
 
     # -------------------------------------------------------------- map data
-    def endpoints(self, dataset: str | None = None, drawable_only: bool = False) -> pd.DataFrame:
+    def endpoints(
+        self, dataset: str | None = None, drawable_only: bool = False, recorded_only: bool = False
+    ) -> pd.DataFrame:
         """Where each voyage embarked and disembarked captives, with map points.
 
         One row per voyage. ``*_precision`` says what each point stands for
@@ -111,7 +133,7 @@ class Voyages:
         points differently. ``drawable_only`` keeps voyages with both points;
         use :meth:`endpoint_coverage` to count the ones left out.
         """
-        q = self.query(dataset) if dataset is not None else self.query()
+        q = self.query(*([dataset] if dataset else []), recorded_only=recorded_only)
         return q.endpoints(drawable_only=drawable_only)
 
     def endpoint_coverage(self) -> pd.DataFrame:

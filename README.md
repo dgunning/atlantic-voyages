@@ -46,6 +46,11 @@ record is silent, as on the site. Totals are the imputed totals; `df.attrs["prov
 says so. `v.transatlantic.disembarked_in("Jamaica").endpoints()` gives the points to
 draw each voyage on a map, and `v.sql("...")` runs any SQL over the tables.
 
+`v.fields(search="captives")` lists the fields, and `v.describe("MAJBUYPT")` shows one with
+its provenance, codebook reference and values. `v.query(recorded_only=True)` (or
+`--recorded-only`) keeps to data transcribed from historical records, which is public
+domain: no imputed field is read.
+
 The same filters work from the command line. Output is CSV on stdout, or a CSV or
 Parquet file with `-o`; the citation and licence note go to stderr, and Parquet files
 carry them in their metadata:

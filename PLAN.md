@@ -1,6 +1,6 @@
 # PLAN.md
 
-Status: Phase 2 — DuckDB connection, `voyage_endpoints` map view, fluent API and `voyages query` CLI done. Next: field helpers (`v.fields()`, `v.describe()`, `recorded_only`), which closes Phase 2. Staying on the 2020 `.sav` for now; the 2023 Dataverse release is noted in docs/DATA.md. African Names (Phase 1) still to do.
+Status: Phase 2 done — DuckDB query layer, map endpoints, fluent API, `voyages query` CLI and field helpers (incl. recorded-only mode) on branch `phase2-query-layer`. Next: merge, then Phase 3 notebooks. African Names (Phase 1) still to do.
 
 ## Goal
 
@@ -70,7 +70,7 @@ before writing ingest code.
 - [x] Fluent API: dataset selectors, place filters at any hierarchy level, year ranges, outcome filters, `.by_decade()`, `.by_region()`, `.summary()` (`api/query.py`; also `.flag()`, `.where()`, `.by()`, `.endpoints()`)
 - [x] Return types: pandas default, `.to_polars()`, `.to_arrow()`, raw SQL escape hatch (summaries return pandas with provenance in `df.attrs`; queries and `v.sql()` have all three)
 - [x] CLI: `voyages query` with the same filters, CSV/Parquet output (`query_cli.py`; citation + licence note on stderr, in Parquet metadata with per-column provenance)
-- [ ] Field-level helpers: `v.fields()`, `v.describe("MAJBUYPT")`, provenance filtering (`recorded_only=True`)
+- [x] Field-level helpers: `v.fields()`, `v.describe("MAJBUYPT")`, provenance filtering (`recorded_only=True`) (`api/fields.py`; recorded-only mode reads no imputed field and substitutes nothing under the same name)
 
 ### Phase 3 — Worked analyses (2–3 sessions)
 
@@ -110,3 +110,4 @@ Append one line per Claude Code session: date, phase, what landed, what's next.
 - 2026-10-19 — Phase 2 — DuckDB connection + `Voyages` client; `voyage_endpoints` view (imputed principal places, provenance per endpoint, region-centre fallback, "???" imputations fall back to recorded); 20 offline tests + full-data coverage (66.8% TA, 82.7% IA drawable). Next: fluent filters.
 - 2026-10-19 — Phase 2 — bulk export checked: no export matches the live site; Dataverse has a May 2023 release (42 new / 71 gone / 401 changed TA voyages vs 2020), recorded in DATA.md; staying on 2020 for now. Fluent API (`v.transatlantic.embarked_from(...).between(...).by_decade()`), name lookup for places and labels, 28 offline tests + PLAN example checked against pandas on full data. Next: `voyages query` CLI, field helpers.
 - 2026-10-19 — Phase 2 — `voyages query` CLI (filters, `--by` decade/region/summary/endpoints/any column, CSV/Parquet, clear errors with exit 2); `column_provenance()` fixes a lookup that hit Estimates fields of the same name; 15 CLI tests. Next: field helpers.
+- 2026-10-19 — Phase 2 — field helpers: `v.fields()`, `v.describe()`; recorded-only mode (`recorded_only=True`, `.recorded_only()`, `--recorded-only`): recorded principal places via new `voyage_endpoints_recorded` view, recorded dates for years, recorded totals by name, imputed columns refused. Year groupings (YEAR5/10/25/100) found to group YEARAM for every voyage: `derived_from` in the registry, licensed as imputed. Phase 2 complete. Next: merge branch, Phase 3.

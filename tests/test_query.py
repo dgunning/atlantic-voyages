@@ -174,7 +174,11 @@ def test_by_region(v, wide):
 
 def test_measures_carry_provenance(v):
     df = v.transatlantic.by_decade(["voyages", "embarked", "captives_purchased"])
-    assert df.attrs["provenance"] == {"embarked": "imputed", "captives_purchased": "recorded"}
+    assert df.attrs["provenance"] == {
+        "decade": "imputed",  # from the imputed year of arrival
+        "embarked": "imputed",
+        "captives_purchased": "recorded",
+    }
 
 
 def test_by_rejects_unknown_columns(v):

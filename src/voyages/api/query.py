@@ -15,6 +15,14 @@ Years are the imputed year of arrival (YEARAM) unless ``on=`` says otherwise.
 Totals sum the imputed totals (SLAXIMP, SLAMIMP) and skip voyages without
 one, as the site does. Results carry the provenance of each measure in
 ``df.attrs["provenance"]``; imputed values are CC BY-NC 4.0.
+
+Recorded-only queries (:meth:`Query.recorded_only`) read no imputed field.
+Nothing is substituted under the same name: places are the recorded principal
+places, years the recorded dates of the same events, and totals must be named
+recorded fields (default: captives on board leaving Africa, captives arriving
+at the first landing). Anything imputed raises ``ValueError``. Recorded data
+covers far fewer voyages than the imputed data. ``where()`` conditions are not
+checked; keep them to recorded columns.
 """
 
 from __future__ import annotations
@@ -32,20 +40,36 @@ from voyages import schema
 if TYPE_CHECKING:
     from voyages.api.client import Voyages
 
-# Short names for the measures people ask for most.
+# Short names for the measures people ask for most (imputed totals).
 MEASURES = {
     "embarked": "embarked_imputed",
     "disembarked": "disembarked_imputed",
     "died": "died_middle_passage_imputed",
 }
+DEFAULT_MEASURES = ("voyages", "embarked", "disembarked")
+RECORDED_DEFAULT_MEASURES = (
+    "voyages",
+    "captives_on_board_leaving_africa",
+    "captives_arrived_first_landing",
+)
 YEARS = {
     "arrived": "year_arrived_imputed",
     "departed": "year_departed_imputed",
     "left_africa": "year_left_africa_imputed",
 }
+# The same events, as recorded.
+RECORDED_YEARS = {
+    "arrived": "first_landing_year",
+    "departed": "departure_year",
+    "left_africa": "left_africa_year",
+}
 SIDES = ("embarkation", "disembarkation")
-BASE = "voyages_wide JOIN voyage_endpoints USING (voyage_id, dataset)"
 LEVELS = ("place", "region", "broad_region")
+
+
+def _base(recorded: bool) -> str:
+    view = "voyage_endpoints_recorded" if recorded else "voyage_endpoints"
+    return f"voyages_wide JOIN {view} USING (voyage_id, dataset)"
 
 
 class PlaceLookupError(LookupError):
@@ -59,6 +83,16 @@ class Query:
     v: Voyages
     datasets: tuple[str, ...]
     clauses: tuple[tuple[str, tuple], ...] = ()
+    recorded: bool = False
+
+    def recorded_only(self) -> Query:
+        """Read no imputed field from here on (see the module docstring).
+
+        Call it before any filter, so every filter is built on recorded data.
+        """
+        if self.clauses and not self.recorded:
+            raise ValueError("call recorded_only() before adding filters")
+        return replace(self, recorded=True)
 
     # ---------------------------------------------------------------- filters
     def embarked_from(self, *places: str | int) -> Query:
@@ -78,12 +112,11 @@ class Query:
     ) -> Query:
         """Voyages with a year in ``start..end``, inclusive. Either end may be open.
 
-        ``on`` is ``arrived`` (default, YEARAM), ``departed`` or ``left_africa``.
+        ``on`` is ``arrived`` (default: YEARAM, or the recorded year of first
+        landing in recorded-only mode), ``departed`` or ``left_africa``.
         Voyages without that year are left out.
         """
-        if on not in YEARS:
-            raise ValueError(f"on must be one of {tuple(YEARS)}, not {on!r}")
-        col = YEARS[on]
+        col = self._year(on)
         q = self._where(f"{col} IS NOT NULL")
         if start is not None:
             q = q._where(f"{col} >= ?", int(start))
@@ -94,35 +127,50 @@ class Query:
     def captive_outcome(self, *outcomes: str | int) -> Query:
         """Voyages by imputed outcome for the captives (FATE2), by label or code,
         e.g. "Captives disembarked in the Americas"."""
+        if self.recorded:
+            raise ValueError(
+                "the outcome for captives is imputed; in recorded-only mode use "
+                ".outcome() (the particular outcome as recorded)"
+            )
         return self._code_filter("outcome_for_captives_imputed", "outcomes_captives", outcomes)
 
+    def outcome(self, *outcomes: str | int) -> Query:
+        """Voyages by particular outcome as recorded (FATE), by label or code."""
+        return self._code_filter("outcome", "outcomes", outcomes)
+
     def flag(self, *nations: str | int) -> Query:
-        """Voyages by imputed flag of the vessel (NATINIMP), e.g. "Portugal / Brazil"."""
-        return self._code_filter("flag_imputed", "nations", nations)
+        """Voyages by flag of the vessel, e.g. "Portugal / Brazil": the imputed
+        flag (NATINIMP), or the recorded one (NATIONAL) in recorded-only mode."""
+        return self._code_filter("flag" if self.recorded else "flag_imputed", "nations", nations)
 
     def where(self, condition: str, *params) -> Query:
-        """Any SQL condition on the columns of ``voyages_wide`` or ``voyage_endpoints``."""
+        """Any SQL condition on the columns of ``voyages_wide`` or the endpoints.
+
+        Not checked in recorded-only mode: keep it to recorded columns.
+        """
         return self._where(f"({condition})", *params)
 
     # -------------------------------------------------------------- summaries
     def by_decade(
-        self,
-        measures: str | Sequence[str] = ("voyages", "embarked", "disembarked"),
-        on: str = "arrived",
+        self, measures: str | Sequence[str] | None = None, on: str = "arrived"
     ) -> pd.DataFrame:
-        """Totals by decade (from the imputed year of arrival by default).
+        """Totals by decade of the year ``on`` (see :meth:`between`).
 
         Voyages without a year form a row with ``decade`` = null rather than
         being dropped.
         """
-        if on not in YEARS:
-            raise ValueError(f"on must be one of {tuple(YEARS)}, not {on!r}")
-        return self._group([f"({YEARS[on]} // 10 * 10)::SMALLINT AS decade"], measures)
+        col = self._year(on)
+        df = self._group([f"({col} // 10 * 10)::SMALLINT AS decade"], measures)
+        df.attrs["provenance"] = {
+            "decade": "derived" if self.recorded else "imputed",
+            **df.attrs["provenance"],
+        }
+        return df
 
     def by_region(
         self,
         side: str = "embarkation",
-        measures: str | Sequence[str] = ("voyages", "embarked", "disembarked"),
+        measures: str | Sequence[str] | None = None,
         level: str = "region",
     ) -> pd.DataFrame:
         """Totals by region of embarkation or disembarkation.
@@ -137,46 +185,57 @@ class Query:
         col = f"{side}_{level}"
         return self._group([col, f"{col}_name"], measures)
 
-    def by(
-        self, *columns: str, measures: str | Sequence[str] = ("voyages", "embarked", "disembarked")
-    ) -> pd.DataFrame:
+    def by(self, *columns: str, measures: str | Sequence[str] | None = None) -> pd.DataFrame:
         """Totals grouped by any columns of the query."""
-        cols = [self._column(c) for c in columns]
-        return self._group(cols, measures)
+        return self._group([self._column(c) for c in columns], measures)
 
     def summary(self) -> pd.DataFrame:
         """One row per dataset: voyages, totals, years and drawable routes."""
+        if self.recorded:
+            emb, dis = RECORDED_DEFAULT_MEASURES[1:]
+            names = (emb, dis)
+        else:
+            emb, dis = MEASURES["embarked"], MEASURES["disembarked"]
+            names = ("embarked", "disembarked")
+        year = self._year("arrived")
         sql = f"""
             SELECT dataset,
                 count(*) AS voyages,
-                sum(embarked_imputed)::BIGINT AS embarked,
-                count(embarked_imputed) AS voyages_with_embarked,
-                sum(disembarked_imputed)::BIGINT AS disembarked,
-                count(disembarked_imputed) AS voyages_with_disembarked,
-                min(year_arrived_imputed) AS first_year,
-                max(year_arrived_imputed) AS last_year,
+                sum({emb})::BIGINT AS {names[0]},
+                count({emb}) AS voyages_with_{names[0]},
+                sum({dis})::BIGINT AS {names[1]},
+                count({dis}) AS voyages_with_{names[1]},
+                min({year}) AS first_year,
+                max({year}) AS last_year,
                 count(*) FILTER (drawable) AS drawable
             FROM ({self.sql()}) GROUP BY dataset ORDER BY dataset DESC"""
-        df = self.v.con.sql(sql, params=self.params()).df()
-        df.attrs["provenance"] = {"embarked": "imputed", "disembarked": "imputed"}
+        df = self._fetch(sql).df()
+        kind = "recorded" if self.recorded else "imputed"
+        df.attrs["provenance"] = {
+            names[0]: kind,
+            names[1]: kind,
+            "first_year": kind,
+            "last_year": kind,
+        }
         return df
 
     def count(self) -> int:
-        return self.v.con.sql(
-            f"SELECT count(*) FROM ({self.sql()})", params=self.params()
-        ).fetchone()[0]
+        return self._fetch(f"SELECT count(*) FROM ({self.sql()})").fetchone()[0]
 
     __len__ = count
 
     # ------------------------------------------------------------------- rows
     def endpoints(self, drawable_only: bool = False) -> pd.DataFrame:
-        """The ``voyage_endpoints`` rows for these voyages, for drawing on a map."""
+        """The endpoint rows for these voyages, for drawing on a map."""
         q = self._where("drawable") if drawable_only else self
         cols = ", ".join(c["name"] for c in schema.table_columns("voyage_endpoints"))
         return q._fetch(f"SELECT {cols} FROM ({q.sql()}) ORDER BY voyage_id").df()
 
     def to_pandas(self, columns: Sequence[str] | None = None) -> pd.DataFrame:
-        """One row per voyage: ``voyages_wide`` plus the endpoint columns."""
+        """One row per voyage: ``voyages_wide`` plus the endpoint columns.
+
+        In recorded-only mode the default is every column that is not imputed.
+        """
         return self._rows(columns).df()
 
     def to_arrow(self, columns: Sequence[str] | None = None):
@@ -189,18 +248,26 @@ class Query:
             raise ImportError("to_polars() needs polars: pip install 'voyages[polars]'") from e
         return self._rows(columns).pl()
 
+    def columns(self) -> list[str]:
+        """Columns available to filters, ``by()`` and ``to_*`` in this mode."""
+        cols = self._all_columns()
+        if self.recorded:
+            cols = [c for c in cols if column_provenance(c, recorded=True) != "imputed"]
+        return cols
+
     # ------------------------------------------------------------------- SQL
     def sql(self) -> str:
         """The SQL for this query's rows; pair with :meth:`params`."""
         marks = ", ".join("?" for _ in self.datasets)
         where = [f"dataset IN ({marks})", *(c for c, _ in self.clauses)]
-        return f"SELECT * FROM {BASE} WHERE " + " AND ".join(where)
+        return f"SELECT * FROM {_base(self.recorded)} WHERE " + " AND ".join(where)
 
     def params(self) -> list:
         return [*self.datasets, *(p for _, ps in self.clauses for p in ps)]
 
     def __repr__(self) -> str:
-        return f"<Query {'+'.join(self.datasets)}: {len(self.clauses)} filter(s)>"
+        mode = ", recorded only" if self.recorded else ""
+        return f"<Query {'+'.join(self.datasets)}{mode}: {len(self.clauses)} filter(s)>"
 
     # -------------------------------------------------------------- internals
     def _where(self, clause: str, *params) -> Query:
@@ -210,21 +277,46 @@ class Query:
         return self.v.con.sql(sql, params=self.params())
 
     def _rows(self, columns: Sequence[str] | None) -> duckdb.DuckDBPyRelation:
-        cols = ", ".join(self._column(c) for c in columns) if columns else "*"
+        names = list(columns) if columns else self.columns()
+        cols = ", ".join(self._column(c) for c in names)
         return self._fetch(f"SELECT {cols} FROM ({self.sql()}) ORDER BY voyage_id")
 
-    def _columns(self) -> list[str]:
-        if not hasattr(self.v, "_query_columns"):
-            self.v._query_columns = self.v.con.sql(f"SELECT * FROM {BASE} LIMIT 0").columns
-        return self.v._query_columns
+    def _all_columns(self) -> list[str]:
+        cache = self.v.__dict__.setdefault("_query_columns", {})
+        if self.recorded not in cache:
+            cache[self.recorded] = self.v.con.sql(
+                f"SELECT * FROM {_base(self.recorded)} LIMIT 0"
+            ).columns
+        return cache[self.recorded]
 
     def _column(self, name: str) -> str:
-        if name not in self._columns():
-            close = difflib.get_close_matches(name, self._columns(), n=3)
+        """Quote a column name after checking it exists and is allowed in this mode."""
+        if name not in self._all_columns():
+            close = difflib.get_close_matches(name, self._all_columns(), n=3)
             raise KeyError(f"no column {name!r}" + (f"; did you mean {close}?" if close else ""))
+        if self.recorded and column_provenance(name, recorded=True) == "imputed":
+            raise ValueError(f"{name!r} is imputed; not available in recorded-only mode")
         return f'"{name}"'
 
+    def _year(self, on: str) -> str:
+        years = RECORDED_YEARS if self.recorded else YEARS
+        if on not in years:
+            raise ValueError(f"on must be one of {tuple(years)}, not {on!r}")
+        return years[on]
+
+    def _measure(self, m: str) -> str:
+        if m in MEASURES:
+            if self.recorded:
+                raise ValueError(
+                    f"{m!r} is an imputed total; in recorded-only mode name a recorded field, "
+                    f"e.g. {', '.join(RECORDED_DEFAULT_MEASURES[1:])}"
+                )
+            return MEASURES[m]
+        return m
+
     def _group(self, select: list[str], measures) -> pd.DataFrame:
+        if measures is None:
+            measures = RECORDED_DEFAULT_MEASURES if self.recorded else DEFAULT_MEASURES
         if isinstance(measures, str):
             measures = [measures]
         aggs, provenance = [], {}
@@ -232,10 +324,9 @@ class Query:
             if m == "voyages":
                 aggs.append("count(*) AS voyages")
                 continue
-            col = MEASURES.get(m, m)
-            self._column(col)
-            aggs.append(f'sum("{col}")::BIGINT AS "{m}"')
-            provenance[m] = column_provenance(col) or "derived"
+            col = self._measure(m)
+            aggs.append(f'sum({self._column(col)})::BIGINT AS "{m}"')
+            provenance[m] = column_provenance(col, recorded=self.recorded) or "derived"
         # Positional keys: an output name like "decade" can shadow a column.
         key_list = ", ".join(str(i + 1) for i in range(len(select)))
         sql = (
@@ -269,22 +360,39 @@ class Query:
 _POINT_SUFFIXES = ("_lat", "_lon", "_precision", "_map_code")
 
 
-def column_provenance(name: str) -> str | None:
+def column_provenance(name: str, recorded: bool = False) -> str | None:
     """Provenance of a query column: recorded, imputed, derived, or None if unknown.
 
     Voyage fields come from the registry (never the Estimates fields, some of
-    which share names). Endpoint places and regions are ``imputed``, the more
-    restrictive class: each row's ``*_provenance`` column says which rows were
-    recorded. Map points and ``drawable`` are ``derived``.
+    which share names). A field derived from an imputed field (the year
+    groupings) counts as ``imputed``. Endpoint places and regions are
+    ``imputed``, the more restrictive class, since each row's ``*_provenance``
+    column says which rows were recorded; in recorded-only mode (``recorded``)
+    places are ``recorded`` and regions ``derived`` from them. Map points and
+    ``drawable`` are ``derived``.
     """
     if name.startswith(SIDES) or name == "drawable":
         if name == "drawable" or name.endswith(_POINT_SUFFIXES):
             return "derived"
-        return None if name.endswith("_provenance") else "imputed"
+        if name.endswith("_provenance"):
+            return None
+        if not recorded:
+            return "imputed"
+        return "recorded" if name.endswith(("_place", "_place_name")) else "derived"
+    f = _voyage_field(name)
+    if f is None:
+        return None
+    if any(_voyage_field(d) and _voyage_field(d).provenance == "imputed" for d in f.derived_from):
+        return "imputed"
+    return f.provenance
+
+
+def _voyage_field(name: str) -> schema.Field | None:
+    """The voyage field for a column, or for the code column behind a ``*_name`` column."""
     base = name[: -len("_name")] if name.endswith("_name") else name
     for f in schema.load().fields:
         if f.name in (name, base) and f.table != "estimates":
-            return f.provenance
+            return f
     return None
 
 

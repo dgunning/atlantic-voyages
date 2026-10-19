@@ -261,6 +261,16 @@ tables:
       dtype: string
       description: transatlantic | intraamerican
     - from_fields: all voyage tables
+  voyage_endpoints_recorded:
+    view: true
+    same_columns_as: voyage_endpoints
+    grain: one row per voyage
+    description: 'DuckDB view (src/voyages/api/views.py) for recorded-only queries. Like
+      voyage_endpoints, but the place is the recorded principal place only (MAJBUYPT, MAJSELPT),
+      region and broad region come from the place hierarchy in places.csv, and no imputed field is
+      read. provenance is recorded wherever a place is given.'
+    key:
+    - voyage_id
   voyage_endpoints:
     view: true
     grain: one row per voyage
@@ -884,6 +894,10 @@ fields:
   kind: code
   provenance: derived
   provenance_evidence: Year grouping ('5-year period in which voyage occurred'), codebook sec.2D p.17
+  derived_from:
+  - year_arrived_imputed
+  provenance_note: Groups the imputed year of arrival (YEARAM), periods starting at 1501; matches for all
+    47,629 voyages (checked 2026-10-19). Licensed as imputed.
   reference: periods_5yr
   datasets:
   - transatlantic
@@ -901,6 +915,10 @@ fields:
   kind: code
   provenance: derived
   provenance_evidence: Year grouping ('Decade in which voyage occurred'), codebook sec.2D p.17
+  derived_from:
+  - year_arrived_imputed
+  provenance_note: Groups the imputed year of arrival (YEARAM), periods starting at 1501; matches for all
+    47,629 voyages (checked 2026-10-19). Licensed as imputed.
   reference: decades
   datasets:
   - transatlantic
@@ -918,6 +936,10 @@ fields:
   kind: code
   provenance: derived
   provenance_evidence: Year grouping ('Quarter-century in which voyage occurred'), codebook sec.2D p.17
+  derived_from:
+  - year_arrived_imputed
+  provenance_note: Groups the imputed year of arrival (YEARAM), periods starting at 1501; matches for all
+    47,629 voyages (checked 2026-10-19). Licensed as imputed.
   reference: quarter_centuries
   datasets:
   - transatlantic
@@ -935,6 +957,10 @@ fields:
   kind: year
   provenance: derived
   provenance_evidence: Year grouping ('Century in which voyage occurred'), codebook sec.2D p.17
+  derived_from:
+  - year_arrived_imputed
+  provenance_note: Groups the imputed year of arrival (YEARAM), periods starting at 1501; matches for all
+    47,629 voyages (checked 2026-10-19). Licensed as imputed.
   datasets:
   - transatlantic
   - intraamerican

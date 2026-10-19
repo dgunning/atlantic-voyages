@@ -44,6 +44,12 @@ _KNOWN = """
         CASE WHEN {e}_unknown THEN NULL ELSE {e}_reg END AS {e}_reg,
         CASE WHEN {e}_unknown THEN NULL ELSE {e}_broad END AS {e}_broad"""
 
+# Recorded-only: no imputed place, region or broad region is read at all.
+_RECORDED_ONLY = """
+        NULL::INTEGER AS {e}_imp,
+        NULL::INTEGER AS {e}_reg,
+        NULL::INTEGER AS {e}_broad"""
+
 _RESOLVED = """
 {e} AS (
     SELECT
@@ -94,17 +100,20 @@ LEFT JOIN places {e}_r ON {e}_r.code = {e}.region
 LEFT JOIN places {e}_b ON {e}_b.code = {e}.broad_region"""
 
 
-def endpoints_sql() -> str:
+def endpoints_sql(recorded_only: bool = False) -> str:
+    """SQL for ``voyage_endpoints``, or ``voyage_endpoints_recorded`` with
+    ``recorded_only``: recorded principal places, regions from the place hierarchy."""
     unknown = ", ".join(str(c) for c in UNKNOWN_REGIONS)
     principal = ",".join(
         _PRINCIPAL.format(e=e, role=role, unknown=unknown) for e, role in ENDPOINTS.items()
     )
-    known = ",".join(_KNOWN.format(e=e) for e in ENDPOINTS)
+    known = ",".join((_RECORDED_ONLY if recorded_only else _KNOWN).format(e=e) for e in ENDPOINTS)
+    name = "voyage_endpoints_recorded" if recorded_only else "voyage_endpoints"
     resolved = ",".join(_RESOLVED.format(e=e) for e in ENDPOINTS)
     columns = ",".join(_COLUMNS.format(e=e) for e in ENDPOINTS)
     joins = "".join(_JOINS.format(e=e) for e in ENDPOINTS)
     return f"""
-CREATE VIEW voyage_endpoints AS
+CREATE VIEW {name} AS
 WITH principal AS (
     SELECT voyage_id,{principal}
     FROM voyage_places
@@ -151,3 +160,4 @@ ORDER BY dataset DESC, endpoint DESC, voyages DESC
 
 def create(con: duckdb.DuckDBPyConnection) -> None:
     con.execute(endpoints_sql())
+    con.execute(endpoints_sql(recorded_only=True))

@@ -41,6 +41,7 @@ class Field:
     codebook: dict[str, Any] | None = None
     notes: str | None = None
     spss_name_by_dataset: dict[str, str] = field(default_factory=dict)
+    derived_from: tuple[str, ...] = ()
 
     def spss_name_in(self, dataset: str) -> str:
         """SPSS variable name for this field in a given dataset's file."""
@@ -86,7 +87,12 @@ def load(path: Path = REGISTRY_PATH) -> Registry:
     doc = yaml.safe_load(path.read_text(encoding="utf-8"))
     fields = tuple(
         Field(
-            **{**f, "datasets": tuple(f["datasets"]), "source_label": f.get("source_label") or {}}
+            **{
+                **f,
+                "datasets": tuple(f["datasets"]),
+                "source_label": f.get("source_label") or {},
+                "derived_from": tuple(f.get("derived_from") or ()),
+            }
         )
         for f in doc["fields"]
     )
@@ -105,6 +111,8 @@ def table_columns(table: str, registry: Registry | None = None) -> list[dict[str
     """
     reg = registry or load()
     spec = reg.tables[table]
+    if "same_columns_as" in spec:
+        return table_columns(spec["same_columns_as"], reg)
     cols: list[dict[str, str]] = []
     for c in spec["columns"]:
         if "from_fields" not in c:

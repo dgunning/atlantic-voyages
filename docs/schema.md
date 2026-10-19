@@ -70,6 +70,27 @@ voyage, for maps.
   `region`, `no_point`, `no_place`) and drawable routes. Full data, 2026-10-19: 24,108 of
   36,108 TA (66.8%) and 9,526 of 11,521 IA (82.7%) drawable.
 
+## Recorded-only queries (2026-10-19)
+
+`recorded_only=True` (API), `.recorded_only()` (on a query) or `--recorded-only` (CLI) reads no
+imputed field, for work that must stay within the public-domain data. Nothing is substituted
+under the same name:
+
+- Places: `voyage_endpoints_recorded`, built from the recorded principal places (MAJBUYPT,
+  MAJSELPT) with regions from the place hierarchy. 18,100 TA voyages are drawable this way,
+  against 24,108 with imputed places.
+- Years: the recorded dates of the same events (first landing, departure, leaving Africa)
+  instead of YEARAM / YEARDEP / YEARAF.
+- Totals: named recorded fields; default `captives_on_board_leaving_africa` (TSLAVESD) and
+  `captives_arrived_first_landing` (SLAARRIV). `embarked` / `disembarked` raise. Recorded
+  counts are sparse (8,300 TA voyages have TSLAVESD, against 34,477 with SLAXIMP), so
+  `summary()` reports how many voyages each total covers.
+- Imputed columns, the imputed flag and FATE2 raise `ValueError`; `.outcome()` (FATE) and the
+  recorded flag (NATIONAL) are available. `where()` conditions are not checked.
+- The year groupings YEAR5, YEAR10, YEAR25, YEAR100 group YEARAM (checked for all 47,629
+  voyages). They carry `derived_from: [year_arrived_imputed]` in fields.yaml and count as
+  imputed for licensing.
+
 ## fields.yaml shape
 
 ```yaml

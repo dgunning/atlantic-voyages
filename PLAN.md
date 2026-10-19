@@ -1,6 +1,6 @@
 # PLAN.md
 
-Status: Phase 0 done — all raw files fetched and checksummed (2026-10-19); `voyages verify` reports ok for every file. Next: Phase 1 plan mode (inspect .sav variable and value labels plus the codebook, propose fields.yaml).
+Status: Phase 0 done — all raw files fetched and checksummed (2026-10-19); `voyages verify` reports ok for every file. Phase 1 schema design agreed (docs/schema.md). Next: generate schema/fields.yaml and schema/reference/*.csv from the .sav labels + codebook index.
 
 ## Goal
 
@@ -93,9 +93,11 @@ Each is a notebook under `notebooks/`, executed in CI, and the basis of a README
 - Final package name
 - Whether to vendor the reference tables or regenerate them from the `.sav` value labels each build (lean: regenerate, then commit the result for diffability)
 - How much of the Estimates methodology to expose vs just the numbers
-- Whether the wide table should keep original SPSS column names (e.g. `MAJBUYPT`) alongside readable ones (lean: yes, both, original names are what the literature uses)
+- ~~Column names~~ decided 2026-10-19: readable snake_case; `spss_name` in fields.yaml maps back (see docs/schema.md)
+- Licence for SlaveVoyages place coordinates (ask the project team); GeoNames fills gaps meanwhile
 
 ## Session log
 
 Append one line per Claude Code session: date, phase, what landed, what's next.
 - 2026-10-19 — Phase 0 — scaffold, citation, fetch manifest + verify, LICENSE/NOTICE/DATA.md, 15 offline tests passing. Next: fetch raw files locally, record checksums, Phase 1 plan mode on the .sav metadata.
+- 2026-10-19 — Phase 0/1 — fetched + checksummed raw files (codebook 2022: 2023 edition 404s); inspected .sav metadata and codebook; agreed schema design in docs/schema.md (readable column names, long tables, places with coords from SlaveVoyages fixture + GeoNames). Next: fields.yaml + reference tables.

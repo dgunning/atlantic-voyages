@@ -60,6 +60,17 @@ voyages query -d transatlantic -e "Bight of Biafra" -l Jamaica --from 1700 --to 
 voyages query -l Jamaica --by endpoints --drawable-only -o jamaica.parquet
 ```
 
+## Worked analyses
+
+Notebooks in `notebooks/`, each a `.py` source paired with an executed `.ipynb`
+(`uv run jupytext --sync notebooks/*.py`, then `uv run jupyter nbconvert --to notebook
+--execute --inplace notebooks/<name>.ipynb`; needs the full data).
+
+- [Arrivals in Jamaica by African region of embarkation](notebooks/01_jamaica_arrivals.ipynb):
+  recorded, imputed and Estimates figures side by side, decade by decade.
+
+![People disembarked in Jamaica by decade](notebooks/figures/01_jamaica_by_decade.png)
+
 ## Data and license
 
 The library code is Apache-2.0. The data belongs to SlaveVoyages: records

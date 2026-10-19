@@ -111,6 +111,13 @@ voyages checked (2026-10-19), unlike the Trans-Atlantic pages (below).
 - 14 place codes used by 30 Trans-Atlantic voyages have no label in any
   source file (e.g. 60628, 41252, 21013). They stay in places.csv with an
   empty name and a note.
+- Dixcove (code 60508), a fort town on the western Ghana coast, is coded under
+  the Bight of Benin (60500) in the source, though it lies on the Gold Coast
+  (60400), west of Elmina. Its map point (4.8, -1.95) is right; the code puts it
+  in the wrong region. It is a recorded place of purchase for 9 Trans-Atlantic
+  voyages. Kept as in the source, since regions are never recomputed (found
+  2026-10-19). Worth raising with the SlaveVoyages team; check whether the Oct
+  2023 recode moved it.
 
 - The 6 Nov 2023 codebook (`SPSS_Codebook_2023-11-06.pdf`) returns 404 on
   the legacy site (checked 2026-10-19). The manifest uses the 2022 edition

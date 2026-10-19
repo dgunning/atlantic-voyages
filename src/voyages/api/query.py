@@ -152,15 +152,20 @@ class Query:
 
     # -------------------------------------------------------------- summaries
     def by_decade(
-        self, measures: str | Sequence[str] | None = None, on: str = "arrived"
+        self,
+        measures: str | Sequence[str] | None = None,
+        on: str = "arrived",
+        by: str | Sequence[str] = (),
     ) -> pd.DataFrame:
-        """Totals by decade of the year ``on`` (see :meth:`between`).
+        """Totals by decade of the year ``on`` (see :meth:`between`), and by any
+        further columns in ``by`` (e.g. ``"embarkation_region_name"``).
 
         Voyages without a year form a row with ``decade`` = null rather than
         being dropped.
         """
         col = self._year(on)
-        df = self._group([f"({col} // 10 * 10)::SMALLINT AS decade"], measures)
+        extra = [self._column(c) for c in ([by] if isinstance(by, str) else by)]
+        df = self._group([f"({col} // 10 * 10)::SMALLINT AS decade", *extra], measures)
         df.attrs["provenance"] = {
             "decade": "derived" if self.recorded else "imputed",
             **df.attrs["provenance"],

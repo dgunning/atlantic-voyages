@@ -152,6 +152,17 @@ def test_by_decade_matches_pandas(v, wide):
         assert g["disembarked"].item() == row.disembarked, d
 
 
+def test_by_decade_with_extra_columns(v, wide):
+    df = v.transatlantic.by_decade("voyages", by="embarkation_region_name")
+    assert list(df.columns) == ["decade", "embarkation_region_name", "voyages"]
+    assert df.voyages.sum() == 300
+    gold = df[df.embarkation_region_name == "Gold Coast"].voyages.sum()
+    ta = wide[wide.dataset == "transatlantic"]
+    assert gold == (ta.principal_purchase_region_imputed == 60400).sum()
+    with pytest.raises(KeyError):
+        v.transatlantic.by_decade(by="nope")
+
+
 def test_by_decade_keeps_voyages_without_a_year(v, wide):
     df = v.query().by_decade("voyages")
     assert df["voyages"].sum() == 600

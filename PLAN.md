@@ -1,6 +1,6 @@
 # PLAN.md
 
-Status: Phase 2 done — DuckDB query layer, map endpoints, fluent API, `voyages query` CLI and field helpers (incl. recorded-only mode), merged to main. Next: Phase 3 notebooks. African Names (Phase 1) still to do.
+Status: Phase 3 started — notebook tooling (jupytext pairs, `notebooks` dependency group, full-data notebook test) and notebook 1 (Jamaica arrivals) done. Next: notebook 2, re-exports from Jamaica. African Names (Phase 1) still to do.
 
 ## Goal
 
@@ -76,7 +76,7 @@ before writing ingest code.
 
 Each is a notebook under `notebooks/`, executed in CI, and the basis of a README section.
 
-- [ ] Arrivals into Jamaica by African embarkation region, by decade, recorded vs imputed vs Estimates
+- [x] Arrivals into Jamaica by African embarkation region, by decade, recorded vs imputed vs Estimates (`notebooks/01_jamaica_arrivals`; Estimates Jamaica total 1,019,588 not yet checked against the site)
 - [ ] Re-exports from Jamaica via the Intra-American data
 - [ ] Bight of Biafra vs Gold Coast vs Bight of Benin: destinations over time
 - [ ] Mortality and voyage duration by route and period
@@ -111,3 +111,4 @@ Append one line per Claude Code session: date, phase, what landed, what's next.
 - 2026-10-19 — Phase 2 — bulk export checked: no export matches the live site; Dataverse has a May 2023 release (42 new / 71 gone / 401 changed TA voyages vs 2020), recorded in DATA.md; staying on 2020 for now. Fluent API (`v.transatlantic.embarked_from(...).between(...).by_decade()`), name lookup for places and labels, 28 offline tests + PLAN example checked against pandas on full data. Next: `voyages query` CLI, field helpers.
 - 2026-10-19 — Phase 2 — `voyages query` CLI (filters, `--by` decade/region/summary/endpoints/any column, CSV/Parquet, clear errors with exit 2); `column_provenance()` fixes a lookup that hit Estimates fields of the same name; 15 CLI tests. Next: field helpers.
 - 2026-10-19 — Phase 2 — field helpers: `v.fields()`, `v.describe()`; recorded-only mode (`recorded_only=True`, `.recorded_only()`, `--recorded-only`): recorded principal places via new `voyage_endpoints_recorded` view, recorded dates for years, recorded totals by name, imputed columns refused. Year groupings (YEAR5/10/25/100) found to group YEARAM for every voyage: `derived_from` in the registry, licensed as imputed. Phase 2 complete. Next: merge branch, Phase 3.
+- 2026-10-19 — Phase 3 — notebook tooling: `.py` percent source paired with executed `.ipynb` (jupytext), `notebooks` dependency group, figures in notebooks/figures, `tests/test_notebooks.py` (fulldata). `by_decade(by=...)`. Notebook 1: Jamaica arrivals by region and decade from three sources; every figure quoted in the text asserted in a cell. Next: notebook 2.

@@ -37,6 +37,7 @@ voyages = "voyages.cli:app"
 
 [dependency-groups]
 dev = [
+    "polars>=2.0.0",
     "pytest>=8",
     "ruff>=0.6",
 ]

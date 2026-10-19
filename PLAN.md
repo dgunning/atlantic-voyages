@@ -1,6 +1,6 @@
 # PLAN.md
 
-Status: Phase 1 — registry, reference tables, and ingest for Trans-Atlantic, Intra-American and Estimates done; `voyages build` writes everything. Next: African Names (People data), then Phase 2 query layer.
+Status: Phase 2 started — DuckDB connection, `Voyages` client (raw SQL, pandas/arrow/polars) and `voyage_endpoints` map view done. Next: fluent filters (`.embarked_from()`, `.between()`, `.by_decade()`). African Names (Phase 1) still to do.
 
 ## Goal
 
@@ -65,9 +65,10 @@ before writing ingest code.
 
 ### Phase 2 — Query layer (2–3 sessions)
 
-- [ ] DuckDB connection over the Parquet directory, lazy, read-only
+- [x] DuckDB connection over the Parquet directory, lazy, read-only (`api/db.py`: in-memory, views over Parquet, reference CSVs as typed tables)
+- [x] `voyage_endpoints` view: principal embarkation/disembarkation with map points, precision and provenance; `v.endpoints()`, `v.endpoint_coverage()`
 - [ ] Fluent API: dataset selectors, place filters at any hierarchy level, year ranges, outcome filters, `.by_decade()`, `.by_region()`, `.summary()`
-- [ ] Return types: pandas default, `.to_polars()`, `.to_arrow()`, raw SQL escape hatch
+- [ ] Return types: pandas default, `.to_polars()`, `.to_arrow()`, raw SQL escape hatch (`v.sql()` / `v.table()` return a lazy `Result` with all three; fluent API to follow)
 - [ ] CLI: `voyages query` with the same filters, CSV/Parquet output
 - [ ] Field-level helpers: `v.fields()`, `v.describe("MAJBUYPT")`, provenance filtering (`recorded_only=True`)
 
@@ -106,3 +107,4 @@ Append one line per Claude Code session: date, phase, what landed, what's next.
 - 2026-10-19 — Phase 1 — Trans-Atlantic ingest: generic registry-driven ingest/voyages.py, 9 Parquet tables, 300-voyage fixture, 10 voyages checked against the site; site marks FATE2-4, *RAT7 and JAMCASPR imputed, registry corrected; site data is newer than the 2020 .sav for some voyages. Next: Intra-American ingest.
 - 2026-10-19 — Phase 1 — Intra-American ingest on the shared ingest/voyages.py; voyage_links table (voyageID2 is text, one voyage links two TA voyages); 10 fractional counts in 2 voyages set to null via KNOWN_BAD_VALUES; IA date-label TODOs resolved from the site. Next: Estimates.
 - 2026-10-19 — Phase 1 — Estimates ingest (ingest/estimates.py): one table, `row` key (no natural key in the source), fixture, per-carrier embarked totals within 15 of the site (Netherlands exact). Next: African Names or Phase 2.
+- 2026-10-19 — Phase 2 — DuckDB connection + `Voyages` client; `voyage_endpoints` view (imputed principal places, provenance per endpoint, region-centre fallback, "???" imputations fall back to recorded); 20 offline tests + full-data coverage (66.8% TA, 82.7% IA drawable). Next: fluent filters.

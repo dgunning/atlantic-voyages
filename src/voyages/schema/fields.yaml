@@ -261,6 +261,98 @@ tables:
       dtype: string
       description: transatlantic | intraamerican
     - from_fields: all voyage tables
+  voyage_endpoints:
+    view: true
+    grain: one row per voyage
+    description: 'DuckDB view (src/voyages/api/views.py), not a Parquet file. Where each voyage
+      embarked and disembarked its captives, with a point to draw on a map. The place is the imputed
+      principal place (MJBYPTIMP, MJSLPTIMP), else the recorded one (MAJBUYPT, MAJSELPT). Its
+      provenance is recorded when the recorded principal place is the same place, otherwise imputed.
+      The point is the place''s map point from places.csv, else the centre of the voyage''s own
+      principal region (regions are kept as recorded, codebook p.30). Catch-all places and regions get
+      no point.'
+    key:
+    - voyage_id
+    columns:
+    - name: voyage_id
+      dtype: int32
+      description: Voyage ID (unique across both voyage datasets)
+    - name: dataset
+      dtype: string
+      description: transatlantic | intraamerican
+    - name: embarkation_place
+      dtype: int32
+      description: Principal place of embarkation (code in places)
+    - name: embarkation_place_name
+      dtype: string
+      description: Name of the principal place of embarkation
+    - name: embarkation_provenance
+      dtype: string
+      description: recorded | imputed, for the place of embarkation
+    - name: embarkation_region
+      dtype: int32
+      description: Principal region of embarkation, as in the voyage record (imputed), else the place's
+        region
+    - name: embarkation_region_name
+      dtype: string
+      description: Name of the region of embarkation
+    - name: embarkation_broad_region
+      dtype: int32
+      description: Broad region of embarkation, as in the voyage record (imputed), else the place's
+        broad region
+    - name: embarkation_broad_region_name
+      dtype: string
+      description: Name of the broad region of embarkation
+    - name: embarkation_lat
+      dtype: float64
+      description: Latitude of the point to draw for embarkation
+    - name: embarkation_lon
+      dtype: float64
+      description: Longitude of the point to draw for embarkation
+    - name: embarkation_precision
+      dtype: string
+      description: 'place | representative | region: what the point stands for. Null: no point'
+    - name: embarkation_map_code
+      dtype: int32
+      description: Code of the place or region whose point is drawn
+    - name: disembarkation_place
+      dtype: int32
+      description: Principal place of disembarkation (code in places)
+    - name: disembarkation_place_name
+      dtype: string
+      description: Name of the principal place of disembarkation
+    - name: disembarkation_provenance
+      dtype: string
+      description: recorded | imputed, for the place of disembarkation
+    - name: disembarkation_region
+      dtype: int32
+      description: Principal region of disembarkation, as in the voyage record (imputed), else the
+        place's region
+    - name: disembarkation_region_name
+      dtype: string
+      description: Name of the region of disembarkation
+    - name: disembarkation_broad_region
+      dtype: int32
+      description: Broad region of disembarkation, as in the voyage record (imputed), else the place's
+        broad region
+    - name: disembarkation_broad_region_name
+      dtype: string
+      description: Name of the broad region of disembarkation
+    - name: disembarkation_lat
+      dtype: float64
+      description: Latitude of the point to draw for disembarkation
+    - name: disembarkation_lon
+      dtype: float64
+      description: Longitude of the point to draw for disembarkation
+    - name: disembarkation_precision
+      dtype: string
+      description: 'place | representative | region: what the point stands for. Null: no point'
+    - name: disembarkation_map_code
+      dtype: int32
+      description: Code of the place or region whose point is drawn
+    - name: drawable
+      dtype: bool
+      description: Both endpoints have a point
 dropped:
 - spss_name: FILTER_$
   reason: SPSS filter left in the file (label is a filter expression), not data

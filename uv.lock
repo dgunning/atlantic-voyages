@@ -670,6 +670,7 @@ polars = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "polars" },
     { name = "pytest" },
     { name = "ruff" },
 ]
@@ -688,6 +689,7 @@ provides-extras = ["polars"]
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "polars", specifier = ">=2.0.0" },
     { name = "pytest", specifier = ">=8" },
     { name = "ruff", specifier = ">=0.6" },
 ]

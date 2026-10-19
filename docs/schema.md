@@ -49,6 +49,27 @@ Reference (schema/reference/*.csv, generated from value labels, committed for di
 - `nations.csv`, `rigs.csv`, `outcomes.csv` (FATE, FATE2–4 as four small tables or one with `kind`), `ton_types.csv`, `resistance.csv`, `year_periods.csv`, `xmimpflag.csv`, `estimates_*.csv`.
 - Codes used but unlabeled get a row with name = null and `note = "code used in data, no label in source"` so joins never drop voyages.
 
+## Query layer: `voyage_endpoints` (Phase 2, 2026-10-19)
+
+`Voyages()` opens an in-memory DuckDB connection: each Parquet table is a view over both
+voyage datasets, each reference CSV a small typed table. `voyage_endpoints` is a derived
+view (`src/voyages/api/views.py`, registered in fields.yaml with `view: true`), one row per
+voyage, for maps.
+
+- Place: the imputed principal place (MJBYPTIMP / MJSLPTIMP), as the site's maps use; else
+  the recorded one. The imputed place differs from the recorded one on ~1,800 TA embarkations
+  and ~1,500 disembarkations (often recorded "port unspecified", imputed a named port), so
+  `*_provenance` is `recorded` only when the two agree.
+- Region / broad region: the voyage's own principal region fields, else the place's parents.
+- Point: the place's own point (`place`, `representative`); else the centre of the voyage's
+  region; else the place's `map_*` fallback. Catch-alls get none.
+- Imputed code 99801 "???" (region 99800 "Codes without labels", 5 TA voyages) means the
+  imputation had no answer; the site shows "???" too. The recorded principal place is used
+  instead (Havana for 4 of the 5).
+- `v.endpoint_coverage()` counts voyages per endpoint status (`place`, `representative`,
+  `region`, `no_point`, `no_place`) and drawable routes. Full data, 2026-10-19: 24,108 of
+  36,108 TA (66.8%) and 9,526 of 11,521 IA (82.7%) drawable.
+
 ## fields.yaml shape
 
 ```yaml

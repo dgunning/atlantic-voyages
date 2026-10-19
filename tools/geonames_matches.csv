@@ -147,6 +147,7 @@ code,name,geonameid,geonames_name,feature_code,country_code,lat,lon,precision,co
 21210,Wilmington (NC),4499379,Wilmington,PPLA2,US,34.23556,-77.94604,place,high,accept,Wilmington NC
 21304,Georgetown (SC),4579662,Georgetown,PPLA2,US,33.37683,-79.2945,place,high,accept,Georgetown SC
 21402,Sunbury,4225187,Sunbury,PPL,US,31.76827,-81.28094,place,high,accept,"Sunbury, Liberty County GA"
+21404,"Cumberland Island, Georgia",4190366,Cumberland Island,ISL,US,30.85123,-81.44698,place,high,accept,Fixture point had the longitude sign flipped; reviewed 2026-10-19
 21505,Indian River,4159661,Indian River Lagoon,BAY,US,28.05529,-80.57616,place,medium,accept,Indian River Lagoon FL; ambiguous; reviewed 2026-10-19
 21506,East Florida,4170894,Saint Augustine,PPLA2,US,29.89469,-81.31452,representative,medium,accept,East Florida: St. Augustine (colonial capital) as stand-in; reviewed 2026-10-19
 21607,Vicksburg (MS),4449620,Vicksburg,PPLA2,US,32.35265,-90.87788,place,high,accept,Vicksburg MS (Mississippi River)
@@ -217,6 +218,7 @@ code,name,geonameid,geonames_name,feature_code,country_code,lat,lon,precision,co
 50111,Tapajé,3386757,Rio Tapajós,STM,BR,-2.40904,-54.72402,place,medium,none,Tapajé identification unclear; reviewed 2026-10-19
 50309,Fernando de Noronha,3399637,Fernando de Noronha,ADM2,BR,-3.85071,-32.41997,place,high,accept,Fernando de Noronha (island municipality record)
 50311,Recife,3390760,Recife,PPLA,BR,-8.05389,-34.88111,place,high,accept,
+50421,Ponta Negro,3456352,Ponta Negra,PT,BR,-22.96208,-42.69166,place,high,accept,"Presumed Ponta Negra, Marica (RJ): filed under Southeast Brazil; fixture had Natal (RN); reviewed 2026-10-19"
 50435,"Laguna, Santa Catarina",3459094,Laguna,PPL,BR,-28.4825,-48.78083,place,high,accept,"Laguna, Santa Catarina"
 50436,Ilha dos Porcos,8823607,Ilha dos Porcos,ISL,BR,-22.85422,-43.1163,place,low,none,possibly Ilha Anchieta SP (3453004); several candidates; reviewed 2026-10-19
 50437,São Vicente,3448136,São Vicente,PPL,BR,-23.96306,-46.39194,place,high,accept,"São Vicente, São Paulo"
@@ -231,6 +233,7 @@ code,name,geonameid,geonames_name,feature_code,country_code,lat,lon,precision,co
 60141,Canary Islands,2520308,Canary Islands,ISLS,ES,28,-15.5,place,medium,accept,Canary Islands archipelago record (island group); reviewed 2026-10-19
 60142,Tenerife,2510529,Tenerife,ISL,ES,28.32977,-16.5097,place,high,accept,Tenerife island record
 60218,Siraboom,,,,,,,,,none,No GeoNames record identified
+60220,Sierra Leone estuary,2403844,Sierra Leone River,ESTY,SL,8.51897,-13.21666,place,high,accept,Fixture point was ~220 km out at sea; reviewed 2026-10-19
 60303,Batoa,2278846,Batoa,PPL,LR,6.81731,-10.92943,place,medium,none,Batoa identification unclear; reviewed 2026-10-19
 60305,Cap des Palmes,2274501,Cape Palmas,CAPE,LR,4.36888,-7.72894,place,high,accept,"Cap des Palmes = Cape Palmas, Liberia"
 60312,Petit Cess,,,,,,,place,medium,none,Little Cess is not River Cess: wrong; reviewed 2026-10-19
@@ -266,6 +269,7 @@ code,name,geonameid,geonames_name,feature_code,country_code,lat,lon,precision,co
 60626,Timbeys,,,,,,,,,none,No GeoNames record identified
 60627,Rio Nazareth,2397711,Baie de Nazaré,BAY,GA,-0.65997,9.06847,place,low,accept,"Rio Nazareth guessed as Baie de Nazaré, Gabon; reviewed 2026-10-19"
 60660,Gulf of Guinea islands,,,,,,,,,none,No GeoNames record identified
+60661,Annobon,2310306,Isla de Annobón,ISL,GQ,-1.43391,5.63697,place,high,accept,Fixture point had lat/lon swapped; reviewed 2026-10-19
 60662,Epee and Princes Islands,,,,,,,,,none,Multi-place (Epe 2343252; Principe 2410878)
 60664,Fernando Po and Cameroons,,,,,,,,,none,Multi-place or composite entry; not matched
 60665,Fernando Po and Princes Islands,,,,,,,,,none,Multi-place or composite entry; not matched
@@ -337,6 +341,7 @@ code,name,geonameid,geonames_name,feature_code,country_code,lat,lon,precision,co
 80499,"Spanish Americas, port unspecified",,,,,,,,,none,Unspecified location with no single stand-in; not matched
 80501,"Kingston, Savannah, Maryland",,,,,,,,,none,Multi-place or composite entry; not matched
 80599,"British Americas, port unspecified",,,,,,,,,none,Unspecified location with no single stand-in; not matched
+80601,Bengal,1275004,Kolkata,PPLA,IN,22.56263,88.36304,representative,high,accept,Calcutta as principal port of Bengal; fixture point was in Jamaica; reviewed 2026-10-19
 80602,Goa,11903108,Old Goa City,PPL,IN,15.50165,73.91161,place,medium,accept,"Old Goa, Portuguese capital of Goa; reviewed 2026-10-19"
 80603,Calcutta,1275004,Kolkata,PPLA,IN,22.56263,88.36304,place,high,accept,Calcutta = Kolkata
 80703,British plantations,,,,,,,,,none,"Non-geographical category, not a place"

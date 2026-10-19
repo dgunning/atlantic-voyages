@@ -48,6 +48,18 @@ SAME_PLACE = {
 }
 
 
+# Fixture points found wrong on review (2026-10-19). These codes take their
+# coordinates from tools/geonames_matches.csv instead, or stay empty.
+FIXTURE_REJECT = {
+    21404: "longitude sign flipped (30.85, +81.45)",
+    60661: "lat/lon swapped (5.63, -1.40 is in Ghana)",
+    60220: "point ~220 km out at sea",
+    50421: "fixture has Ponta Negra, Natal (RN); code is under Southeast Brazil",
+    80601: "point (18.45, -77.45) is in Jamaica, not Bengal",
+    80604: "point is Basse-Indre near Nantes, but the code is under India",
+}
+
+
 def names_agree(a: str, b: str) -> bool:
     na, nb = norm(a), norm(b)
     if not na or not nb:
@@ -72,6 +84,8 @@ def main(fixture_path: Path, geonames_path: Path | None) -> None:
         f = fixture.get(code)
         if p["level"] != "place":
             continue  # regions and broad regions: no point coordinates
+        if code in FIXTURE_REJECT:
+            f = None
         if f and (float(f["latitude"]), float(f["longitude"])) != (0.0, 0.0):
             if code in SAME_PLACE or names_agree(name, f["place"]):
                 out.append(

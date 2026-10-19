@@ -14,6 +14,7 @@ adds ``label`` in project language (see CLAUDE.md).
 from __future__ import annotations
 
 import csv
+import math
 import re
 from collections import defaultdict
 from dataclasses import dataclass, field
@@ -182,6 +183,55 @@ def load_coordinates(path: Path = COORDINATES_CSV) -> dict[int, dict[str, str]]:
 
 
 PLACE_COORD_COLUMNS = ("lat", "lon", "coord_source", "coord_precision", "coord_ref")
+MAP_COLUMNS = ("map_lat", "map_lon", "map_precision", "map_code")
+
+# Catch-all regions: their codes span several regions or continents
+# ("Africa, port unspecified", "Windward + Ivory + Gold + Benin",
+# "Americas, port unspecified"), so no single centre is honest.
+NO_CENTRE_REGIONS = {
+    60900: "Other Africa",
+    80200: "Americas",
+    80300: "Asia e Africa",
+    80400: "Spanish Americas",
+    80500: "British Americas",
+    80700: "Non-geographical",
+    99800: "Codes without labels",
+}
+
+
+def _km(a: tuple[float, float], b: tuple[float, float]) -> float:
+    la1, lo1, la2, lo2 = map(math.radians, (*a, *b))
+    h = (
+        math.sin((la2 - la1) / 2) ** 2
+        + math.cos(la1) * math.cos(la2) * math.sin((lo2 - lo1) / 2) ** 2
+    )
+    return 6371 * 2 * math.asin(math.sqrt(h))
+
+
+def region_centres(rows: list[dict]) -> dict[int, tuple[float, float, int, int]]:
+    """Centre point for each region: its medoid port.
+
+    The medoid is the region's port with the smallest total distance to
+    the region's other ports. It is a real place on land, and a few far-off
+    or odd ports (e.g. Delagoa filed under Sierra Leone) cannot drag it
+    away the way they would drag an average. Uses ports with
+    precision "place"; falls back to "representative" points (e.g.
+    "St. Kitts, port unspecified") when a region has nothing else.
+    Returns {region_code: (lat, lon, medoid_code, n_ports)}.
+    """
+    by_region: dict[int, dict[str, list]] = defaultdict(lambda: {"place": [], "representative": []})
+    for r in rows:
+        if r["level"] == "place" and r["region_code"] and r["lat"]:
+            pt = (r["code"], (float(r["lat"]), float(r["lon"])))
+            by_region[r["region_code"]][r["coord_precision"]].append(pt)
+    out = {}
+    for region, groups in by_region.items():
+        if region in NO_CENTRE_REGIONS:
+            continue
+        pts = groups["place"] or groups["representative"]
+        code, ll = min(pts, key=lambda p: sum(_km(p[1], q[1]) for q in pts))
+        out[region] = (ll[0], ll[1], code, len(pts))
+    return out
 
 
 def place_rows(ls: LabelSet, coords: dict[int, dict[str, str]] | None = None) -> list[dict]:
@@ -215,6 +265,36 @@ def place_rows(ls: LabelSet, coords: dict[int, dict[str, str]] | None = None) ->
                 "note": r["note"],
             }
         )
+
+    # Regions get their medoid port as a point (coord_precision "region").
+    # Broad regions stay empty: a continent-sized point would mislead.
+    centres = region_centres(rows)
+    for r in rows:
+        if r["level"] == "region" and r["code"] in centres:
+            lat, lon, medoid, n = centres[r["code"]]
+            r.update(
+                lat=lat,
+                lon=lon,
+                coord_source="derived",
+                coord_precision="region",
+                coord_ref=f"medoid of {n} port coordinates in this region (code {medoid})",
+            )
+
+    # map_*: the point to draw for this code. A place's own coordinates if it
+    # has them, otherwise its region's centre. Empty when neither exists
+    # ("Africa, port unspecified", catch-all regions, broad regions).
+    by_code = {r["code"]: r for r in rows}
+    for r in rows:
+        src = r if r["lat"] else by_code.get(r["region_code"]) if r["region_code"] else None
+        if src and src["lat"]:
+            r.update(
+                map_lat=src["lat"],
+                map_lon=src["lon"],
+                map_precision=src["coord_precision"],
+                map_code=src["code"],
+            )
+        else:
+            r.update(dict.fromkeys(MAP_COLUMNS))
     return rows
 
 

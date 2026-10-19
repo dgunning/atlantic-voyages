@@ -112,3 +112,63 @@ def test_committed_reference_tables_match_a_fresh_build(tmp_path: Path):
     reference.build(out_dir=tmp_path)
     for p in sorted(REF.glob("*.csv")):
         assert filecmp.cmp(p, tmp_path / p.name, shallow=False), p.name
+
+
+# ---------------------------------------------------------------- map points
+def places_by_code() -> dict[str, dict[str, str]]:
+    return {r["code"]: r for r in read("places")}
+
+
+def test_region_centres_are_member_ports():
+    """A region's point is its medoid port, so it is a real place on land."""
+    places = places_by_code()
+    for r in places.values():
+        if r["level"] != "region" or not r["lat"]:
+            continue
+        assert r["coord_source"] == "derived" and r["coord_precision"] == "region"
+        medoid = re.search(r"code (\d+)\)", r["coord_ref"]).group(1)
+        assert places[medoid]["region_code"] == r["code"]
+        assert (places[medoid]["lat"], places[medoid]["lon"]) == (r["lat"], r["lon"])
+
+
+def test_catch_all_and_broad_regions_have_no_point():
+    places = places_by_code()
+    for code in reference.NO_CENTRE_REGIONS:
+        if str(code) in places:
+            assert not places[str(code)]["lat"], code
+    for r in places.values():
+        if r["level"] == "broad_region":
+            assert not r["lat"] and not r["map_lat"], r["code"]
+
+
+def test_map_point_falls_back_to_region():
+    places = places_by_code()
+    # Costa da Mina: the Portuguese/Brazilian name for the Bight of Benin coast.
+    mina = places["60502"]
+    assert not mina["lat"]
+    assert (mina["map_code"], mina["map_precision"]) == ("60500", "region")
+    assert (mina["map_lat"], mina["map_lon"]) == (places["60500"]["lat"], places["60500"]["lon"])
+    # Bonny has its own point.
+    assert places["60605"]["map_code"] == "60605" and places["60605"]["map_precision"] == "place"
+    # "Africa, port unspecified" sits in a catch-all region: nothing to draw.
+    assert not places["60999"]["map_lat"]
+
+
+def test_points_sit_near_their_region():
+    """Catches sign flips and swapped lat/lon (found in the 2013 fixture)."""
+    places = places_by_code()
+    filed_elsewhere = {"60206"}  # Delagoa Bay, filed under Sierra Leone in the source
+    for c, r in places.items():
+        reg = places.get(r["region_code"] or "", {})
+        if r["level"] != "place" or not r["lat"] or not reg.get("lat") or c in filed_elsewhere:
+            continue
+        d = reference._km(
+            (float(r["lat"]), float(r["lon"])), (float(reg["lat"]), float(reg["lon"]))
+        )
+        assert d < 3500, (c, r["source_name"], round(d))
+
+
+def test_fixture_errors_stay_fixed():
+    places = places_by_code()
+    assert float(places["21404"]["lon"]) < 0  # Cumberland Island, GA
+    assert float(places["60661"]["lat"]) < 0  # Annobon is south of the equator

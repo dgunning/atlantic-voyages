@@ -57,6 +57,14 @@ is built by `tools/place_coordinates.py` (dev-time, not part of `voyages build`)
 | SlaveVoyages legacy site fixture: `IQSS/voyages` @ `cf1e5a8` (2013-07-19), `voyages/apps/voyage/fixtures/test_set_200_voyages.json`, SHA-256 `2d98130a955237f42719ea567e1b1d2b8eb27686a0356045c4e3c10ca37394f4` | Lat/lon for 830 place codes, 269 of them (0,0) placeholders | 2026-10-19 | None stated in the repo; asked of the SlaveVoyages team (open) |
 | GeoNames (https://www.geonames.org), country dumps from https://download.geonames.org/export/dump/ | Reviewed matches for places the fixture lacks; each row cites its `geonames:<id>` | 2026-10-19 | CC BY 4.0 |
 
+Six fixture points were found wrong on review (2026-10-19) and are rejected in
+`FIXTURE_REJECT` in `tools/place_coordinates.py`: Cumberland Island GA
+(longitude sign flipped), Annobon (lat/lon swapped), Sierra Leone estuary
+(at sea), Ponta Negro (wrong state), Bengal (point in Jamaica), Basse
+Indres (point near Nantes, code under India). The first five now use
+GeoNames records. A test flags any point more than 3,500 km from its
+region's centre.
+
 Rules: fixture points are used only when the fixture's place name agrees
 with ours (codes were reassigned after 2013), and (0,0) is treated as
 missing. GeoNames points are used only when a reviewer accepted the

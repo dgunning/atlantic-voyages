@@ -41,7 +41,11 @@ Estimates
 - `estimates` — its own table, its own region codes (they don't use the place hierarchy). Whole table is CC BY-NC; every field provenance = derived/imputed per codebook.
 
 Reference (schema/reference/*.csv, generated from value labels, committed for diffability)
-- `places.csv` — code, name, level (place/region/broad_region), region_code, broad_region_code, alt_names (IA spellings), lat, lon, coord_source, coord_precision, coord_match.
+- `places.csv` — code, name, level (place/region/broad_region), region_code, broad_region_code, alt_names (IA spellings), lat, lon, coord_source, coord_precision, coord_ref, and map_lat, map_lon, map_precision, map_code.
+  - `coord_precision`: `place` (the place itself), `representative` (a "port unspecified" code drawn at the principal port), `region` (a region's centre).
+  - Region centres are the region's medoid port: the port with the smallest total distance to the region's other ports. That keeps the point on land and robust to odd filings. Catch-all regions (Other Africa, Americas, Spanish Americas, ...) and broad regions get no point.
+  - `map_*` is the point to draw for a code: its own coordinates, else its region's centre, else empty. Apps should style `region` endpoints differently and count, not silently drop, voyages with no point.
+  - Coverage (2026-10-19, imputed principal ports): 67% of Trans-Atlantic and 83% of Intra-American voyages have a drawable route. Most of the rest have no imputed endpoint (4,361 TA) or an imputed purchase region of "Other Africa" (7,291 TA): the data does not say where in Africa.
 - `nations.csv`, `rigs.csv`, `outcomes.csv` (FATE, FATE2–4 as four small tables or one with `kind`), `ton_types.csv`, `resistance.csv`, `year_periods.csv`, `xmimpflag.csv`, `estimates_*.csv`.
 - Codes used but unlabeled get a row with name = null and `note = "code used in data, no label in source"` so joins never drop voyages.
 

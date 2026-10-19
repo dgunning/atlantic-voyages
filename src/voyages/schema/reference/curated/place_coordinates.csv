@@ -322,7 +322,7 @@ code,lat,lon,coord_source,coord_precision,coord_ref,note
 21401,32.0833,-81.1,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
 21402,31.76827,-81.28094,geonames,place,geonames:4225187,"Sunbury, Liberty County GA"
 21403,32.00021,-80.84567,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
-21404,30.8511,81.4484,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21404,30.85123,-81.44698,geonames,place,geonames:4190366,Fixture point had the longitude sign flipped; reviewed 2026-10-19
 21499,32.0833,-81.1,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
 21501,29.8944,-81.3147,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
 21502,30.55812,-87.1815,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
@@ -579,7 +579,7 @@ code,lat,lon,coord_source,coord_precision,coord_ref,note
 50418,-22.91667,-42.81667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
 50419,-25.51667,-48.5,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
 50420,-23.21667,-44.71667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
-50421,-5.88333,-35.16667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50421,-22.96208,-42.69166,geonames,place,geonames:3456352,"Presumed Ponta Negra, Marica (RJ): filed under Southeast Brazil; fixture had Natal (RN); reviewed 2026-10-19"
 50422,-22.9,-43.23333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
 50423,-23.02,-43.57,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
 50424,-23.79,-45.99,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
@@ -635,7 +635,7 @@ code,lat,lon,coord_source,coord_precision,coord_ref,note
 60216,4.89917,-8.84583,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
 60217,7.57325,-12.70415,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
 60219,6.84667,-11.39,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
-60220,6.49613,-13.17066,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60220,8.51897,-13.21666,geonames,place,geonames:2403844,Fixture point was ~220 km out at sea; reviewed 2026-10-19
 60241,6.98333,-11.28333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
 60242,8.50013,-13.1204,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,fixture name: River Kissey
 60299,8.3,-13.23,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
@@ -729,7 +729,7 @@ code,lat,lon,coord_source,coord_precision,coord_ref,note
 60624,4.32939,6.50705,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
 60625,4.73333,8.65,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
 60627,-0.65997,9.06847,geonames,place,geonames:2397711,"Rio Nazareth guessed as Baie de Nazaré, Gabon; reviewed 2026-10-19"
-60661,5.6325,-1.40139,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60661,-1.43391,5.63697,geonames,place,geonames:2310306,Fixture point had lat/lon swapped; reviewed 2026-10-19
 60663,3.49,8.7,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
 60668,1.56667,7.35,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
 60671,0.25574,6.54352,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
@@ -792,7 +792,6 @@ code,lat,lon,coord_source,coord_precision,coord_ref,note
 60837,-20.3,57.58333,geonames,place,geonames:934293,Mauritius island record
 60899,-15.0375,40.73167,geonames,representative,geonames:345947,Mozambique Island as principal port stand-in; reviewed 2026-10-19
 60915,4.26565,5.99,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
-80601,18.45,-77.45,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+80601,22.56263,88.36304,geonames,representative,geonames:1275004,Calcutta as principal port of Bengal; fixture point was in Jamaica; reviewed 2026-10-19
 80602,15.50165,73.91161,geonames,place,geonames:11903108,"Old Goa, Portuguese capital of Goa; reviewed 2026-10-19"
 80603,22.56263,88.36304,geonames,place,geonames:1275004,Calcutta = Kolkata
-80604,47.2,-1.67,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,

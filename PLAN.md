@@ -1,6 +1,6 @@
 # PLAN.md
 
-Status: Phase 2 done — DuckDB query layer, map endpoints, fluent API, `voyages query` CLI and field helpers (incl. recorded-only mode) on branch `phase2-query-layer`. Next: merge, then Phase 3 notebooks. African Names (Phase 1) still to do.
+Status: Phase 2 done — DuckDB query layer, map endpoints, fluent API, `voyages query` CLI and field helpers (incl. recorded-only mode), merged to main. Next: Phase 3 notebooks. African Names (Phase 1) still to do.
 
 ## Goal
 

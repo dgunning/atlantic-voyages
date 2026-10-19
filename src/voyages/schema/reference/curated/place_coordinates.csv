@@ -1,0 +1,798 @@
+code,lat,lon,coord_source,coord_precision,coord_ref,note
+10101,38.34517,-0.48149,geonames,place,geonames:2521978,"Alicante, Spain"
+10102,41.38333,2.18333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10103,43.25,-2.96667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10104,36.53361,-6.29944,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10106,36.13333,-5.35,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10107,43.36667,-8.38333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10110,43.46472,-3.80444,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10111,37.37722,-5.98694,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10112,36.78333,-6.35,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10113,42.23333,-8.72,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10199,36.53361,-6.29944,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10202,37.1,-8.66667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10203,38.71667,-9.13333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10204,41.15,-8.61667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10205,38.56667,-28.7,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10206,38.5245,-8.89307,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10299,38.71667,-9.13333,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10399,51.5,-0.11667,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10401,52.72377,-4.05748,geonames,place,geonames:2656311,
+10402,51.01678,-4.20832,geonames,place,geonames:2655707,
+10403,53.39337,-3.01479,geonames,place,geonames:2655613,
+10404,51.45,-2.58333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10405,50.39431,-3.51585,geonames,place,geonames:2654663,
+10406,51.36667,1.45,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10407,50.33166,-4.20251,geonames,place,geonames:2653467,"Cawsand, Cornwall"
+10408,51.64087,-2.67683,geonames,place,geonames:2653256,"Chepstow, Wales (Monmouthshire)"
+10409,53.2,-2.91667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10410,51.88333,0.9,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10411,50.76667,-1.3,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10412,50.35,-3.58333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10413,51.47764,-0.02609,geonames,place,geonames:2651349,"Deptford, London (Thames)"
+10414,51.13333,1.3,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10415,50.7,-3.53333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10416,51.08333,1.18333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10417,53.29485,-2.72745,geonames,place,geonames:2649029,"Frodsham, Cheshire"
+10418,53.38333,-0.76667,geonames,place,geonames:2648945,"Gainsborough, Lincolnshire (River Trent)"
+10419,51.47785,-0.01176,geonames,place,geonames:2647937,"Greenwich, London"
+10420,49.45,-2.53333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10421,51.94194,1.28437,geonames,place,geonames:2647383,
+10422,53.71667,-0.33333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10423,51.2093,-4.11344,geonames,place,geonames:2646276,
+10424,52.08333,1.16667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10426,50.67948,-1.28764,geonames,place,geonames:2633939,Isle of Wight (island record)
+10427,49.2167,-2.13753,geonames,place,geonames:3042143,Jersey (island record)
+10428,54.31667,-2.75,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10429,52.75172,0.39516,geonames,place,geonames:2645456,"King's Lynn (Lynn), Norfolk"
+10430,54.06667,-2.83333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10432,53.41667,-3.0,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10433,51.5,-0.11667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10434,50.73333,-2.93333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10436,54.71434,-3.49509,geonames,place,geonames:2642927,
+10437,51.71667,-5.03333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10438,50.83333,-0.23333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10439,54.98806,-1.61944,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10440,51.80519,-2.453,geonames,place,geonames:2641605,Newnham on Severn (Gloucestershire) assumed; 14 Newnhams in GB; reviewed 2026-10-19
+10441,55.01646,-1.44925,geonames,place,geonames:2641267,
+10443,52.62783,1.29834,geonames,place,geonames:2641181,
+10444,50.53333,-4.93333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10445,54.71667,-6.1,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10446,54.05,-3.15,geonames,place,geonames:2649141,"Piel of Foulney = Foulney Island, Cumbria (Barrow harbour); name variant"
+10447,50.39639,-4.13861,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10448,50.71667,-2.0,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10449,57.68144,-2.68956,geonames,place,geonames:2639992,Portsery presumed Portsoy (Banffshire); spelling far from modern
+10450,50.76667,-1.08333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10451,53.83333,-2.98333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10452,53.76667,-2.72,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10453,51.33568,1.41797,geonames,place,geonames:2639660,
+10454,54.35591,-3.40864,geonames,place,geonames:2639599,
+10455,51.42687,0.40642,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10456,51.38764,0.50546,geonames,place,geonames:2639268,"Rochester, Kent (Medway)"
+10457,51.5,-0.05,geonames,place,geonames:2639091,"Rotherhithe, London"
+10458,50.95114,0.7337,geonames,place,geonames:2638909,
+10459,54.27966,-0.40443,geonames,place,geonames:2638419,
+10460,51.44042,0.76252,geonames,place,geonames:2638081,
+10461,54.99859,-1.4323,geonames,place,geonames:2637329,"""Shields"" ambiguous North/South Shields; used South Shields (Tyne)"
+10462,50.83333,-0.23333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10463,50.69094,-3.2397,geonames,place,geonames:2637853,
+10464,50.9,-1.4,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10466,54.58333,-1.42,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10467,53.443,-0.81361,geonames,place,geonames:2634265,"Stockwithe = West Stockwith (Notts/Lincs, Trent)? spelling doubt"
+10468,54.90465,-1.38222,geonames,place,geonames:2636531,
+10469,50.54581,-3.49671,geonames,place,geonames:2636132,
+10470,50.68333,-3.45,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10471,50.43061,-3.50344,geonames,place,geonames:2635679,Tor Bay (bay record)
+10472,52.35734,-3.68431,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10473,54.48667,-0.63056,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10474,54.55,-3.6,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10476,54.6425,-3.54413,geonames,place,geonames:2633553,
+10477,50.7,-1.5,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10478,51.95,-7.85056,geonames,place,geonames:2960869,Youghal is in Ireland; source region says England
+10479,53.28077,-3.83039,geonames,place,geonames:2652426,"Conway = modern Conwy, Wales"
+10480,50.15599,-5.07106,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10481,51.51412,-0.03282,geonames,place,geonames:2644497,"Limehouse, London"
+10485,50.64751,-3.43162,geonames,place,geonames:2643306,"Lympstone, Devon"
+10499,51.5,-0.11667,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10501,56.06983,-3.77209,geonames,place,geonames:2657592,"Airth, Stirlingshire (Forth)"
+10502,56.01667,-3.61667,geonames,place,geonames:2655215,Borrowstounness = Bo'ness
+10503,56.46913,-2.97489,geonames,place,geonames:2650752,
+10504,55.83333,-4.25,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10505,55.93333,-4.75,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10506,55.95,-3.16667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10508,56.7,-2.45,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10510,55.63616,-4.78588,geonames,place,geonames:2638648,
+10511,56.2136,-2.93642,geonames,place,geonames:2643511,"Largo, Fife: used Lower Largo (harbour village)"
+10512,55.06959,-3.61139,geonames,place,geonames:2650798,Dumfries (Nith estuary)
+10513,55.84838,-6.10517,geonames,place,geonames:2640080,"Point Askaig = Port Askaig, Islay"
+10514,55.42583,-5.60764,geonames,place,geonames:2653915,Cambletown = Campbeltown
+10515,54.84143,-5.11705,geonames,place,geonames:2640009,
+10516,55.6194,-4.65508,geonames,place,geonames:2646032,"Erwin presumed Irvine, Ayrshire (old spelling)"
+10517,57.14369,-2.09814,geonames,place,geonames:2657832,
+10518,54.90234,-5.02731,geonames,place,geonames:2636719,
+10599,56.78036,-4.01,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10601,51.89861,-8.49583,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10602,52.57444,-7.55028,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10603,52.08806,-7.62528,geonames,place,geonames:2964528,"Dungarvan, Co. Waterford"
+10604,53.27194,-9.04889,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10605,51.70644,-8.52331,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10606,52.66222,-8.66652,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10607,54.9981,-7.30934,geonames,place,geonames:2643736,Londonderry = Derry (NI)
+10608,54.79472,-7.59139,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10609,54.36956,-5.55711,geonames,place,geonames:2636724,"Strangford, Co. Down"
+10610,52.25833,-7.11,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10611,52.33417,-6.4575,geonames,place,geonames:2960964,
+10612,54.59682,-5.92541,geonames,place,geonames:2655984,
+10613,55.13333,-6.66667,geonames,place,geonames:2652586,
+10699,53.33306,-6.24889,geonames,representative,geonames:2964574,Dublin as principal port of Ireland; reviewed 2026-10-19
+10702,43.48333,-1.48333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10703,44.83333,-0.56667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10704,48.4,-4.48333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10705,50.95194,1.85635,geonames,place,geonames:3029162,"Calais, France"
+10706,47.7442,-2.63932,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10707,49.93333,1.08333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10708,48.63055,-2.0632,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10709,51.05,2.36667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10710,49.41667,0.23333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10711,48.74546,-4.01737,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10712,46.16667,-1.15,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10713,49.5,0.13333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10714,47.06284,-1.98232,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10715,47.75,-3.36667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10716,43.3,5.4,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,fixture name: Marseilles
+10717,43.3,5.4,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10718,47.26667,-2.16667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10719,48.58333,-3.83333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10720,47.21667,-1.55,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10721,47.28333,-2.03333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10722,47.70838,-3.35587,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10723,47.99597,-4.09795,geonames,place,geonames:2984701,"Quimper, Brittany"
+10724,45.93333,-0.98333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10725,48.51667,-2.78,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10726,48.65,-2.01667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10727,47.27432,-2.21361,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10728,43.26764,6.64049,geonames,place,geonames:2976742,
+10729,43.40176,3.6966,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10730,47.66667,-2.75,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10799,47.21667,-1.55,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10810,52.35,4.91667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10821,52.71667,5.28,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10827,52.43854,4.82643,geonames,place,geonames:2744118,"Zaandam, Netherlands"
+10828,52.54562,5.27,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10829,53.14933,4.81991,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10830,51.91667,4.5,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10831,51.8,4.67,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10832,51.7514,4.5986,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10833,51.70202,4.62737,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10834,51.83333,4.13333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10840,51.49647,3.77109,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10850,51.5,3.61,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10851,51.45,3.58333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10852,51.5451,3.66407,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10860,53.21667,6.55,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10899,53.14933,4.81991,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10901,55.66667,12.58333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10902,55.06667,8.68,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10903,56.0363,12.6135,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+10999,55.67594,12.56553,geonames,representative,geonames:2618425,Copenhagen as principal port of Denmark; reviewed 2026-10-19
+11001,54.65222,19.91,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+11002,53.55,10.0,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+11003,53.36667,7.21667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+11004,53.55,10.0,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+11005,52.37052,9.73322,geonames,representative,geonames:2910831,Hanover = Hannover city (inland); state/kingdom ambiguous
+11101,51.21667,4.41667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+11102,51.0,4.5,geonames,representative,geonames:3337388,Flanders region (ADM1) record
+11103,51.2094,0.22524,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+11199,51.21667,4.41667,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+11201,59.2858,10.42,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+11202,60.39299,5.32415,geonames,place,geonames:3161732,
+11301,57.71667,11.97,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+11399,59.32938,18.06871,geonames,representative,geonames:2673730,Stockholm as principal port of Sweden; reviewed 2026-10-19
+11401,44.40478,8.94439,geonames,place,geonames:3176219,
+11402,40.83333,14.25,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+11404,45.64861,13.78,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+11501,59.992,29.77616,geonames,place,geonames:540771,Cronstadt = Kronstadt
+11502,46.46667,30.73333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+11601,40.0,9.0,geonames,place,geonames:2523227,Sardinia island record
+20101,41.6769,-71.2667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20102,41.5101,-71.17116,geonames,place,geonames:5223129,
+20103,41.49,-71.3133,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20104,41.55401,-71.46796,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20105,41.8239,-71.4133,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20106,41.62594,-71.21338,geonames,place,geonames:5225245,"Tiverton, RI"
+20107,41.7303,-71.2831,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20108,41.7001,-71.41617,geonames,place,geonames:5225507,"Warwick, RI"
+20199,41.49,-71.31,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20201,43.91064,-69.8206,geonames,place,geonames:4957570,"Bath, Maine (Kennebec)"
+20202,43.26592,-70.8645,geonames,place,geonames:4832356,
+20203,43.49258,-70.45338,geonames,place,geonames:4958141,
+20204,45.18376,-67.27662,geonames,place,geonames:4959834,"Calais, Maine (St. Croix River)"
+20205,44.2098,-69.06476,geonames,place,geonames:4959908,
+20207,43.85702,-70.10311,geonames,place,geonames:4964867,
+20208,43.65917,-70.25665,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20209,44.55313,-68.86476,geonames,place,geonames:4976052,"Prospect, Maine (Penobscot River)"
+20210,44.0873,-69.79893,geonames,place,geonames:4976528,"Richmond, Maine (Kennebec)"
+20211,45.07813,-67.10943,geonames,place,geonames:4976705,
+20212,44.10369,-69.10893,geonames,place,geonames:4832458,
+20213,43.90509,-69.6884,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20214,44.00286,-69.6656,geonames,place,geonames:4983359,
+20215,43.08299,-70.71009,geonames,place,geonames:4968933,
+20216,44.73118,-68.82643,geonames,place,geonames:4974328,"Orrington, Maine (Penobscot River)"
+20217,44.46452,-68.71114,geonames,place,geonames:4974967,Penobscot town; could mean the river/bay
+20299,43.65737,-70.2589,geonames,representative,geonames:4975802,Portland as principal port of Maine; reviewed 2026-10-19
+20301,43.10056,-70.79333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20302,43.0717,-70.7631,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20303,42.95718,-70.77805,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20399,43.0717,-70.7631,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20401,41.77422,-70.50537,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20402,42.85833,-70.93056,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20403,43.38259,-70.47783,geonames,place,geonames:4956893,"Arundel, now Kennebunkport area, Maine (then Massachusetts)"
+20404,42.36166,-71.05947,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20405,41.68206,-69.95974,geonames,place,geonames:4932844,"Chatham, Cape Cod"
+20406,42.24177,-70.80365,geonames,place,geonames:4933533,
+20407,41.81389,-71.12083,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20408,42.04167,-70.67278,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20409,41.76677,-71.03282,geonames,place,geonames:4937355,"Freetown, MA"
+20410,42.72509,-70.99117,geonames,place,geonames:4937684,"Georgetown, MA"
+20411,42.24177,-70.88977,geonames,place,geonames:4939549,
+20412,41.99455,-70.72448,geonames,place,geonames:4941383,"Kingston, MA (Plymouth County)"
+20413,42.50317,-70.85659,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20414,42.09177,-70.70559,geonames,place,geonames:4943204,
+20415,41.63768,-70.93082,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20416,42.8125,-70.8778,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20417,42.5194,-70.8972,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20418,42.84176,-70.86061,geonames,place,geonames:4950092,"Salisbury, MA"
+20420,42.19593,-70.72587,geonames,place,geonames:4950395,
+20421,41.74806,-71.19028,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20422,42.22093,-70.93977,geonames,place,geonames:4955336,
+20423,42.3778,-71.06,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20425,41.28346,-70.09946,geonames,place,geonames:4944903,Nantucket town
+20426,41.95844,-70.66726,geonames,place,geonames:4947597,"Plymouth, MA"
+20499,42.36166,-71.05947,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20501,41.17923,-73.18945,geonames,place,geonames:5282804,
+20502,41.28899,-72.68176,geonames,place,geonames:4835512,"Guildford = Guilford, CT"
+20503,41.47732,-72.51203,geonames,place,geonames:4831718,"Haddam, CT (Connecticut River)"
+20504,41.3081,-72.93,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20505,41.3556,-72.1,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20506,41.56269,-72.64981,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20508,41.14121,-73.26373,geonames,place,geonames:4834157,
+20509,41.35815,-72.5637,geonames,place,geonames:4837289,"Killingworth, CT"
+20510,41.71427,-72.65259,geonames,place,geonames:4845612,"Weathersfield = Wethersfield, CT"
+20599,41.35565,-72.09952,geonames,representative,geonames:4839416,New London as principal port of Connecticut; reviewed 2026-10-19
+20601,40.77927,-72.91538,geonames,place,geonames:5110292,"Brookhaven, Long Island"
+20602,40.81677,-73.06622,geonames,place,geonames:5125123,Long Island (island record)
+20603,40.99788,-72.29258,geonames,place,geonames:5134800,
+20699,40.71458,-74.00708,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20701,39.74595,-75.54659,geonames,place,geonames:4145381,"Wilmington, Delaware"
+20799,39.74595,-75.54659,geonames,representative,geonames:4145381,Wilmington as principal port of Delaware; reviewed 2026-10-19
+20801,39.42028,-75.51972,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20802,39.36276,-74.42643,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20804,40.50645,-74.26577,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20806,40.07122,-74.86489,geonames,place,geonames:5096075,Burlington NJ (Delaware River)
+20807,40.73566,-74.17237,geonames,place,geonames:5101798,Newark NJ
+20808,39.34428,-75.35714,geonames,place,geonames:4501296,"Cohanzie presumed Cohansey River, NJ (Delaware Bay)"
+20899,40.50677,-74.26542,geonames,representative,geonames:5102578,Perth Amboy as principal port of New Jersey; reviewed 2026-10-19
+20901,39.81928,-75.41853,geonames,place,geonames:4559431,"Marcus Hook, Delaware River"
+20902,39.9522,-75.1642,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+20999,39.95238,-75.16362,geonames,representative,geonames:4560349,Philadelphia as principal port of Pennsylvania; reviewed 2026-10-19
+21001,38.94989,-76.48524,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21002,39.2903,-76.6125,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21003,38.85216,-77.02721,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21004,38.7,-76.2,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21005,37.66917,-77.20444,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21006,38.30897,-76.45123,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21007,38.68651,-76.17161,geonames,representative,geonames:4364745,"Oxford, MD: Talbot County port of entry; reviewed 2026-10-19"
+21008,38.85825,-76.18,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21009,39.56242,-75.94811,geonames,representative,geonames:4350685,Cecil County record (not a port); reviewed 2026-10-19
+21010,38.63456,-76.32662,geonames,representative,geonames:4141910,Choptank River (colonial customs district); reviewed 2026-10-19
+21011,37.9654,-75.64965,geonames,representative,geonames:4365782,Pocomoke River (colonial customs district); reviewed 2026-10-19
+21012,38.10235,-76.44217,geonames,place,geonames:4368319,"St. Mary's River, MD (GeoNames river point)"
+21099,38.30897,-76.45123,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21101,36.93469,-76.35637,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21102,37.0297,-76.3456,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21103,36.95002,-76.38292,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21104,36.93295,-76.19325,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21105,37.30078,-75.92854,geonames,representative,geonames:4776500,Northampton County VA record (not a port)
+21106,37.91873,-76.27,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21107,37.59826,-76.38813,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21108,38.10394,-76.52077,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21109,37.5184,-77.42742,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21110,37.2707,-76.70746,geonames,place,geonames:4793846,
+21111,37.2268,-76.45376,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21113,37.71957,-75.66548,geonames,place,geonames:4743873,"Accomac, VA Eastern Shore"
+21114,37.63764,-76.5744,geonames,place,geonames:4790870,"Urbanna, VA (Rappahannock)"
+21115,37.55376,-77.46026,geonames,place,geonames:4781708,"Richmond, Virginia"
+21116,36.97515,-76.34967,geonames,place,geonames:4762934,Hampton Roads (harbor record)
+21199,37.2268,-76.45376,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21201,36.06556,-76.9666,geonames,representative,geonames:4455071,Bertie County NC record (not a port)
+21202,36.24285,-76.70618,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21203,35.10849,-77.04411,geonames,place,geonames:4481682,
+21204,35.41004,-76.1485,geonames,representative,geonames:4472505,Hyde County NC record (not a port); reviewed 2026-10-19
+21205,35.88368,-75.6495,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21206,34.7184,-76.66161,geonames,place,geonames:4454370,Beaufort NC
+21207,34.28684,-78.70113,geonames,place,geonames:4457578,Brunswick NC; historic Brunswick Town on Cape Fear River
+21208,33.88545,-78.01277,geonames,place,geonames:4459154,"Cape Fear River (the port district), not the cape; reviewed 2026-10-19"
+21209,36.05794,-76.60772,geonames,place,geonames:4464897,
+21210,34.23556,-77.94604,geonames,place,geonames:4499379,Wilmington NC
+21299,35.88368,-75.6495,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21301,32.43139,-80.67,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21302,32.78096,-79.93554,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21304,33.37683,-79.2945,geonames,place,geonames:4579662,Georgetown SC
+21399,32.78096,-79.93554,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21401,32.0833,-81.1,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21402,31.76827,-81.28094,geonames,place,geonames:4225187,"Sunbury, Liberty County GA"
+21403,32.00021,-80.84567,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21404,30.8511,81.4484,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21499,32.0833,-81.1,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21501,29.8944,-81.3147,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21502,30.55812,-87.1815,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21503,30.687,-81.442,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21504,24.55917,-81.78403,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21505,28.05529,-80.57616,geonames,place,geonames:4159661,Indian River Lagoon FL; ambiguous; reviewed 2026-10-19
+21506,29.89469,-81.31452,geonames,representative,geonames:4170894,East Florida: St. Augustine (colonial capital) as stand-in; reviewed 2026-10-19
+21599,29.8944,-81.3147,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21601,29.95444,-90.075,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21602,29.1222,-89.1072,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21603,29.52468,-92.67,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21604,30.39195,-88.94993,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21605,30.30501,-89.28,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21606,30.69444,-88.04306,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21607,32.35265,-90.87788,geonames,place,geonames:4449620,Vicksburg MS (Mississippi River)
+21699,29.52468,-92.67,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21701,46.8,-71.25,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21702,46.77556,-65.2178,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21704,48.34364,-57.42457,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21705,44.87737,-63.87373,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21706,44.65,-63.6,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21707,44.56642,-64.30758,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21708,43.62503,-65.34962,geonames,place,geonames:6127770,"Roseway, Nova Scotia (Shelburne area)"
+21802,38.25424,-85.75941,geonames,place,geonames:4299276,Louisville KY (Ohio River)
+21903,44.12283,-69.17,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21904,32.78096,-79.93554,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+21906,38.89511,-77.03637,geonames,place,geonames:4140963,Washington DC
+21999,32.78096,-79.93554,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+22001,36.16589,-86.78444,geonames,place,geonames:4644585,Nashville TN
+22101,30.7752,-94.41548,geonames,place,geonames:4743079,Woodville TX
+31102,18.45,-71.25,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31103,19.86667,-71.65,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31104,19.21667,-69.32,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31106,18.47186,-69.89232,geonames,place,geonames:3492908,"Santo Domingo, DR"
+31107,18.37308,-70.64389,geonames,place,geonames:3495763,Bahía de Ocoa (bay record); Ocoa town inland; reviewed 2026-10-19
+31109,19.79344,-70.6884,geonames,place,geonames:3493175,"Puerto Plata, DR"
+31110,18.14676,-68.6877,geonames,place,geonames:3492895,Isla Saona (island record)
+31199,18.46667,-69.9,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31201,18.46633,-66.10572,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31299,18.46633,-66.10572,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31301,22.90361,-83.15917,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31302,20.9625,-75.71861,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31303,22.97583,-82.92194,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31304,22.52056,-79.46694,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31305,23.1125,-81.78139,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31306,23.0375,-81.20472,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31307,22.14611,-80.43556,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31308,19.95076,-75.73811,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31309,22.91945,-83.38027,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31310,22.20056,-84.08389,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31311,22.68833,-82.65361,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31312,23.13194,-82.36417,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31313,21.68331,-82.82405,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31314,20.34333,-77.11667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31315,22.9875,-82.75361,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31316,23.04111,-81.5775,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31317,23.04111,-81.5775,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31318,23.04111,-81.5775,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31319,21.54528,-77.26444,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31320,21.195,-76.60278,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31321,22.80667,-80.07556,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31322,22.49472,-79.54583,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31323,20.02472,-75.82194,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31324,21.80194,-79.98417,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31326,22.71736,-82.29006,geonames,place,geonames:3567655,"Batabanó, Cuba (port village is Surgidero de Batabanó)"
+31327,20.34801,-74.49714,geonames,place,geonames:3567834,"Baracoa, Cuba"
+31330,21.38083,-77.91694,geonames,place,geonames:3566067,Puerto Príncipe = Camagüey
+31399,21.77157,-78.92087,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+31401,12.57858,-81.69973,geonames,place,geonames:3670218,"St. Andreas guessed as San Andrés island, Colombia; reviewed 2026-10-19"
+31499,18.46667,-69.9,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+32110,12.1,-68.91667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+32120,12.51667,-70.03333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+32130,12.2,-68.5,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+32140,18.1,-63.03333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+32141,18.1,-63.03,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+32150,17.46667,-62.98333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+32151,17.63027,-63.24068,geonames,place,geonames:3513314,Saba island
+32199,12.1,-68.91667,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+32201,5.95859,-55.67599,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+32202,5.95859,-55.67599,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+32230,7.04396,-58.35479,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+32240,5.95859,-55.67599,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+32241,5.83333,-55.16667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+32250,6.6713,-57.93,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+32299,5.95859,-55.67599,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+33299,18.34732,-64.72,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+33399,18.21667,-63.05,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+33401,17.11667,-61.85,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+33499,17.11667,-61.85,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+33599,17.3,-62.71667,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+33601,17.2,-62.58333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+33699,17.2,-62.58333,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+33799,16.7,-62.21667,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+33801,15.30174,-61.38808,geonames,place,geonames:3575635,"Roseau, Dominica"
+33802,15.21667,-61.36667,geonames,representative,geonames:3575621,"St. Mark parish record, Dominica (not a port); reviewed 2026-10-19"
+33899,15.3,-61.4,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+34199,14.0,-61.0,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+34201,13.1,-59.62,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+34202,13.25072,-59.64396,geonames,place,geonames:3373505,"Speightstown, Barbados"
+34299,13.1,-59.6,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+34399,13.13333,-61.21667,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+34499,12.05,-61.75,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+34599,10.65,-61.51667,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+34601,11.23333,-60.61667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+34699,11.25,-60.66667,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35101,18.26667,-76.76667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35102,18.18333,-76.46667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35103,18.01667,-77.85,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35104,18.5,-77.65,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35105,18.45,-78.16667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35106,18.46667,-77.65,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35107,18.46667,-77.91667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35108,17.88333,-76.42,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35109,18.36667,-76.9,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35110,17.9333,-76.92,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35111,18.43333,-77.2,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35112,18.21667,-78.13333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35113,17.98333,-76.95,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35114,18.0,-76.8,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35199,18.0,-76.8,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35201,24.99364,-77.39683,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35202,21.4,-71.11667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35203,25.07606,-77.38108,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35204,24.33083,-75.43625,geonames,place,geonames:3572679,"Cat Island, Bahamas"
+35205,23.57476,-75.88966,geonames,place,geonames:3572296,Great Exuma island record
+35206,21.05741,-73.32545,geonames,place,geonames:3572289,Heneague presumed Great Inagua (Heneagua); name variant; reviewed 2026-10-19
+35299,26.53333,-78.7,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35301,6.81667,-58.16667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35302,6.81667,-58.15,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35304,6.72,-58.37,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35305,6.81667,-58.17,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35401,14.03333,-83.38333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35402,15.91667,-86.0,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35499,15.91667,-86.0,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35507,18.21667,-63.05,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35508,32.29417,-64.78389,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35509,32.29417,-64.78389,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+35510,13.00966,-61.2293,geonames,place,geonames:3577956,Becquia = Bequia
+35511,19.5,-80.66667,geonames,representative,geonames:3580719,Cayman Islands record; Grand Cayman is 3580656; reviewed 2026-10-19
+35512,13.35037,-81.37369,geonames,place,geonames:3671696,Providence Island = Isla de Providencia (Colombia); reviewed 2026-10-19
+35599,18.0,-76.8,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36101,14.6,-61.08333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36102,14.73333,-61.16667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36199,14.63333,-61.16667,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36201,16.0,-61.71667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36202,16.23333,-61.51667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36203,15.93333,-61.26667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36204,16.31754,-61.42873,geonames,representative,geonames:3579202,Grande-Terre island record (not a port); reviewed 2026-10-19
+36299,16.0,-61.71667,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,"fixture name: Guadeloupe, port unspecified"
+36301,4.93333,-52.33333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36302,3.9,-51.8,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36399,4.9381,-52.33455,geonames,representative,geonames:3382160,Cayenne as principal port of French Guiana; reviewed 2026-10-19
+36401,20.04634,-72.78667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36402,18.76944,-72.5125,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36403,19.75,-72.204,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36404,18.2,-73.75,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36405,19.06667,-72.36667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36406,19.66778,-71.83972,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36407,18.23417,-72.53472,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36408,18.65,-74.11667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36409,18.51083,-72.63389,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36410,19.8,-73.38,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36411,18.43139,-72.86694,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36412,18.53917,-72.335,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36413,19.93276,-72.83087,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36414,19.11667,-72.7,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36415,18.0694,-73.6512,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36416,18.34487,-74.43919,geonames,place,geonames:3716617,"Cap Tiburon, Haiti"
+36499,19.75778,-72.20417,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+36599,19.75778,-72.20417,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+37010,17.77305,-64.82,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+37020,18.34141,-64.94,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+37030,18.34231,-64.74295,geonames,place,geonames:4795502,"St. John island, US Virgin Islands"
+37040,18.4481,-64.43474,geonames,place,geonames:3577369,Spanish Town on Virgin Gorda (BVI); source region says Danish WI; reviewed 2026-10-19
+37099,18.02,-64.8,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+38101,17.9002,-62.8317,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+38199,17.9,-62.83333,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+39001,20.0,-70.0,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+39002,20.0,-70.0,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41201,19.41,-99.16,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41202,19.85,-90.53333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41203,19.17,-96.13,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41204,15.8,-88.7,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41205,15.7,-88.61667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41206,9.55,-79.65,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41207,10.39972,-75.51444,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41208,11.24722,-74.20167,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41210,10.44528,-67.96444,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41211,10.44528,-67.96444,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41212,10.5,-66.91667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41213,10.46667,-64.16667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41214,10.6,-66.9333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41215,10.95,-64.08,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41216,8.86343,-60.54,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41217,11.54444,-72.90722,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+41218,8.5,-77.5,geonames,representative,geonames:3699895,Isthmus of Darien region record; reviewed 2026-10-19
+41220,16.37219,-86.42807,geonames,place,geonames:3602735,Roatán island
+41221,10.47306,-68.0125,geonames,place,geonames:3629706,
+41222,15.66871,-63.61801,geonames,place,geonames:3648752,Isla de Aves (island record)
+41223,11.40769,-69.67822,geonames,place,geonames:3645213,"Coro, Venezuela"
+41224,10.64232,-71.61089,geonames,place,geonames:3633009,
+41225,10.1384,-64.68769,geonames,place,geonames:3648559,"Nueva Barcelona = Barcelona, Venezuela"
+41226,8.35122,-62.64102,geonames,place,geonames:3645528,Guayana (Santo Tomé de Guayana) = Ciudad Guayana; reviewed 2026-10-19
+41227,10.79006,-68.32564,geonames,place,geonames:3625965,Tucacas used for Caracas Coast and Tucacas (two places); reviewed 2026-10-19
+41299,9.03,-76.26,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+42001,-34.5875,-58.6725,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+42002,-34.85806,-56.17083,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+42003,-34.4667,-57.85,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+42004,-34.9,-54.95,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+42007,-34.94747,-54.93382,geonames,place,geonames:3440939,
+42099,-34.90328,-56.18816,geonames,representative,geonames:3441575,Montevideo as principal Río de la Plata port stand-in; reviewed 2026-10-19
+43001,-12.04318,-77.02824,geonames,place,geonames:3936456,Lima (port was Callao)
+44001,-33.036,-71.62963,geonames,place,geonames:3868626,
+44002,-36.72494,-73.11684,geonames,place,geonames:3870282,
+45099,-2.19616,-79.88621,geonames,representative,geonames:3657509,Guayaquil as principal port of Ecuador; reviewed 2026-10-19
+50102,-2.51667,-44.26667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50103,-1.45,-48.48333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50105,-0.16667,-49.0,geonames,place,geonames:3407729,Amazon River record (not mouth-specific); reviewed 2026-10-19
+50106,-3.71722,-38.54306,geonames,representative,geonames:3399415,Ceará: Fortaleza as principal port stand-in; reviewed 2026-10-19
+50107,0.03889,-51.06639,geonames,place,geonames:3396016,
+50108,-1.45583,-48.50444,geonames,place,geonames:3405870,Belém (Pará)
+50109,-2.52972,-44.30278,geonames,place,geonames:3388368,São Luís (Maranhão)
+50110,-4.56167,-37.76972,geonames,place,geonames:3407378,"Aracati, Ceará"
+50201,-16.67179,-39.26418,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50202,-11.45,-37.36667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50203,-9.3319,-38.2604,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50204,-5.61667,-35.6,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50299,-12.97111,-38.51083,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50301,-9.78362,-35.85,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50302,-7.75772,-34.85064,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,fixture name: Ilha de Itamaric 
+50303,-9.66667,-35.72,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50304,-7.85,-34.83333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50305,-8.05389,-34.88111,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50306,-6.78027,-34.94216,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50307,-5.795,-35.20944,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50309,-3.85071,-32.41997,geonames,place,geonames:3399637,Fernando de Noronha (island municipality record)
+50311,-8.05389,-34.88111,geonames,place,geonames:3390760,
+50399,-8.05389,-34.88111,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50402,-22.9,-43.23333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50403,-22.98167,-43.70083,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50404,-22.77,-41.96,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50405,-22.88333,-42.01667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50406,-21.75,-41.3,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50407,-25.0167,-47.95,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50408,-22.96667,-43.18333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50409,-23.18333,-44.18333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50410,-22.75944,-43.10917,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50411,-23.5395,-45.06,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50412,-23.15032,-44.23784,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50413,-29.33333,-49.7,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50414,-22.9993,-43.92694,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50416,-22.38333,-41.78333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50417,-22.95,-44.03333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50418,-22.91667,-42.81667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50419,-25.51667,-48.5,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50420,-23.21667,-44.71667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50421,-5.88333,-35.16667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50422,-22.9,-43.23333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50423,-23.02,-43.57,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50424,-23.79,-45.99,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50426,-30.03333,-51.2,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50427,-24.07233,-46.68908,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50428,-23.95,-46.33333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50430,-23.8,-45.41667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50431,-27.45972,-48.47185,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50433,-23.43333,-45.06667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50434,-20.31667,-40.35,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+50435,-28.4825,-48.78083,geonames,place,geonames:3459094,"Laguna, Santa Catarina"
+50437,-23.96306,-46.39194,geonames,place,geonames:3448136,"São Vicente, São Paulo"
+50438,-20.31944,-40.33778,geonames,representative,geonames:3444924,Espírito Santo: Vitória as principal port stand-in; reviewed 2026-10-19
+50499,-22.90642,-43.18223,geonames,representative,geonames:3451190,SE Brazil: Rio de Janeiro as principal port stand-in; reviewed 2026-10-19
+50599,-16.55,-47.55,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60101,13.33444,-16.38667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60102,20.59569,-16.46,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60103,11.20143,-16.12037,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60104,11.85,-15.58333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60105,12.27056,-16.16583,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60106,12.57115,-16.71318,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60108,13.45306,-16.5775,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60109,14.66861,-17.39917,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60110,13.30641,-16.39101,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60111,14.16667,-16.83333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60113,14.43833,-17.0125,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60114,12.24788,-15.80105,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60115,11.55,-14.93333,geonames,place,geonames:2374676,"Rio Bolola guessed as Bolola, Guinea-Bissau; reviewed 2026-10-19"
+60116,10.46667,-13.48333,geonames,place,geonames:2422505,"Rio Bramiah presumed Bramaya, Guinea"
+60117,11.5049,-15.49403,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60118,16.01793,-16.48962,geonames,place,geonames:2246452,"Saint-Louis, Senegal"
+60119,15.38333,-16.78333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60126,16.1018,-22.93875,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60127,14.94138,-24.39445,geonames,place,geonames:3374613,Santa Catarina do Fogo: Fogo island record (Cape Verde); reviewed 2026-10-19
+60128,32.63333,-16.9,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60129,37.74058,-25.67282,geonames,place,geonames:3373385,Azores archipelago record (island group); reviewed 2026-10-19
+60141,28.0,-15.5,geonames,place,geonames:2520308,Canary Islands archipelago record (island group); reviewed 2026-10-19
+60142,28.32977,-16.5097,geonames,place,geonames:2510529,Tenerife island record
+60199,15.38333,-16.78333,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60201,8.10473,-13.22867,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60202,8.57051,-13.00356,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60204,10.78202,-14.57,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60205,5.78306,-10.95,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60206,-26.21967,32.71726,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60207,8.49,-13.23,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60208,7.26016,-12.04157,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60209,4.4969,-7.9331,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60210,9.48039,-13.79534,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60211,7.9125,-12.98778,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60212,10.58216,-14.6379,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60213,10.13756,-14.06157,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60214,8.93872,-13.21464,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60216,4.89917,-8.84583,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60217,7.57325,-12.70415,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60219,6.84667,-11.39,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60220,6.49613,-13.17066,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60241,6.98333,-11.28333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60242,8.50013,-13.1204,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,fixture name: River Kissey
+60299,8.3,-13.23,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60302,5.98,-10.14983,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60305,4.36888,-7.72894,geonames,place,geonames:2274501,"Cap des Palmes = Cape Palmas, Liberia"
+60306,6.70407,-11.30905,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60307,6.64697,-11.17771,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60308,6.73776,-11.35807,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60309,5.13667,-5.02417,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60310,5.35661,-9.48292,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60311,4.57139,-8.22,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60314,4.91667,-6.15,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60315,5.91111,-10.0625,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60316,5.97111,-10.15,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60317,5.20194,-3.735,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60318,6.23689,-10.65381,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60319,6.19013,-10.47533,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60320,6.98333,-11.28333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60321,6.31912,-10.80919,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60322,6.41855,-10.81224,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60324,5.12361,-3.28,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60326,4.99361,-9.03667,geonames,place,geonames:2273895,"Rio Sinou = Sinoe River, Liberia"
+60327,8.50013,-13.1204,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60328,4.95,-6.08333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60329,5.85183,-10.03414,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60330,5.85183,-10.03414,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60331,6.38,-10.79246,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60332,4.41667,-7.35,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60333,5.8,-9.85,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60334,6.3175,-10.77972,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60335,5.16595,-4.88,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60340,4.90015,-8.84416,geonames,place,geonames:2273979,"Settra Kru (alt name of Garroway Roads), Liberia"
+60399,6.70407,-11.30905,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60402,5.54189,-0.1993,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60404,5.55,-0.21667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60405,5.29074,-0.9159,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60407,5.17394,-1.12019,geonames,place,geonames:2304538,Anomabu (Anomabo); row also names Apam (2304389); reviewed 2026-10-19
+60408,5.1667,-1.1167,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,fixture name: Anomabu
+60409,5.28333,-0.73333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60410,4.93489,-2.36472,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60411,4.86833,-2.24139,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60412,5.18251,-1.11662,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60413,5.01973,-1.62709,geonames,place,geonames:2295387,"Chama = Shama, Ghana (Dutch fort)"
+60414,5.55,-0.18333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60415,5.08333,-1.35,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60417,5.2,-1.08333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60419,5.16328,-1.15828,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60420,5.74612,0.18565,geonames,place,geonames:2296338,Old Ningo town (GeoNames spells Old Nigo); reviewed 2026-10-19
+60421,5.77385,0.67201,geonames,place,geonames:2294237,Rio Volta = Volta River (GeoNames point near mouth)
+60422,4.93422,-1.71454,geonames,place,geonames:11808941,"Sekondi, Ghana"
+60424,5.21764,-0.80559,geonames,place,geonames:2294792,"Tantumquerry = Tantumkweri (Tantamkweri Point), Ghana"
+60425,5.33333,-0.61667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60426,5.35784,-0.56,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60427,5.35784,-0.56,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60428,4.79361,-2.13472,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60429,4.82285,-1.91681,geonames,place,geonames:2302373,"Boutry = Butre, Ghana"
+60499,5.19077,-1.0992,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60501,6.3176,5.6145,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60503,6.19889,1.48,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60506,6.4,2.2,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60507,6.41667,3.05,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60508,4.8,-1.95,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60509,6.41667,2.88333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60510,6.26333,1.69,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60511,6.23333,1.6,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60512,6.28333,1.83333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60513,7.4824,4.56032,geonames,place,geonames:2338900,Ife = Ile-Ife (inland Yoruba city); reviewed 2026-10-19
+60514,6.36984,2.51364,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60515,6.36667,2.08333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60516,5.91667,0.98333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60517,6.45306,3.39583,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60520,6.45407,3.39467,geonames,place,geonames:2332459,Legas = Lagos (historical spelling)
+60521,5.75,5.08,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60523,6.48333,2.61667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60524,5.38641,5.28,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60526,4.31328,6.04958,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60599,6.36667,2.08333,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60601,4.47865,7.19,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60604,3.95444,9.245,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60605,4.43333,7.16667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60608,4.95,8.31667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60609,3.91309,9.58062,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60610,3.91309,9.58062,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60612,-0.6254,8.71155,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60613,-0.6254,8.71155,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60615,0.91457,9.31701,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60616,1.56285,7.4405,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60619,4.31221,6.02588,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60620,0.20739,9.89337,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60622,4.5742,6.9758,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60624,4.32939,6.50705,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60625,4.73333,8.65,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60627,-0.65997,9.06847,geonames,place,geonames:2397711,"Rio Nazareth guessed as Baie de Nazaré, Gabon; reviewed 2026-10-19"
+60661,5.6325,-1.40139,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60663,3.49,8.7,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60668,1.56667,7.35,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60671,0.25574,6.54352,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60673,0.33333,6.73333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60676,0.1861,6.65947,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60699,4.43333,7.16667,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60703,-7.85,13.11667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60704,-7.23333,12.87,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60705,-8.83682,13.23432,geonames,representative,geonames:2240449,Luanda city used; Barra de Cariba not in GeoNames
+60706,-8.74835,13.39457,geonames,place,geonames:2243597,"Bengo River (GeoNames point near mouth), Angola"
+60707,-12.57833,13.40722,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60708,-10.7333,13.75,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60709,-4.72646,11.84143,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60711,-5.55,12.2,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60712,-0.61846,8.71094,geonames,place,geonames:2399612,"Cabo Lopo Gonçalves = Cape Lopez, Gabon"
+60714,-6.07568,12.33184,geonames,place,geonames:2238977,"Cape Padroon presumed Ponta do Padrão (Congo River mouth), Angola"
+60715,-9.31811,13.17567,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60716,-3.15469,10.38,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60717,-5.89462,12.97111,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60718,-5.89462,12.97111,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60721,-5.23864,12.14428,geonames,place,geonames:2243181,"Kacongo = Cacongo, Cabinda"
+60722,-4.10972,11.34972,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60724,-4.65194,11.8125,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60725,-5.33333,12.18333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60726,-3.41667,10.65,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60728,-8.94474,13.07529,geonames,place,geonames:2591968,"Mossulo = Mussulo, Luanda"
+60729,-6.137,12.51353,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60730,-11.2,13.83333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60732,-11.31667,13.81667,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60733,-12.61444,13.35028,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60734,-8.83833,13.23444,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,fixture name: Luanda
+60735,-8.46667,13.35,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60740,-15.57,-5.42,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60741,-6.12996,12.3709,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60799,-8.83833,13.23444,slavevoyages,representative,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60801,-16.2325,39.90861,geonames,place,geonames:1052944,"Anghoza River presumed Angoche, Mozambique"
+60802,-10.69168,40.63889,geonames,place,geonames:1047175,Cabo Delgado (cape record)
+60803,-34.1,18.38333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60806,-12.33333,40.58333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60807,-23.865,35.38333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60808,-12.43028,40.61306,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60809,-8.75,39.4,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60810,-25.96528,32.58917,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60811,-19.1911,46.69877,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60813,-20.28869,44.31782,geonames,place,geonames:1058381,"Morondova = Morondava, Madagascar"
+60814,-25.03249,46.98329,geonames,place,geonames:1055433,Port Dauphin = Fort-Dauphin (Tôlanaro)
+60815,-16.91952,49.89574,geonames,place,geonames:1057213,St. Mary's Island = Nosy Boraha (Île Sainte-Marie)
+60816,-23.35,43.66667,geonames,place,geonames:1055429,Tulia presumed Toliara (Tuléar); reviewed 2026-10-19
+60817,-15.0375,40.73167,geonames,place,geonames:345947,Mocambo presumed Mozambique Island
+60820,-15.03846,40.73576,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60822,-17.87861,36.88833,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60823,-20.155,34.73167,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60824,-20.03085,45.695,geonames,representative,geonames:12036340,St. Lawrence = historical name of Madagascar; island record; reviewed 2026-10-19
+60826,-6.16667,39.18333,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60831,-20.77758,56.64221,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60832,-21.11429,55.54756,geonames,place,geonames:935316,Bourbon = Réunion island
+60833,-20.32864,57.56025,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60834,-20.16194,57.49889,geonames,place,geonames:934154,"Port Louis, Mauritius"
+60836,-12.22,44.42,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+60837,-20.3,57.58333,geonames,place,geonames:934293,Mauritius island record
+60899,-15.0375,40.73167,geonames,representative,geonames:345947,Mozambique Island as principal port stand-in; reviewed 2026-10-19
+60915,4.26565,5.99,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+80601,18.45,-77.45,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,
+80602,15.50165,73.91161,geonames,place,geonames:11903108,"Old Goa, Portuguese capital of Goa; reviewed 2026-10-19"
+80603,22.56263,88.36304,geonames,place,geonames:1275004,Calcutta = Kolkata
+80604,47.2,-1.67,slavevoyages,place,IQSS/voyages@cf1e5a8:voyages/apps/voyage/fixtures/test_set_200_voyages.json,

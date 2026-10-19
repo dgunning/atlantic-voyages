@@ -1,0 +1,357 @@
+code,name,geonameid,geonames_name,feature_code,country_code,lat,lon,precision,confidence,decision,note
+10101,Alicante,2521978,Alicante,PPLA2,ES,38.34517,-0.48149,place,high,accept,"Alicante, Spain"
+10401,Barmouth,2656311,Barmouth,PPL,GB,52.72377,-4.05748,place,high,accept,
+10402,Bideford,2655707,Bideford,PPL,GB,51.01678,-4.20832,place,high,accept,
+10403,Birkenhead,2655613,Birkenhead,PPL,GB,53.39337,-3.01479,place,high,accept,
+10405,Brixham,2654663,Brixham,PPL,GB,50.39431,-3.51585,place,high,accept,
+10407,Cawsand,2653467,Cawsand,PPL,GB,50.33166,-4.20251,place,high,accept,"Cawsand, Cornwall"
+10408,Chepstow,2653256,Chepstow,PPL,GB,51.64087,-2.67683,place,high,accept,"Chepstow, Wales (Monmouthshire)"
+10413,Deptford,2651349,Deptford,PPL,GB,51.47764,-0.02609,place,high,accept,"Deptford, London (Thames)"
+10417,Frodsham,2649029,Frodsham,PPL,GB,53.29485,-2.72745,place,high,accept,"Frodsham, Cheshire"
+10418,Gainsborough,2648945,Gainsborough,PPL,GB,53.38333,-0.76667,place,high,accept,"Gainsborough, Lincolnshire (River Trent)"
+10419,Greenwich,2647937,Greenwich,PPLX,GB,51.47785,-0.01176,place,high,accept,"Greenwich, London"
+10421,Harwich,2647383,Harwich,PPL,GB,51.94194,1.28437,place,high,accept,
+10423,Ilfracombe,2646276,Ilfracombe,PPL,GB,51.2093,-4.11344,place,high,accept,
+10426,Isle of Wight,2633939,Isle of Wight,ISL,GB,50.67948,-1.28764,place,high,accept,Isle of Wight (island record)
+10427,Jersey,3042143,Jersey,ISL,JE,49.2167,-2.13753,place,high,accept,Jersey (island record)
+10429,King's Lynn,2645456,King's Lynn,PPL,GB,52.75172,0.39516,place,high,accept,"King's Lynn (Lynn), Norfolk"
+10431,Lindale,2644484,Lindale,PPL,GB,54.21716,-2.89601,place,medium,none,too uncertain; reviewed 2026-10-19
+10436,Maryport,2642927,Maryport,PPL,GB,54.71434,-3.49509,place,high,accept,
+10440,Newnham,2641605,Newnham,PPL,GB,51.80519,-2.453,place,medium,accept,Newnham on Severn (Gloucestershire) assumed; 14 Newnhams in GB; reviewed 2026-10-19
+10441,North Shields,2641267,North Shields,PPL,GB,55.01646,-1.44925,place,high,accept,
+10443,Norwich,2641181,Norwich,PPLA2,GB,52.62783,1.29834,place,high,accept,
+10446,Piel of Foulney,2649141,Foulney Island,ISL,GB,54.05,-3.15,place,medium,accept,"Piel of Foulney = Foulney Island, Cumbria (Barrow harbour); name variant"
+10449,Portsery,2639992,Portsoy,PPL,GB,57.68144,-2.68956,place,medium,accept,Portsery presumed Portsoy (Banffshire); spelling far from modern
+10453,Ramsgate,2639660,Ramsgate,PPL,GB,51.33568,1.41797,place,high,accept,
+10454,Ravenglass,2639599,Ravenglass,PPL,GB,54.35591,-3.40864,place,high,accept,
+10456,Rochester,2639268,Rochester,PPLA2,GB,51.38764,0.50546,place,high,accept,"Rochester, Kent (Medway)"
+10457,Rotherhithe,2639091,Rotherhithe,PPLX,GB,51.5,-0.05,place,high,accept,"Rotherhithe, London"
+10458,Rye,2638909,Rye,PPL,GB,50.95114,0.7337,place,high,accept,
+10459,Scarborough,2638419,Scarborough,PPL,GB,54.27966,-0.40443,place,high,accept,
+10460,Sheerness,2638081,Sheerness,PPL,GB,51.44042,0.76252,place,high,accept,
+10461,Shields,2637329,South Shields,PPLA2,GB,54.99859,-1.4323,place,medium,accept,"""Shields"" ambiguous North/South Shields; used South Shields (Tyne)"
+10463,Sidmouth,2637853,Sidmouth,PPL,GB,50.69094,-3.2397,place,high,accept,
+10467,Stockwithe,2634265,West Stockwith,PPL,GB,53.443,-0.81361,place,medium,accept,"Stockwithe = West Stockwith (Notts/Lincs, Trent)? spelling doubt"
+10468,Sunderland,2636531,Sunderland,PPLA2,GB,54.90465,-1.38222,place,high,accept,
+10469,Teignmouth,2636132,Teignmouth,PPL,GB,50.54581,-3.49671,place,high,accept,
+10471,Torbay,2635679,Tor Bay,BAY,GB,50.43061,-3.50344,place,high,accept,Tor Bay (bay record)
+10476,Workington,2633553,Workington,PPL,GB,54.6425,-3.54413,place,high,accept,
+10478,Youghal,2960869,Youghal,PPL,IE,51.95,-7.85056,place,high,accept,Youghal is in Ireland; source region says England
+10479,Conway,2652426,Conwy,PPLA2,GB,53.28077,-3.83039,place,high,accept,"Conway = modern Conwy, Wales"
+10481,Lymehouse (London),2644497,Limehouse,PPLX,GB,51.51412,-0.03282,place,high,accept,"Limehouse, London"
+10485,Lympstone,2643306,Lympstone,PPL,GB,50.64751,-3.43162,place,high,accept,"Lympstone, Devon"
+10501,Airth,2657592,Airth,PPL,GB,56.06983,-3.77209,place,high,accept,"Airth, Stirlingshire (Forth)"
+10502,Borrowstounness,2655215,Bo’ness,PPL,GB,56.01667,-3.61667,place,high,accept,Borrowstounness = Bo'ness
+10503,Dundee,2650752,Dundee,PPLA2,GB,56.46913,-2.97489,place,high,accept,
+10507,Lough Neagh,2641846,Lough Neagh,LK,GB,54.61667,-6.41667,place,medium,none,"a lake, filed under Scotland in the source; reviewed 2026-10-19"
+10509,Ross,,,,,,,,,none,No GeoNames record identified
+10510,Saltcoats,2638648,Saltcoats,PPL,GB,55.63616,-4.78588,place,high,accept,
+10511,"Largo, Fifeshire",2643511,Lower Largo,PPL,GB,56.2136,-2.93642,place,medium,accept,"Largo, Fife: used Lower Largo (harbour village)"
+10512,Dumfries,2650798,Dumfries,PPLA2,GB,55.06959,-3.61139,place,high,accept,Dumfries (Nith estuary)
+10513,Point Askaig,2640080,Port Askaig,PPL,GB,55.84838,-6.10517,place,high,accept,"Point Askaig = Port Askaig, Islay"
+10514,Cambletown,2653915,Campbeltown,PPL,GB,55.42583,-5.60764,place,high,accept,Cambletown = Campbeltown
+10515,Portpatrick,2640009,Portpatrick,PPL,GB,54.84143,-5.11705,place,high,accept,
+10516,Erwin,2646032,Irvine,PPLA2,GB,55.6194,-4.65508,place,medium,accept,"Erwin presumed Irvine, Ayrshire (old spelling)"
+10517,Aberdeen,2657832,Aberdeen,PPLA2,GB,57.14369,-2.09814,place,high,accept,
+10518,Stranraer,2636719,Stranraer,PPL,GB,54.90234,-5.02731,place,high,accept,
+10603,Dungarvan,2964528,Dungarvan,PPL,IE,52.08806,-7.62528,place,high,accept,"Dungarvan, Co. Waterford"
+10607,Londonderry,2643736,Derry,PPLA2,GB,54.9981,-7.30934,place,high,accept,Londonderry = Derry (NI)
+10609,Strangford,2636724,Strangford,PPL,GB,54.36956,-5.55711,place,high,accept,"Strangford, Co. Down"
+10611,Wexford,2960964,Wexford,PPLA2,IE,52.33417,-6.4575,place,high,accept,
+10612,Belfast,2655984,Belfast,PPLA,GB,54.59682,-5.92541,place,high,accept,
+10613,Coleraine,2652586,Coleraine,PPLA2,GB,55.13333,-6.66667,place,high,accept,
+10699,"Ireland, port unspecified",2964574,Dublin,PPLC,IE,53.33306,-6.24889,representative,medium,accept,Dublin as principal port of Ireland; reviewed 2026-10-19
+10705,Calais (Fr.),3029162,Calais,PPLA3,FR,50.95194,1.85635,place,high,accept,"Calais, France"
+10723,Quimper,2984701,Quimper,PPLA2,FR,47.99597,-4.09795,place,high,accept,"Quimper, Brittany"
+10728,Saint-Tropez,2976742,Saint-Tropez,PPL,FR,43.26764,6.64049,place,high,accept,
+10827,Zaandam,2744118,Zaandam,PPL,NL,52.43854,4.82643,place,high,accept,"Zaandam, Netherlands"
+10999,"Denmark, port unspecified",2618425,Copenhagen,PPLC,DK,55.67594,12.56553,representative,medium,accept,Copenhagen as principal port of Denmark; reviewed 2026-10-19
+11005,Hanover,2910831,Hannover,PPLA,DE,52.37052,9.73322,representative,medium,accept,Hanover = Hannover city (inland); state/kingdom ambiguous
+11102,Flanders,3337388,Flanders,ADM1,BE,51,4.5,representative,medium,accept,Flanders region (ADM1) record
+11202,Bergen,3161732,Bergen,PPLA,NO,60.39299,5.32415,place,high,accept,
+11399,"Sweden, port unspecified",2673730,Stockholm,PPLC,SE,59.32938,18.06871,representative,medium,accept,Stockholm as principal port of Sweden; reviewed 2026-10-19
+11401,Genoa,3176219,Genoa,PPLA,IT,44.40478,8.94439,place,high,accept,
+11501,Cronstadt,540771,Kronstadt,PPL,RU,59.992,29.77616,place,high,accept,Cronstadt = Kronstadt
+11601,Sardinia,2523227,Sardinia,ISL,IT,40,9,place,high,accept,Sardinia island record
+11699,"Mediterranean, port unspecified",,,,,,,,,none,Unspecified location with no single stand-in; not matched
+20102,Little Compton,5223129,Little Compton,PPL,US,41.5101,-71.17116,place,high,accept,
+20106,Tiverton,5225245,Tiverton,PPL,US,41.62594,-71.21338,place,high,accept,"Tiverton, RI"
+20108,Warwick,5225507,Warwick,PPL,US,41.7001,-71.41617,place,high,accept,"Warwick, RI"
+20201,Bath,4957570,Bath,PPLA2,US,43.91064,-69.8206,place,high,accept,"Bath, Maine (Kennebec)"
+20202,Berwick,4832356,Berwick,PPL,US,43.26592,-70.8645,place,high,accept,
+20203,Biddeford,4958141,Biddeford,PPL,US,43.49258,-70.45338,place,high,accept,
+20204,Calais,4959834,Calais,PPL,US,45.18376,-67.27662,place,high,accept,"Calais, Maine (St. Croix River)"
+20205,Camden,4959908,Camden,PPL,US,44.2098,-69.06476,place,high,accept,
+20207,Freeport,4964867,Freeport,PPL,US,43.85702,-70.10311,place,high,accept,
+20209,Prospect,4976052,Prospect,PPL,US,44.55313,-68.86476,place,high,accept,"Prospect, Maine (Penobscot River)"
+20210,Richmond,4976528,Richmond,PPL,US,44.0873,-69.79893,place,high,accept,"Richmond, Maine (Kennebec)"
+20211,Robbinston,4976705,Robbinston,PPL,US,45.07813,-67.10943,place,high,accept,
+20212,Rockland,4832458,Rockland,PPLA2,US,44.10369,-69.10893,place,high,accept,
+20214,Wiscasset,4983359,Wiscasset,PPLA2,US,44.00286,-69.6656,place,high,accept,
+20215,Kittery Point,4968933,Kittery Point,PPL,US,43.08299,-70.71009,place,high,accept,
+20216,Orrington,4974328,Orrington,PPL,US,44.73118,-68.82643,place,high,accept,"Orrington, Maine (Penobscot River)"
+20217,Penobscot,4974967,Penobscot,PPL,US,44.46452,-68.71114,place,medium,accept,Penobscot town; could mean the river/bay
+20299,"Maine, port unspecified",4975802,Portland,PPLA2,US,43.65737,-70.2589,representative,medium,accept,Portland as principal port of Maine; reviewed 2026-10-19
+20403,Arundel,4956893,Arundel,PPL,US,43.38259,-70.47783,place,high,accept,"Arundel, now Kennebunkport area, Maine (then Massachusetts)"
+20405,Chatham,4932844,Chatham,PPL,US,41.68206,-69.95974,place,high,accept,"Chatham, Cape Cod"
+20406,Cohasset,4933533,Cohasset,PPL,US,42.24177,-70.80365,place,high,accept,
+20409,Freetown (Mass.),4937355,Freetown,PPL,US,41.76677,-71.03282,place,high,accept,"Freetown, MA"
+20410,Georgetown,4937684,Georgetown,PPL,US,42.72509,-70.99117,place,high,accept,"Georgetown, MA"
+20411,Hingham,4939549,Hingham,PPL,US,42.24177,-70.88977,place,high,accept,
+20412,Kingston (Mass.),4941383,Kingston,PPL,US,41.99455,-70.72448,place,high,accept,"Kingston, MA (Plymouth County)"
+20414,Marshfield,4943204,Marshfield,PPL,US,42.09177,-70.70559,place,high,accept,
+20418,Salisbury,4950092,Salisbury,PPL,US,42.84176,-70.86061,place,high,accept,"Salisbury, MA"
+20420,Scituate,4950395,Scituate,PPL,US,42.19593,-70.72587,place,high,accept,
+20422,Weymouth,4955336,Weymouth,PPL,US,42.22093,-70.93977,place,high,accept,
+20425,Nantucket,4944903,Nantucket,PPLA2,US,41.28346,-70.09946,place,high,accept,Nantucket town
+20426,Plymouth (Mass.),4947597,Plymouth,PPL,US,41.95844,-70.66726,place,high,accept,"Plymouth, MA"
+20501,Bridgeport,5282804,Bridgeport,PPL,US,41.17923,-73.18945,place,high,accept,
+20502,Guildford,4835512,Guilford,PPL,US,41.28899,-72.68176,place,high,accept,"Guildford = Guilford, CT"
+20503,Haddam,4831718,Haddam,PPL,US,41.47732,-72.51203,place,high,accept,"Haddam, CT (Connecticut River)"
+20508,Fairfield,4834157,Fairfield,PPL,US,41.14121,-73.26373,place,high,accept,
+20509,Killingworth,4837289,Killingworth,PPL,US,41.35815,-72.5637,place,high,accept,"Killingworth, CT"
+20510,Weathersfield,4845612,Wethersfield,PPL,US,41.71427,-72.65259,place,high,accept,"Weathersfield = Wethersfield, CT"
+20599,"Connecticut, port unspecified",4839416,New London,PPL,US,41.35565,-72.09952,representative,medium,accept,New London as principal port of Connecticut; reviewed 2026-10-19
+20601,Brookhaven,5110292,Brookhaven,PPL,US,40.77927,-72.91538,place,high,accept,"Brookhaven, Long Island"
+20602,Long Island,5125123,Long Island,ISL,US,40.81677,-73.06622,place,high,accept,Long Island (island record)
+20603,Sag Harbor,5134800,Sag Harbor,PPL,US,40.99788,-72.29258,place,high,accept,
+20701,Wilmington (Del.),4145381,Wilmington,PPLA2,US,39.74595,-75.54659,place,high,accept,"Wilmington, Delaware"
+20799,"Delaware, port unspecified",4145381,Wilmington,PPLA2,US,39.74595,-75.54659,representative,medium,accept,Wilmington as principal port of Delaware; reviewed 2026-10-19
+20803,Milwell,,,,,,,,,none,No GeoNames record identified
+20805,Wharton,,,,,,,place,low,none,Wharton NJ is an inland iron town: wrong; reviewed 2026-10-19
+20806,Burlington (NJ),5096075,Burlington,PPL,US,40.07122,-74.86489,place,high,accept,Burlington NJ (Delaware River)
+20807,Newark,5101798,Newark,PPLA2,US,40.73566,-74.17237,place,high,accept,Newark NJ
+20808,Cohanzie (NJ),4501296,Cohansey River,STM,US,39.34428,-75.35714,place,medium,accept,"Cohanzie presumed Cohansey River, NJ (Delaware Bay)"
+20899,"New Jersey, port unspecified",5102578,Perth Amboy,PPL,US,40.50677,-74.26542,representative,medium,accept,Perth Amboy as principal port of New Jersey; reviewed 2026-10-19
+20901,Marcus Hook,4559431,Marcus Hook,PPL,US,39.81928,-75.41853,place,high,accept,"Marcus Hook, Delaware River"
+20999,"Pennsylvania, port unspecified",4560349,Philadelphia,PPLA2,US,39.95238,-75.16362,representative,medium,accept,Philadelphia as principal port of Pennsylvania; reviewed 2026-10-19
+21007,Talbot County,4364745,Oxford,PPL,US,38.68651,-76.17161,representative,medium,accept,"Oxford, MD: Talbot County port of entry; reviewed 2026-10-19"
+21009,Cecil County,4350685,Cecil County,ADM2,US,39.56242,-75.94811,representative,medium,accept,Cecil County record (not a port); reviewed 2026-10-19
+21010,Choptank,4141910,Choptank River,STM,US,38.63456,-76.32662,representative,medium,accept,Choptank River (colonial customs district); reviewed 2026-10-19
+21011,Pocomoke,4365782,Pocomoke River,STM,US,37.9654,-75.64965,representative,medium,accept,Pocomoke River (colonial customs district); reviewed 2026-10-19
+21012,St. Mary's River,4368319,Saint Marys River,STM,US,38.10235,-76.44217,place,high,accept,"St. Mary's River, MD (GeoNames river point)"
+21105,Northampton County,4776500,Northampton County,ADM2,US,37.30078,-75.92854,representative,medium,accept,Northampton County VA record (not a port)
+21110,Williamsburg,4793846,Williamsburg,PPLA2,US,37.2707,-76.70746,place,high,accept,
+21112,Vatt (location undetermined),,,,,,,,,none,No GeoNames record identified
+21113,Accomac,4743873,Accomac,PPLA2,US,37.71957,-75.66548,place,high,accept,"Accomac, VA Eastern Shore"
+21114,Urbanna,4790870,Urbanna,PPL,US,37.63764,-76.5744,place,high,accept,"Urbanna, VA (Rappahannock)"
+21115,Richmond (VA),4781708,Richmond,PPLA,US,37.55376,-77.46026,place,high,accept,"Richmond, Virginia"
+21116,Hampton Roads,4762934,Hampton Roads,HBR,US,36.97515,-76.34967,place,high,accept,Hampton Roads (harbor record)
+21201,Bertie County,4455071,Bertie County,ADM2,US,36.06556,-76.9666,representative,medium,accept,Bertie County NC record (not a port)
+21203,New Bern,4481682,New Bern,PPLA2,US,35.10849,-77.04411,place,high,accept,
+21204,Hyde County,4472505,Hyde County,ADM2,US,35.41004,-76.1485,representative,medium,accept,Hyde County NC record (not a port); reviewed 2026-10-19
+21206,Beaufort (NC),4454370,Beaufort,PPLA2,US,34.7184,-76.66161,place,high,accept,Beaufort NC
+21207,Brunswick,4457578,Brunswick,PPL,US,34.28684,-78.70113,place,medium,accept,Brunswick NC; historic Brunswick Town on Cape Fear River
+21208,Cape Fear,4459154,Cape Fear River,STM,US,33.88545,-78.01277,place,medium,accept,"Cape Fear River (the port district), not the cape; reviewed 2026-10-19"
+21209,Edenton,4464897,Edenton,PPLA2,US,36.05794,-76.60772,place,high,accept,
+21210,Wilmington (NC),4499379,Wilmington,PPLA2,US,34.23556,-77.94604,place,high,accept,Wilmington NC
+21304,Georgetown (SC),4579662,Georgetown,PPLA2,US,33.37683,-79.2945,place,high,accept,Georgetown SC
+21402,Sunbury,4225187,Sunbury,PPL,US,31.76827,-81.28094,place,high,accept,"Sunbury, Liberty County GA"
+21505,Indian River,4159661,Indian River Lagoon,BAY,US,28.05529,-80.57616,place,medium,accept,Indian River Lagoon FL; ambiguous; reviewed 2026-10-19
+21506,East Florida,4170894,Saint Augustine,PPLA2,US,29.89469,-81.31452,representative,medium,accept,East Florida: St. Augustine (colonial capital) as stand-in; reviewed 2026-10-19
+21607,Vicksburg (MS),4449620,Vicksburg,PPLA2,US,32.35265,-90.87788,place,high,accept,Vicksburg MS (Mississippi River)
+21703,St. John,6138517,Saint John,PPL,CA,45.27076,-66.05616,place,medium,none,"Saint John NB, St. John's NL or St. John's Island PEI; reviewed 2026-10-19"
+21708,Roseway (NS),6127770,Roseway,PPL,CA,43.62503,-65.34962,place,high,accept,"Roseway, Nova Scotia (Shelburne area)"
+21801,Smithfield,4308834,Smithfield,PPL,US,38.38673,-85.2569,place,medium,none,Smithfield KY is inland: unclear; reviewed 2026-10-19
+21802,Louisville,4299276,Louisville,PPLA2,US,38.25424,-85.75941,place,high,accept,Louisville KY (Ohio River)
+21901,Newport and Boston,,,,,,,,,none,Multi-place or composite entry; not matched
+21902,Newport and Salem,,,,,,,,,none,Multi-place or composite entry; not matched
+21906,"Washington, DC",4140963,Washington,PPLC,US,38.89511,-77.03637,place,high,accept,Washington DC
+22001,Nashville,4644585,Nashville,PPLA,US,36.16589,-86.78444,place,high,accept,Nashville TN
+22101,Woodville,4743079,Woodville,PPLA2,US,30.7752,-94.41548,place,high,accept,Woodville TX
+31106,Santo Domingo,3492908,Santo Domingo,PPLC,DO,18.47186,-69.89232,place,high,accept,"Santo Domingo, DR"
+31107,Ocoa,3495763,Bahía de Ocoa,BAY,DO,18.37308,-70.64389,place,medium,accept,Bahía de Ocoa (bay record); Ocoa town inland; reviewed 2026-10-19
+31109,Puerto de Plata,3493175,Puerto Plata,PPLA,DO,19.79344,-70.6884,place,high,accept,"Puerto Plata, DR"
+31110,Isla Saona,3492895,Isla Saona,ISL,DO,18.14676,-68.6877,place,high,accept,Isla Saona (island record)
+31326,Batabanó,3567655,Batabanó,PPLA2,CU,22.71736,-82.29006,place,high,accept,"Batabanó, Cuba (port village is Surgidero de Batabanó)"
+31327,Baracoa,3567834,Baracoa,PPLA2,CU,20.34801,-74.49714,place,high,accept,"Baracoa, Cuba"
+31329,South Keys,,,,,,,,,none,No GeoNames record identified
+31330,Puerto Principe,3566067,Camagüey,PPLA,CU,21.38083,-77.91694,place,high,accept,Puerto Príncipe = Camagüey
+31401,St. Andreas,3670218,San Andrés,PPLA,CO,12.57858,-81.69973,place,low,accept,"St. Andreas guessed as San Andrés island, Colombia; reviewed 2026-10-19"
+32151,Saba,3513314,Saba Island,ISL,BQ,17.63027,-63.24068,place,high,accept,Saba island
+32301,Bijsterpan (location undetermined),,,,,,,,,none,No GeoNames record identified
+32399,"Other Dutch Americas, colony unspecified",,,,,,,,,none,Unspecified location with no single stand-in; not matched
+33801,"Roseau, Dominica",3575635,Roseau,PPLC,DM,15.30174,-61.38808,place,high,accept,"Roseau, Dominica"
+33802,"St. Mark, Dominica",3575621,Saint Mark,ADM1,DM,15.21667,-61.36667,representative,medium,accept,"St. Mark parish record, Dominica (not a port); reviewed 2026-10-19"
+34202,"Speight's Town, Barbados",3373505,Speightstown,PPLA,BB,13.25072,-59.64396,place,high,accept,"Speightstown, Barbados"
+35204,Cat Island (Bahamas),3572679,Cat Island,ISL,BS,24.33083,-75.43625,place,high,accept,"Cat Island, Bahamas"
+35205,Exuma,3572296,Great Exuma,ISL,BS,23.57476,-75.88966,place,high,accept,Great Exuma island record
+35206,Heneague (Bahamas),3572289,Great Inagua,ISL,BS,21.05741,-73.32545,place,medium,accept,Heneague presumed Great Inagua (Heneagua); name variant; reviewed 2026-10-19
+35502,Antigua or Dominica,,,,,,,,,none,Multi-place or composite entry; not matched
+35503,Barbados and Jamaica,,,,,,,,,none,Multi-place or composite entry; not matched
+35504,Dominica or Jamaica,,,,,,,,,none,Multi-place or composite entry; not matched
+35505,Jamaica or St. Kitts,,,,,,,,,none,Multi-place or composite entry; not matched
+35510,Becquia,3577956,Bequia Island,ISL,VC,13.00966,-61.2293,place,high,accept,Becquia = Bequia
+35511,Grand Cayman or Cayman Islands,3580719,Cayman Islands,ISLS,KY,19.5,-80.66667,representative,medium,accept,Cayman Islands record; Grand Cayman is 3580656; reviewed 2026-10-19
+35512,Providence Island,3671696,Isla de Providencia,ISL,CO,13.35037,-81.37369,place,medium,accept,Providence Island = Isla de Providencia (Colombia); reviewed 2026-10-19
+36204,"Grande-Terre, port unspecified",3579202,Grande-Terre,ISL,GP,16.31754,-61.42873,representative,medium,accept,Grande-Terre island record (not a port); reviewed 2026-10-19
+36399,"Guyane française, port unspecified",3382160,Cayenne,PPLC,GF,4.9381,-52.33455,representative,medium,accept,Cayenne as principal port of French Guiana; reviewed 2026-10-19
+36416,Cap Tiberon,3716617,Cap Tiburon,PT,HT,18.34487,-74.43919,place,high,accept,"Cap Tiburon, Haiti"
+37030,St. John (Virgin Islands),4795502,Saint John,ISL,VI,18.34231,-64.74295,place,high,accept,"St. John island, US Virgin Islands"
+37040,Spanish Town (Virgin Islands),3577369,Spanish Town,PPL,VG,18.4481,-64.43474,place,medium,accept,Spanish Town on Virgin Gorda (BVI); source region says Danish WI; reviewed 2026-10-19
+39003,Orici (location undetermined),,,,,,,,,none,No GeoNames record identified
+39004,Bottomaneau (location undetermined),,,,,,,,,none,No GeoNames record identified
+41218,Darien,3699895,Isthmus of Darien,RGN,PA,8.5,-77.5,representative,medium,accept,Isthmus of Darien region record; reviewed 2026-10-19
+41220,Rattan (a) Roatán,3602735,Roatan Island,ISL,HN,16.37219,-86.42807,place,high,accept,Roatán island
+41221,Puerto Cabello,3629706,Puerto Cabello,PPLA2,VE,10.47306,-68.0125,place,high,accept,
+41222,Isla de Aves,3648752,Isla de Aves,ISL,VE,15.66871,-63.61801,place,high,accept,Isla de Aves (island record)
+41223,Coro,3645213,Coro,PPLA,VE,11.40769,-69.67822,place,high,accept,"Coro, Venezuela"
+41224,Maracaibo,3633009,Maracaibo,PPLA,VE,10.64232,-71.61089,place,high,accept,
+41225,Nueva Barcelona,3648559,Barcelona,PPLA,VE,10.1384,-64.68769,place,high,accept,"Nueva Barcelona = Barcelona, Venezuela"
+41226,Guayana,3645528,Ciudad Guayana,PPLA2,VE,8.35122,-62.64102,place,medium,accept,Guayana (Santo Tomé de Guayana) = Ciudad Guayana; reviewed 2026-10-19
+41227,Caracas Coast and Tucacas,3625965,Tucacas,PPLA2,VE,10.79006,-68.32564,place,medium,accept,Tucacas used for Caracas Coast and Tucacas (two places); reviewed 2026-10-19
+41228,Caye de San Juan,,,,,,,,,none,No GeoNames record identified
+42007,Punta del Este,3440939,Punta del Este,PPL,UY,-34.94747,-54.93382,place,high,accept,
+42099,"Rio de la Plata, port unspecified",3441575,Montevideo,PPLC,UY,-34.90328,-56.18816,representative,medium,accept,Montevideo as principal Río de la Plata port stand-in; reviewed 2026-10-19
+43001,Lima,3936456,Lima,PPLC,PE,-12.04318,-77.02824,place,high,accept,Lima (port was Callao)
+44001,Valparaiso,3868626,Valparaíso,PPLA,CL,-33.036,-71.62963,place,high,accept,
+44002,Talcahuano,3870282,Talcahuano,PPL,CL,-36.72494,-73.11684,place,high,accept,
+45099,"Ecuador, port unspecified",3657509,Guayaquil,PPLA,EC,-2.19616,-79.88621,representative,medium,accept,Guayaquil as principal port of Ecuador; reviewed 2026-10-19
+50104,Guajano,,,,,,,,,none,No GeoNames record identified
+50105,Rio Amazona,3407729,Amazon River,STM,BR,-0.16667,-49,place,medium,accept,Amazon River record (not mouth-specific); reviewed 2026-10-19
+50106,"Ceará, port unspecified",3399415,Fortaleza,PPLA,BR,-3.71722,-38.54306,representative,medium,accept,Ceará: Fortaleza as principal port stand-in; reviewed 2026-10-19
+50107,Macapá,3396016,Macapá,PPLA,BR,0.03889,-51.06639,place,high,accept,
+50108,Belém,3405870,Belém,PPLA,BR,-1.45583,-48.50444,place,high,accept,Belém (Pará)
+50109,São Luis,3388368,São Luís,PPLA,BR,-2.52972,-44.30278,place,high,accept,São Luís (Maranhão)
+50110,Aracaty,3407378,Aracati,PPLA2,BR,-4.56167,-37.76972,place,high,accept,"Aracati, Ceará"
+50111,Tapajé,3386757,Rio Tapajós,STM,BR,-2.40904,-54.72402,place,medium,none,Tapajé identification unclear; reviewed 2026-10-19
+50309,Fernando de Noronha,3399637,Fernando de Noronha,ADM2,BR,-3.85071,-32.41997,place,high,accept,Fernando de Noronha (island municipality record)
+50311,Recife,3390760,Recife,PPLA,BR,-8.05389,-34.88111,place,high,accept,
+50435,"Laguna, Santa Catarina",3459094,Laguna,PPL,BR,-28.4825,-48.78083,place,high,accept,"Laguna, Santa Catarina"
+50436,Ilha dos Porcos,8823607,Ilha dos Porcos,ISL,BR,-22.85422,-43.1163,place,low,none,possibly Ilha Anchieta SP (3453004); several candidates; reviewed 2026-10-19
+50437,São Vicente,3448136,São Vicente,PPL,BR,-23.96306,-46.39194,place,high,accept,"São Vicente, São Paulo"
+50438,"Espírito Santo, port unspecified",3444924,Vitória,PPLA,BR,-20.31944,-40.33778,representative,medium,accept,Espírito Santo: Vitória as principal port stand-in; reviewed 2026-10-19
+50499,"Southeast Brazil, port unspecified",3451190,Rio de Janeiro,PPLA,BR,-22.90642,-43.18223,representative,medium,accept,SE Brazil: Rio de Janeiro as principal port stand-in; reviewed 2026-10-19
+60107,Galam,,,,,,,,,none,No GeoNames record identified
+60115,Rio Bolola,2374676,Bolola,PPL,GW,11.55,-14.93333,place,low,accept,"Rio Bolola guessed as Bolola, Guinea-Bissau; reviewed 2026-10-19"
+60116,Rio Bramiah,2422505,Bramaya,PPL,GN,10.46667,-13.48333,place,medium,accept,"Rio Bramiah presumed Bramaya, Guinea"
+60118,Senegal,2246452,Saint-Louis,PPLA,SN,16.01793,-16.48962,place,high,accept,"Saint-Louis, Senegal"
+60127,Santa Catarina do Fogo,3374613,Fogo Island,ISL,CV,14.94138,-24.39445,place,medium,accept,Santa Catarina do Fogo: Fogo island record (Cape Verde); reviewed 2026-10-19
+60129,Azores,3373385,Azores,ISLS,PT,37.74058,-25.67282,place,medium,accept,Azores archipelago record (island group); reviewed 2026-10-19
+60141,Canary Islands,2520308,Canary Islands,ISLS,ES,28,-15.5,place,medium,accept,Canary Islands archipelago record (island group); reviewed 2026-10-19
+60142,Tenerife,2510529,Tenerife,ISL,ES,28.32977,-16.5097,place,high,accept,Tenerife island record
+60218,Siraboom,,,,,,,,,none,No GeoNames record identified
+60303,Batoa,2278846,Batoa,PPL,LR,6.81731,-10.92943,place,medium,none,Batoa identification unclear; reviewed 2026-10-19
+60305,Cap des Palmes,2274501,Cape Palmas,CAPE,LR,4.36888,-7.72894,place,high,accept,"Cap des Palmes = Cape Palmas, Liberia"
+60312,Petit Cess,,,,,,,place,medium,none,Little Cess is not River Cess: wrong; reviewed 2026-10-19
+60313,Dembia,,,,,,,,,none,No GeoNames record identified
+60326,Rio Sinou,2273895,Sinoe River,STM,LR,4.99361,-9.03667,place,high,accept,"Rio Sinou = Sinoe River, Liberia"
+60340,Garroway Roads,2273979,Settra Kru,PPL,LR,4.90015,-8.84416,place,high,accept,"Settra Kru (alt name of Garroway Roads), Liberia"
+60407,Anomabu and Apam,2304538,Anomabu,PPL,GH,5.17394,-1.12019,place,medium,accept,Anomabu (Anomabo); row also names Apam (2304389); reviewed 2026-10-19
+60413,Chama,2295387,Shama,PPL,GH,5.01973,-1.62709,place,high,accept,"Chama = Shama, Ghana (Dutch fort)"
+60416,Eva,,,,,,,,,none,No GeoNames record identified
+60418,Lagoo,,,,,,,,,none,No GeoNames record identified
+60420,Ningo,2296338,Old Nigo,PPL,GH,5.74612,0.18565,place,medium,accept,Old Ningo town (GeoNames spells Old Nigo); reviewed 2026-10-19
+60421,Rio Volta,2294237,Volta River,STM,GH,5.77385,0.67201,place,high,accept,Rio Volta = Volta River (GeoNames point near mouth)
+60422,Sekondi,11808941,Sekondi,PPLA2,GH,4.93422,-1.71454,place,high,accept,"Sekondi, Ghana"
+60424,Tantumquerry,2294792,Tantamkweri Point,PT,GH,5.21764,-0.80559,place,high,accept,"Tantumquerry = Tantumkweri (Tantamkweri Point), Ghana"
+60429,Boutry,2302373,Butre,PPL,GH,4.82285,-1.91681,place,high,accept,"Boutry = Butre, Ghana"
+60502,Costa da Mina,,,,,,,,,none,No GeoNames record identified
+60504,Agora,2395752,Agoué,PPL,BJ,6.2463,1.67624,place,medium,none,Agora identification unclear; reviewed 2026-10-19
+60505,Amokou,,,,,,,,,none,No GeoNames record identified
+60513,Ife,2338900,Ile-Ife,PPLA2,NG,7.4824,4.56032,place,medium,accept,Ife = Ile-Ife (inland Yoruba city); reviewed 2026-10-19
+60518,Lamo River,,,,,,,,,none,No GeoNames record identified
+60519,Lay,,,,,,,,,none,No GeoNames record identified
+60520,Legas,2332459,Lagos,PPLA2,NG,6.45407,3.39467,place,medium,accept,Legas = Lagos (historical spelling)
+60522,Pataquery,,,,,,,,,none,No GeoNames record identified
+60602,Barabalemo,,,,,,,,,none,No GeoNames record identified
+60603,Bilbay,,,,,,,,,none,No GeoNames record identified
+60607,Bundy,,,,,,,,,none,No GeoNames record identified
+60611,Cape Baxos,,,,,,,,,none,No GeoNames record identified
+60614,Cape Lopez and Annobon,,,,,,,,,none,Multi-place (Cape Lopez 2399612; Annobón 2310306)
+60617,Fockey,,,,,,,,,none,No GeoNames record identified
+60618,Forke,,,,,,,,,none,No GeoNames record identified
+60621,Liverpool River,,,,,,,,,none,No GeoNames record identified
+60623,Quaqua,,,,,,,,,none,No GeoNames record identified
+60626,Timbeys,,,,,,,,,none,No GeoNames record identified
+60627,Rio Nazareth,2397711,Baie de Nazaré,BAY,GA,-0.65997,9.06847,place,low,accept,"Rio Nazareth guessed as Baie de Nazaré, Gabon; reviewed 2026-10-19"
+60660,Gulf of Guinea islands,,,,,,,,,none,No GeoNames record identified
+60662,Epee and Princes Islands,,,,,,,,,none,Multi-place (Epe 2343252; Principe 2410878)
+60664,Fernando Po and Cameroons,,,,,,,,,none,Multi-place or composite entry; not matched
+60665,Fernando Po and Princes Islands,,,,,,,,,none,Multi-place or composite entry; not matched
+60666,Juda and Princes Islands,,,,,,,,,none,Multi-place or composite entry; not matched
+60669,Princes Island and Annobon,,,,,,,,,none,Multi-place or composite entry; not matched
+60670,Princes Island and Cape Lopez,,,,,,,,,none,Multi-place or composite entry; not matched
+60672,"Principe, Cap Lopez, Annobon",,,,,,,,,none,Multi-place or composite entry; not matched
+60674,São Tomé and Annobon,,,,,,,,,none,Multi-place or composite entry; not matched
+60675,São Tomé and Cape Lopez,,,,,,,,,none,Multi-place or composite entry; not matched
+60677,Costa de Africa (mainland coast around S Tome/Principe),,,,,,,,,none,No GeoNames record identified
+60701,Alecuba,,,,,,,,,none,No GeoNames record identified
+60702,Ambona,,,,,,,,,none,No GeoNames record identified
+60705,"Barra de Cariba, Luanda",2240449,Luanda,PPLC,AO,-8.83682,13.23432,representative,medium,accept,Luanda city used; Barra de Cariba not in GeoNames
+60706,Bengo,2243597,Bengo,STM,AO,-8.74835,13.39457,place,medium,accept,"Bengo River (GeoNames point near mouth), Angola"
+60710,Bomara,,,,,,,,,none,No GeoNames record identified
+60712,Cabo Lopo Gonçalves,2399612,Cap Lopez,CAPE,GA,-0.61846,8.71094,place,medium,accept,"Cabo Lopo Gonçalves = Cape Lopez, Gabon"
+60713,Cape Mole,,,,,,,,,none,No GeoNames record identified
+60714,Cape Padroon,2238977,Ponta do Padrão,PT,AO,-6.07568,12.33184,place,medium,accept,"Cape Padroon presumed Ponta do Padrão (Congo River mouth), Angola"
+60719,Grenada Point,,,,,,,,,none,No GeoNames record identified
+60720,Iron Point,,,,,,,,,none,No GeoNames record identified
+60721,Kacongo,2243181,Cacongo,PPL,AO,-5.23864,12.14428,place,high,accept,"Kacongo = Cacongo, Cabinda"
+60723,Liverpool River,,,,,,,,,none,No GeoNames record identified
+60727,Metrueba,,,,,,,,,none,No GeoNames record identified
+60728,"Mossulo, Luanda",2591968,Mussulo,PPLA2,AO,-8.94474,13.07529,place,high,accept,"Mossulo = Mussulo, Luanda"
+60731,Penido,,,,,,,,,none,No GeoNames record identified
+60801,Anghoza River,1052944,Angoche,PPL,MZ,-16.2325,39.90861,place,medium,accept,"Anghoza River presumed Angoche, Mozambique"
+60802,Cabo Delgado,1047175,Cabo Delgado,CAPE,MZ,-10.69168,40.63889,place,high,accept,Cabo Delgado (cape record)
+60805,Costa Leste Occidental,,,,,,,,,none,No GeoNames record identified
+60812,Mauratan,,,,,,,,,none,No GeoNames record identified
+60813,Morondova,1058381,Morondava,PPLA,MG,-20.28869,44.31782,place,high,accept,"Morondova = Morondava, Madagascar"
+60814,Port Dauphin,1055433,Tôlanaro,PPLA,MG,-25.03249,46.98329,place,high,accept,Port Dauphin = Fort-Dauphin (Tôlanaro)
+60815,St. Mary's Island,1057213,Nosy Sainte Marie,ISL,MG,-16.91952,49.89574,place,high,accept,St. Mary's Island = Nosy Boraha (Île Sainte-Marie)
+60816,Tulia,1055429,Toliara,PPLA,MG,-23.35,43.66667,place,medium,accept,Tulia presumed Toliara (Tuléar); reviewed 2026-10-19
+60817,Mocambo,345947,Mozambique Island,ISL,MZ,-15.0375,40.73167,place,medium,accept,Mocambo presumed Mozambique Island
+60819,Momboza or Zanzibar,,,,,,,,,none,Multi-place (Mombasa 186301; Zanzibar 148730)
+60821,"Pomba, Monfia",,,,,,,,,none,Multi-place (Pemba; Mafia Island 155410)
+60824,St. Lawrence,12036340,Madagascar,ISL,MG,-20.03085,45.695,representative,low,accept,St. Lawrence = historical name of Madagascar; island record; reviewed 2026-10-19
+60832,Bourbon,935316,Reunion,ISL,RE,-21.11429,55.54756,place,high,accept,Bourbon = Réunion island
+60834,Port-Louis,934154,Port Louis,PPLC,MU,-20.16194,57.49889,place,high,accept,"Port Louis, Mauritius"
+60837,Mauritius (Ile de France),934293,Mauritius,ISL,MU,-20.3,57.58333,place,high,accept,Mauritius island record
+60838,"Ascension, Assomption, and Bourbon",,,,,,,,,none,Multi-place or composite entry; not matched
+60899,"Southeast Africa and Indian Ocean islands, port unspecified",345947,Mozambique Island,ISL,MZ,-15.0375,40.73167,representative,medium,accept,Mozambique Island as principal port stand-in; reviewed 2026-10-19
+60901,Princes Island and Elmina,,,,,,,,,none,Multi-place or composite entry; not matched
+60902,Angola (possibly New Calabar),,,,,,,,,none,No GeoNames record identified
+60903,Senegambia or Sierra Leone,,,,,,,,,none,Multi-place or composite entry; not matched
+60908,West of Cape Apolonia,,,,,,,,,none,No GeoNames record identified
+60909,Angola to Ardra,,,,,,,,,none,No GeoNames record identified
+60912,Windward + Ivory + Gold + Benin,,,,,,,,,none,Multi-place or composite entry; not matched
+60913,C.C. Castle and Windward,,,,,,,,,none,Multi-place or composite entry; not matched
+60914,Gold Coast + Bight of Benin + Bight of Biafra,,,,,,,,,none,Multi-place or composite entry; not matched
+60916,Windward Coast (Nunez - Assini),,,,,,,,,none,No GeoNames record identified
+60917,"Gold Coast, Fr. definition",,,,,,,,,none,No GeoNames record identified
+60981,Causacoo (location undetermined),,,,,,,,,none,No GeoNames record identified
+60982,Cape St Martha (location undetermined),,,,,,,,,none,No GeoNames record identified
+60983,Casnasonis (location undetermined),,,,,,,,,none,No GeoNames record identified
+60984,Massa (location undetermined),,,,,,,,,none,No GeoNames record identified
+60985,Touau-Toro (location undetermined),,,,,,,,,none,No GeoNames record identified
+60986,Cape Logas (location undetermined),,,,,,,,,none,No GeoNames record identified
+60999,"Africa., port unspecified",,,,,,,,,none,Unspecified location with no single stand-in; not matched
+80199,"East Indies, port unspecified",,,,,,,,,none,Unspecified location with no single stand-in; not matched
+80201,"Guecka, location undetermined",,,,,,,,,none,No GeoNames record identified
+80202,"Rocus, location undetermined",,,,,,,,,none,No GeoNames record identified
+80203,"Kalas, location undetermined",,,,,,,,,none,No GeoNames record identified
+80204,"Imfors Bay, location undetermined",,,,,,,,,none,No GeoNames record identified
+80205,"Marrader (Morada?), location undetermined",,,,,,,,,none,No GeoNames record identified
+80299,"Americas, port unspecified",,,,,,,,,none,Unspecified location with no single stand-in; not matched
+80399,"Asia e Africa, port unspecified",,,,,,,,,none,Unspecified location with no single stand-in; not matched
+80401,"Spanish American Mainland, port unspecified",,,,,,,,,none,Unspecified location with no single stand-in; not matched
+80499,"Spanish Americas, port unspecified",,,,,,,,,none,Unspecified location with no single stand-in; not matched
+80501,"Kingston, Savannah, Maryland",,,,,,,,,none,Multi-place or composite entry; not matched
+80599,"British Americas, port unspecified",,,,,,,,,none,Unspecified location with no single stand-in; not matched
+80602,Goa,11903108,Old Goa City,PPL,IN,15.50165,73.91161,place,medium,accept,"Old Goa, Portuguese capital of Goa; reviewed 2026-10-19"
+80603,Calcutta,1275004,Kolkata,PPLA,IN,22.56263,88.36304,place,high,accept,Calcutta = Kolkata
+80703,British plantations,,,,,,,,,none,"Non-geographical category, not a place"
+80704,Non-British,,,,,,,,,none,"Non-geographical category, not a place"
+80705,Captured by WIC,,,,,,,,,none,"Non-geographical category, not a place"
+80706,Captured interloper,,,,,,,,,none,"Non-geographical category, not a place"
+80707,Prize (unknown place),,,,,,,,,none,"Non-geographical category, not a place"
+80708,Prize (taken from Dutch),,,,,,,,,none,"Non-geographical category, not a place"
+80709,Prize (taken from French),,,,,,,,,none,"Non-geographical category, not a place"
+80710,Prize (taken from Spanish),,,,,,,,,none,"Non-geographical category, not a place"
+80711,Sold at sea to another vessel,,,,,,,,,none,"Non-geographical category, not a place"
+80712,wreck,,,,,,,,,none,"Non-geographical category, not a place"
+80713,Slaves rescued at sea from a shipwreck,,,,,,,,,none,"Non-geographical category, not a place"
+80714,Prize (taken from Portuguese),,,,,,,,,none,"Non-geographical category, not a place"
+80715,Prize (taken from USA),,,,,,,,,none,"Non-geographical category, not a place"
+80716,Taken at sea from Pirates,,,,,,,,,none,"Non-geographical category, not a place"
+80717,Seized at sea by Spanish officials,,,,,,,,,none,"Non-geographical category, not a place"
+99801,???,,,,,,,,,none,No GeoNames record identified

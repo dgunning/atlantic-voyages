@@ -1,0 +1,118 @@
+code,name,alt_name,region,broad_region
+10431,Lindale,,England,Europe
+10507,Lough Neagh,,Scotland,Europe
+10509,Ross,,Scotland,Europe
+11699,"Mediterranean, port unspecified",,Mediterranean,Europe
+20803,Milwell,,New Jersey,Mainland North America
+20805,Wharton,,New Jersey,Mainland North America
+21112,Vatt (location undetermined),,Virginia,Mainland North America
+21703,St. John,,Canada,Mainland North America
+21801,Smithfield,,Kentucky,Mainland North America
+21901,Newport and Boston,,Other North America,Mainland North America
+21902,Newport and Salem,,Other North America,Mainland North America
+31329,South Keys,,Cuba,Caribbean
+32301,Bijsterpan (location undetermined),,Other Dutch Americas,Caribbean
+32399,"Other Dutch Americas, colony unspecified",,Other Dutch Americas,Caribbean
+35502,Antigua or Dominica,,Other British Caribbean,Caribbean
+35503,Barbados and Jamaica,,Other British Caribbean,Caribbean
+35504,Dominica or Jamaica,,Other British Caribbean,Caribbean
+35505,Jamaica or St. Kitts,,Other British Caribbean,Caribbean
+39003,Orici (location undetermined),,Other Caribbean,Caribbean
+39004,Bottomaneau (location undetermined),,Other Caribbean,Caribbean
+41228,Caye de San Juan,,Spanish Circum-Caribbean,Spanish Mainland America
+50104,Guajano,,Amazonia,Brazil
+50111,Tapajé,,Amazonia,Brazil
+50436,Ilha dos Porcos,,Southeast Brazil,Brazil
+60107,Galam,,Senegambia and offshore Atlantic,Africa
+60218,Siraboom,,Sierra Leone,Africa
+60303,Batoa,,Windward Coast,Africa
+60312,Petit Cess,,Windward Coast,Africa
+60313,Dembia,,Windward Coast,Africa
+60416,Eva,,Gold Coast,Africa
+60418,Lagoo,,Gold Coast,Africa
+60502,Costa da Mina,,Bight of Benin,Africa
+60504,Agora,,Bight of Benin,Africa
+60505,Amokou,,Bight of Benin,Africa
+60518,Lamo River,,Bight of Benin,Africa
+60519,Lay,,Bight of Benin,Africa
+60522,Pataquery,,Bight of Benin,Africa
+60602,Barabalemo,,Bight of Biafra and Gulf of Guinea islands,Africa
+60603,Bilbay,,Bight of Biafra and Gulf of Guinea islands,Africa
+60607,Bundy,,Bight of Biafra and Gulf of Guinea islands,Africa
+60611,Cape Baxos,,Bight of Biafra and Gulf of Guinea islands,Africa
+60614,Cape Lopez and Annobon,,Bight of Biafra and Gulf of Guinea islands,Africa
+60617,Fockey,,Bight of Biafra and Gulf of Guinea islands,Africa
+60618,Forke,,Bight of Biafra and Gulf of Guinea islands,Africa
+60621,Liverpool River,,Bight of Biafra and Gulf of Guinea islands,Africa
+60623,Quaqua,,Bight of Biafra and Gulf of Guinea islands,Africa
+60626,Timbeys,,Bight of Biafra and Gulf of Guinea islands,Africa
+60660,Gulf of Guinea islands,,Bight of Biafra and Gulf of Guinea islands,Africa
+60662,Epee and Princes Islands,,Bight of Biafra and Gulf of Guinea islands,Africa
+60664,Fernando Po and Cameroons,,Bight of Biafra and Gulf of Guinea islands,Africa
+60665,Fernando Po and Princes Islands,,Bight of Biafra and Gulf of Guinea islands,Africa
+60666,Juda and Princes Islands,,Bight of Biafra and Gulf of Guinea islands,Africa
+60669,Princes Island and Annobon,,Bight of Biafra and Gulf of Guinea islands,Africa
+60670,Princes Island and Cape Lopez,,Bight of Biafra and Gulf of Guinea islands,Africa
+60672,"Principe, Cap Lopez, Annobon",,Bight of Biafra and Gulf of Guinea islands,Africa
+60674,São Tomé and Annobon,,Bight of Biafra and Gulf of Guinea islands,Africa
+60675,São Tomé and Cape Lopez,,Bight of Biafra and Gulf of Guinea islands,Africa
+60677,Costa de Africa (mainland coast around S Tome/Principe),,Bight of Biafra and Gulf of Guinea islands,Africa
+60701,Alecuba,,West Central Africa and St. Helena,Africa
+60702,Ambona,,West Central Africa and St. Helena,Africa
+60710,Bomara,,West Central Africa and St. Helena,Africa
+60713,Cape Mole,,West Central Africa and St. Helena,Africa
+60719,Grenada Point,,West Central Africa and St. Helena,Africa
+60720,Iron Point,,West Central Africa and St. Helena,Africa
+60723,Liverpool River,,West Central Africa and St. Helena,Africa
+60727,Metrueba,,West Central Africa and St. Helena,Africa
+60731,Penido,,West Central Africa and St. Helena,Africa
+60805,Costa Leste Occidental,,Southeast Africa and Indian Ocean islands,Africa
+60812,Mauratan,,Southeast Africa and Indian Ocean islands,Africa
+60819,Momboza or Zanzibar,,Southeast Africa and Indian Ocean islands,Africa
+60821,"Pomba, Monfia",,Southeast Africa and Indian Ocean islands,Africa
+60838,"Ascension, Assomption, and Bourbon",,Southeast Africa and Indian Ocean islands,Africa
+60901,Princes Island and Elmina,,Other Africa,Africa
+60902,Angola (possibly New Calabar),,Other Africa,Africa
+60903,Senegambia or Sierra Leone,,Other Africa,Africa
+60908,West of Cape Apolonia,,Other Africa,Africa
+60909,Angola to Ardra,,Other Africa,Africa
+60912,Windward + Ivory + Gold + Benin,,Other Africa,Africa
+60913,C.C. Castle and Windward,,Other Africa,Africa
+60914,Gold Coast + Bight of Benin + Bight of Biafra,,Other Africa,Africa
+60916,Windward Coast (Nunez - Assini),,Other Africa,Africa
+60917,"Gold Coast, Fr. definition",,Other Africa,Africa
+60981,Causacoo (location undetermined),,Other Africa,Africa
+60982,Cape St Martha (location undetermined),,Other Africa,Africa
+60983,Casnasonis (location undetermined),,Other Africa,Africa
+60984,Massa (location undetermined),,Other Africa,Africa
+60985,Touau-Toro (location undetermined),,Other Africa,Africa
+60986,Cape Logas (location undetermined),,Other Africa,Africa
+60999,"Africa., port unspecified",,Other Africa,Africa
+80199,"East Indies, port unspecified",,East Indies,Other
+80201,"Guecka, location undetermined",,Americas,Other
+80202,"Rocus, location undetermined",,Americas,Other
+80203,"Kalas, location undetermined",,Americas,Other
+80204,"Imfors Bay, location undetermined",,Americas,Other
+80205,"Marrader (Morada?), location undetermined",,Americas,Other
+80299,"Americas, port unspecified",,Americas,Other
+80399,"Asia e Africa, port unspecified",,Asia e Africa,Other
+80401,"Spanish American Mainland, port unspecified",,Spanish Americas,Other
+80499,"Spanish Americas, port unspecified",,Spanish Americas,Other
+80501,"Kingston, Savannah, Maryland",,British Americas,Other
+80599,"British Americas, port unspecified",,British Americas,Other
+80703,British plantations,,Non-geographical,Other
+80704,Non-British,,Non-geographical,Other
+80705,Captured by WIC,,Non-geographical,Other
+80706,Captured interloper,,Non-geographical,Other
+80707,Prize (unknown place),,Non-geographical,Other
+80708,Prize (taken from Dutch),,Non-geographical,Other
+80709,Prize (taken from French),,Non-geographical,Other
+80710,Prize (taken from Spanish),,Non-geographical,Other
+80711,Sold at sea to another vessel,,Non-geographical,Other
+80712,wreck,Wreck,Non-geographical,Other
+80713,Slaves rescued at sea from a shipwreck,,Non-geographical,Other
+80714,Prize (taken from Portuguese),,Non-geographical,Other
+80715,Prize (taken from USA),,Non-geographical,Other
+80716,Taken at sea from Pirates,,Non-geographical,Other
+80717,Seized at sea by Spanish officials,,Non-geographical,Other
+99801,???,,,

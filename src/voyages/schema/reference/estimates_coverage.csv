@@ -1,0 +1,6 @@
+code,label,source_label,source_label_alt,datasets,used_in_data,note
+1,both,both,,estimates,True,
+2,only embarkation region,only embarkation region,,estimates,True,
+3,only disembarkation region,only disembarkation region,,estimates,True,
+4,neither,neither,,estimates,True,
+5,inferred data,inferred data,,estimates,True,

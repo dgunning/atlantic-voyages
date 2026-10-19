@@ -18,3 +18,4 @@ data/
 .ruff_cache/
 !tests/fixtures/**
 !schema/reference/**
+.DS_Store

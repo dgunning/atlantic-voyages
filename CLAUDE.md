@@ -28,6 +28,10 @@ code, docs, tests, and commit messages should reflect that.
 - Raw downloads come only from slavevoyages.org (the `.sav` and `.csv`
   files and the PDF codebook). Record file name, URL, download date, and
   SHA-256 in `docs/DATA.md` whenever a raw file is added or refreshed.
+  One exception: place coordinates (absent from the downloads) come from
+  the SlaveVoyages legacy repo fixture and GeoNames (CC BY 4.0), curated
+  by `tools/place_coordinates.py`, with a source and reference on every
+  row. See `docs/DATA.md`.
 - Data transcribed from historical documents is public domain. Imputed
   fields (marked `*` on the site) and the entire Estimates database are
   CC BY-NC 4.0. Every field in the registry carries `provenance:

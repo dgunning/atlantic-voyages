@@ -1,0 +1,8 @@
+code,label,source_label,source_label_alt,datasets,used_in_data,note
+1,Captives disembarked in the Americas,Slaves disembarked Americas,,transatlantic;intraamerican,True,
+2,No captives embarked,No slaves embarked,,transatlantic;intraamerican,True,
+3,Captives disembarked in Africa or Europe,Slaves disembarked in Africa/Europe,,transatlantic;intraamerican,True,
+4,Captives perished with the ship,Slaves perished with ship,,transatlantic;intraamerican,True,
+5,"Captives embarked, then transshipped or no further record","Slaves embarked, transhipped or no further record",,transatlantic;intraamerican,True,
+6,No information on captives,No information on slaves,,transatlantic;intraamerican,True,
+7,Captives embarked but not disembarked in Europe or the Americas,Slaves embarked but not disemb in Europe or America,,transatlantic;intraamerican,True,

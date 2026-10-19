@@ -47,7 +47,32 @@ Listed on the Trans-Atlantic downloads page, same base URL: `tastdb-exp-2019.sav
 `SPSS_Codebook_2019.pdf`. Useful for reproducing
 published analyses that cite a specific version.
 
+## Place coordinates (curated, committed)
+
+The .sav files carry no coordinates. `src/voyages/schema/reference/curated/place_coordinates.csv`
+is built by `tools/place_coordinates.py` (dev-time, not part of `voyages build`) from:
+
+| Source | What | Retrieved | Licence |
+|---|---|---|---|
+| SlaveVoyages legacy site fixture: `IQSS/voyages` @ `cf1e5a8` (2013-07-19), `voyages/apps/voyage/fixtures/test_set_200_voyages.json`, SHA-256 `2d98130a955237f42719ea567e1b1d2b8eb27686a0356045c4e3c10ca37394f4` | Lat/lon for 830 place codes, 269 of them (0,0) placeholders | 2026-10-19 | None stated in the repo; asked of the SlaveVoyages team (open) |
+| GeoNames (https://www.geonames.org), country dumps from https://download.geonames.org/export/dump/ | Reviewed matches for places the fixture lacks; each row cites its `geonames:<id>` | 2026-10-19 | CC BY 4.0 |
+
+Rules: fixture points are used only when the fixture's place name agrees
+with ours (codes were reassigned after 2013), and (0,0) is treated as
+missing. GeoNames points are used only when a reviewer accepted the
+match. Every row records `coord_source` and `coord_ref`. Regions and broad
+regions have no point coordinates.
+
+These two sources are the one exception to "raw data comes only from
+slavevoyages.org", agreed 2026-10-19 because the downloads have no
+coordinates at all.
+
 ## Open questions
+
+- Licence for the SlaveVoyages fixture coordinates (ask the project team).
+- 14 place codes used by 30 Trans-Atlantic voyages have no label in any
+  source file (e.g. 60628, 41252, 21013). They stay in places.csv with an
+  empty name and a note.
 
 - The 6 Nov 2023 codebook (`SPSS_Codebook_2023-11-06.pdf`) returns 404 on
   the legacy site (checked 2026-10-19). The manifest uses the 2022 edition
@@ -58,5 +83,5 @@ published analyses that cite a specific version.
   and whether the 2020 `.sav` is the canonical current release.
 - The People / African Names data has its own downloads page; add entries once
   the Phase 1 ingest reaches it.
-- The newer API (`rice-crc/voyages-api`) may expose a bulk export that supersedes
+- The newer API (now `IQSS/voyages-api`; `rice-crc/voyages-api` redirects) may expose a bulk export that supersedes
   the legacy files. Check before Phase 2.

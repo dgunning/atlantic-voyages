@@ -1,0 +1,10 @@
+code,label,source_label,source_label_alt,datasets,used_in_data,note
+0,unspecified,unspecified,,estimates,True,
+1,Spain / Uruguay,Spain / Uruguay,,estimates,True,
+2,Portugal / Brazil,Portugal / Brazil,,estimates,True,
+3,Great Britain,Great Britain,,estimates,True,
+4,Netherlands,Netherlands,,estimates,True,
+5,U.S.A.,U.S.A.,,estimates,True,
+6,France,France,,estimates,True,
+7,Denmark / Baltic,Denmark / Baltic,,estimates,True,
+8,Portuguese to Span Amer > 1830,Portuguese to Span Amer > 1830,,estimates,False,

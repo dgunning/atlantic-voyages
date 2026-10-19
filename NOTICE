@@ -20,6 +20,12 @@ Attribution-NonCommercial 4.0 International License
 of those fields, including the fixture samples in this repository,
 must retain this notice and credit SlaveVoyages as the original source.
 
+Place coordinates in src/voyages/schema/reference/curated/place_coordinates.csv
+come from two sources, recorded per row in coord_source / coord_ref:
+- the SlaveVoyages legacy site (github.com/IQSS/voyages), and
+- GeoNames (https://www.geonames.org), licensed under Creative Commons
+  Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/).
+
 Recommended citation:
 
   SlaveVoyages, Trans-Atlantic Slave Trade Database,

@@ -43,8 +43,12 @@ def verify() -> None:
 
 @app.command()
 def build() -> None:
-    """Build typed Parquet from the raw downloads (not implemented yet: Phase 1)."""
-    raise typer.Exit(code=typer.echo("build is Phase 1 work; see PLAN.md") or 1)
+    """Build the reference tables (and, later in Phase 1, Parquet) from the raw downloads."""
+    from voyages.ingest import reference
+
+    for table, n in reference.build().items():
+        typer.echo(f"ok  reference/{table}.csv  {n} rows")
+    typer.echo("\nParquet tables are not built yet (Phase 1, see PLAN.md).")
 
 
 if __name__ == "__main__":

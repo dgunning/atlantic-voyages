@@ -1,0 +1,11 @@
+code,label,source_label,source_label_alt,datasets,used_in_data,note
+0,Unspecified,Unspecified,,estimates,True,
+100,Europe,Europe,,estimates,True,
+200,Mainland North America,Mainland North America,,estimates,True,
+300,British Caribbean,British Caribbean,,estimates,True,
+400,French Caribbean,French Caribbean,,estimates,True,
+500,Dutch Americas,Dutch Americas,,estimates,True,
+600,Danish West Indies,Danish West Indies,,estimates,True,
+700,Spanish Americas,Spanish Americas,,estimates,True,
+800,Brazil,Brazil,,estimates,True,
+900,Africa,Africa,,estimates,True,

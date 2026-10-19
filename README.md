@@ -76,6 +76,12 @@ Notebooks in `notebooks/`, each a `.py` source paired with an executed `.ipynb`
 
 ![Routes from Calabar](notebooks/figures/02_calabar_routes.png)
 
+- [Re-exports from Jamaica](notebooks/03_jamaica_reexports.ipynb): captives shipped on from
+  Jamaica to other colonies, from the Intra-American data: destinations, timing, a comparison
+  with arrivals from Africa, and the journeys that can be traced from the African coast.
+
+![Routes from Jamaica](notebooks/figures/03_reexport_routes.png)
+
 ## Data and license
 
 The library code is Apache-2.0. The data belongs to SlaveVoyages: records

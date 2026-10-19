@@ -510,16 +510,16 @@ fields:
   codebook:
     section: Voyage Outcome
     page: 10
-- name: outcome_for_captives
+- name: outcome_for_captives_imputed
   spss_name: FATE2
-  label: Outcome of voyage for captives
+  label: Imputed outcome of voyage for captives
   source_label:
     transatlantic: Outcome of voyage for slaves
   dtype: int32
   kind: code
-  provenance: recorded
-  provenance_evidence: 'Listed under codebook ''2. DATA VARIABLES'' (Voyage Outcome, p.14); intro p.3:
-    data variables ''come directly from historical records'''
+  provenance: imputed
+  provenance_evidence: Marked IMP on the SlaveVoyages voyage page (checked https://legacy.slavevoyages.org/voyage/91000/variables,
+    2026-10-19)
   reference: outcomes_captives
   datasets:
   - transatlantic
@@ -528,16 +528,18 @@ fields:
   codebook:
     section: Voyage Outcome
     page: 14
-- name: outcome_if_captured
+  provenance_note: Codebook classifies as recorded; the site marks it imputed, which sets the licence
+    (CC BY-NC).
+- name: outcome_if_captured_imputed
   spss_name: FATE3
-  label: Outcome of voyage if vessel captured
+  label: Imputed outcome of voyage if vessel captured
   source_label:
     transatlantic: Outcome of voyage if vessel captured
   dtype: int32
   kind: code
-  provenance: recorded
-  provenance_evidence: 'Listed under codebook ''2. DATA VARIABLES'' (Voyage Outcome, p.14); intro p.3:
-    data variables ''come directly from historical records'''
+  provenance: imputed
+  provenance_evidence: Marked IMP on the SlaveVoyages voyage page (checked https://legacy.slavevoyages.org/voyage/91000/variables,
+    2026-10-19)
   reference: outcomes_captured
   datasets:
   - transatlantic
@@ -546,16 +548,18 @@ fields:
   codebook:
     section: Voyage Outcome
     page: 14
-- name: outcome_for_owner
+  provenance_note: Codebook classifies as recorded; the site marks it imputed, which sets the licence
+    (CC BY-NC).
+- name: outcome_for_owner_imputed
   spss_name: FATE4
-  label: Outcome of voyage for owner
+  label: Imputed outcome of voyage for owner
   source_label:
     transatlantic: Outcome of voyage for owner
   dtype: int32
   kind: code
-  provenance: recorded
-  provenance_evidence: 'Listed under codebook ''2. DATA VARIABLES'' (Voyage Outcome, p.14); intro p.3:
-    data variables ''come directly from historical records'''
+  provenance: imputed
+  provenance_evidence: Marked IMP on the SlaveVoyages voyage page (checked https://legacy.slavevoyages.org/voyage/91000/variables,
+    2026-10-19)
   reference: outcomes_owner
   datasets:
   - transatlantic
@@ -564,6 +568,8 @@ fields:
   codebook:
     section: Voyage Outcome
     page: 14
+  provenance_note: Codebook classifies as recorded; the site marks it imputed, which sets the licence
+    (CC BY-NC).
 - name: resistance
   spss_name: RESISTANCE
   label: African resistance
@@ -675,16 +681,19 @@ fields:
     page: 19
   notes: Codebook labels it 'Derived' under data variables; classification follows IMP suffix, .sav label
     and p.3 definition
-- name: price_standardized
+- name: price_standardized_imputed
   spss_name: JAMCASPR
-  label: Average price of captives standardized on sterling cash price of prime captives sold in Jamaica
+  label: Imputed average price of captives standardized on sterling cash price of prime captives sold
+    in Jamaica
   source_label:
     transatlantic: Standardized average price of prime slaves
   dtype: float64
   kind: measure
-  provenance: derived
-  provenance_evidence: Standardized from recorded prices (codebook p.26)
-  provenance_note: 'TODO(field): standardization method not documented in the codebook'
+  provenance: imputed
+  provenance_evidence: Marked IMP on the SlaveVoyages voyage page (checked https://legacy.slavevoyages.org/voyage/91000/variables,
+    2026-10-19)
+  provenance_note: 'Codebook classifies as derived; the site marks it imputed, which sets the licence
+    (CC BY-NC). TODO(field): standardization method not documented in the codebook'
   datasets:
   - transatlantic
   table: voyages
@@ -4599,17 +4608,17 @@ fields:
     section: Slaves (characteristics)
     page: 25
   notes: Label says Percentage but .sav values are 0-1 fractions (TA sample 0.353); stored as ratio
-- name: men_share_departure_or_arrival
+- name: men_share_departure_or_arrival_imputed
   spss_name: MENRAT7
-  label: Share of men at departure or arrival
+  label: Imputed share of men at departure or arrival
   source_label:
     transatlantic: Percentage of men when leaving Africa or arriving at port of landing
     intraamerican: Percentage of men at first port of purchase
   dtype: float64
   kind: ratio
-  provenance: derived
-  provenance_evidence: Computed ratio ('Percentage of men at departure or arrival', F8.5), codebook sec.2G
-    p.22-24
+  provenance: imputed
+  provenance_evidence: Marked IMP on the SlaveVoyages voyage page (checked https://legacy.slavevoyages.org/voyage/91000/variables,
+    2026-10-19)
   datasets:
   - transatlantic
   - intraamerican
@@ -4621,6 +4630,8 @@ fields:
     section: Slaves (characteristics)
     page: 26
   notes: Label says Percentage but .sav values are 0-1 fractions (TA sample 0.353); stored as ratio
+  provenance_note: Codebook classifies as derived; the site marks it imputed, which sets the licence (CC
+    BY-NC). Computed from the stage-7 counts, which are imputed.
 - name: women_share_embarked_first_port
   spss_name: WOMRAT1
   label: Share of women among embarked captives
@@ -4664,17 +4675,17 @@ fields:
     section: Slaves (characteristics)
     page: 25
   notes: Label says Percentage but .sav values are 0-1 fractions (TA sample 0.353); stored as ratio
-- name: women_share_departure_or_arrival
+- name: women_share_departure_or_arrival_imputed
   spss_name: WOMRAT7
-  label: Share of women at departure or arrival
+  label: Imputed share of women at departure or arrival
   source_label:
     transatlantic: Percentage of women when leaving Africa or arriving at port of landing
     intraamerican: Percentage of women at first port of purchase
   dtype: float64
   kind: ratio
-  provenance: derived
-  provenance_evidence: Computed ratio ('Percentage of women at departure or arrival', F8.5), codebook
-    sec.2G p.22-24
+  provenance: imputed
+  provenance_evidence: Marked IMP on the SlaveVoyages voyage page (checked https://legacy.slavevoyages.org/voyage/91000/variables,
+    2026-10-19)
   datasets:
   - transatlantic
   - intraamerican
@@ -4686,6 +4697,8 @@ fields:
     section: Slaves (characteristics)
     page: 26
   notes: Label says Percentage but .sav values are 0-1 fractions (TA sample 0.353); stored as ratio
+  provenance_note: Codebook classifies as derived; the site marks it imputed, which sets the licence (CC
+    BY-NC). Computed from the stage-7 counts, which are imputed.
 - name: boys_share_embarked_first_port
   spss_name: BOYRAT1
   label: Share of boys among embarked captives
@@ -4729,17 +4742,17 @@ fields:
     section: Slaves (characteristics)
     page: 25
   notes: Label says Percentage but .sav values are 0-1 fractions (TA sample 0.353); stored as ratio
-- name: boys_share_departure_or_arrival
+- name: boys_share_departure_or_arrival_imputed
   spss_name: BOYRAT7
-  label: Share of boys at departure or arrival
+  label: Imputed share of boys at departure or arrival
   source_label:
     transatlantic: Percentage of boys when leaving Africa or arriving at port of landing
     intraamerican: Percentage of boys at first port of purchase
   dtype: float64
   kind: ratio
-  provenance: derived
-  provenance_evidence: Computed ratio ('Percentage of boys at departure or arrival', F8.5), codebook sec.2G
-    p.22-24
+  provenance: imputed
+  provenance_evidence: Marked IMP on the SlaveVoyages voyage page (checked https://legacy.slavevoyages.org/voyage/91000/variables,
+    2026-10-19)
   datasets:
   - transatlantic
   - intraamerican
@@ -4751,6 +4764,8 @@ fields:
     section: Slaves (characteristics)
     page: 26
   notes: Label says Percentage but .sav values are 0-1 fractions (TA sample 0.353); stored as ratio
+  provenance_note: Codebook classifies as derived; the site marks it imputed, which sets the licence (CC
+    BY-NC). Computed from the stage-7 counts, which are imputed.
 - name: girls_share_embarked_first_port
   spss_name: GIRLRAT1
   label: Share of girls among embarked captives
@@ -4794,17 +4809,17 @@ fields:
     section: Slaves (characteristics)
     page: 25
   notes: Label says Percentage but .sav values are 0-1 fractions (TA sample 0.353); stored as ratio
-- name: girls_share_departure_or_arrival
+- name: girls_share_departure_or_arrival_imputed
   spss_name: GIRLRAT7
-  label: Share of girls at departure or arrival
+  label: Imputed share of girls at departure or arrival
   source_label:
     transatlantic: Percentage of girls when leaving Africa or arriving at port of landing
     intraamerican: Percentage of girls at first port of purchase
   dtype: float64
   kind: ratio
-  provenance: derived
-  provenance_evidence: Computed ratio ('Percentage of girls at departure or arrival', F8.5), codebook
-    sec.2G p.22-24
+  provenance: imputed
+  provenance_evidence: Marked IMP on the SlaveVoyages voyage page (checked https://legacy.slavevoyages.org/voyage/91000/variables,
+    2026-10-19)
   datasets:
   - transatlantic
   - intraamerican
@@ -4816,6 +4831,8 @@ fields:
     section: Slaves (characteristics)
     page: 26
   notes: Label says Percentage but .sav values are 0-1 fractions (TA sample 0.353); stored as ratio
+  provenance_note: Codebook classifies as derived; the site marks it imputed, which sets the licence (CC
+    BY-NC). Computed from the stage-7 counts, which are imputed.
 - name: males_share_embarked_first_port
   spss_name: MALRAT1
   label: Share of males among embarked captives
@@ -4857,16 +4874,17 @@ fields:
     section: Slaves (characteristics)
     page: 25
   notes: Label says Percentage but .sav values are 0-1 fractions (TA sample 0.353); stored as ratio
-- name: males_share_departure_or_arrival
+- name: males_share_departure_or_arrival_imputed
   spss_name: MALRAT7
-  label: Share of males at departure or arrival
+  label: Imputed share of males at departure or arrival
   source_label:
     transatlantic: Male ratio at embarkation or disembarkation
     intraamerican: Male ratio at first port of purchase
   dtype: float64
   kind: ratio
-  provenance: derived
-  provenance_evidence: Computed ratio ('Male ratio at departure or arrival', F8.5), codebook sec.2G p.22-24
+  provenance: imputed
+  provenance_evidence: Marked IMP on the SlaveVoyages voyage page (checked https://legacy.slavevoyages.org/voyage/91000/variables,
+    2026-10-19)
   datasets:
   - transatlantic
   - intraamerican
@@ -4878,6 +4896,8 @@ fields:
     section: Slaves (characteristics)
     page: 26
   notes: Label says Percentage but .sav values are 0-1 fractions (TA sample 0.353); stored as ratio
+  provenance_note: Codebook classifies as derived; the site marks it imputed, which sets the licence (CC
+    BY-NC). Computed from the stage-7 counts, which are imputed.
 - name: children_share_embarked_first_port
   spss_name: CHILRAT1
   label: Share of children among embarked captives
@@ -4919,16 +4939,17 @@ fields:
     section: Slaves (characteristics)
     page: 25
   notes: Label says Percentage but .sav values are 0-1 fractions (TA sample 0.353); stored as ratio
-- name: children_share_departure_or_arrival
+- name: children_share_departure_or_arrival_imputed
   spss_name: CHILRAT7
-  label: Share of children at departure or arrival
+  label: Imputed share of children at departure or arrival
   source_label:
     transatlantic: Child ratio at embarkation or disembarkation
     intraamerican: Child ratio at first port of purchase
   dtype: float64
   kind: ratio
-  provenance: derived
-  provenance_evidence: Computed ratio ('Child ratio at departure or arrival', F8.5), codebook sec.2G p.22-24
+  provenance: imputed
+  provenance_evidence: Marked IMP on the SlaveVoyages voyage page (checked https://legacy.slavevoyages.org/voyage/91000/variables,
+    2026-10-19)
   datasets:
   - transatlantic
   - intraamerican
@@ -4940,6 +4961,8 @@ fields:
     section: Slaves (characteristics)
     page: 26
   notes: Label says Percentage but .sav values are 0-1 fractions (TA sample 0.353); stored as ratio
+  provenance_note: Codebook classifies as derived; the site marks it imputed, which sets the licence (CC
+    BY-NC). Computed from the stage-7 counts, which are imputed.
 - name: crew_outset
   spss_name: CREW1
   label: Crew at voyage outset

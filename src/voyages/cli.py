@@ -43,12 +43,18 @@ def verify() -> None:
 
 @app.command()
 def build() -> None:
-    """Build the reference tables (and, later in Phase 1, Parquet) from the raw downloads."""
-    from voyages.ingest import reference
+    """Build the reference tables and the Parquet tables from the raw downloads."""
+    import pyarrow.parquet as pq
+
+    from voyages.config import built_dir
+    from voyages.ingest import reference, transatlantic
 
     for table, n in reference.build().items():
         typer.echo(f"ok  reference/{table}.csv  {n} rows")
-    typer.echo("\nParquet tables are not built yet (Phase 1, see PLAN.md).")
+    for table, path in transatlantic.build().items():
+        typer.echo(f"ok  {table}/{path.name}  {pq.read_metadata(path).num_rows} rows")
+    typer.echo(f"\nbuilt dir: {built_dir()}")
+    typer.echo("Intra-American and Estimates tables are not built yet (Phase 1, see PLAN.md).")
 
 
 if __name__ == "__main__":

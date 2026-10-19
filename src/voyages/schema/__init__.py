@@ -91,3 +91,60 @@ def load(path: Path = REGISTRY_PATH) -> Registry:
         for f in doc["fields"]
     )
     return Registry(fields=fields, tables=doc["tables"], dropped=tuple(doc.get("dropped", ())))
+
+
+# ------------------------------------------------------------ table schemas
+VOYAGE_DATASETS = ("transatlantic", "intraamerican")
+
+
+def table_columns(table: str, registry: Registry | None = None) -> list[dict[str, str]]:
+    """Columns of a Parquet table, in order, with `from_fields` expanded.
+
+    Each item has name, dtype and description. This is the single place
+    the Parquet layout is defined; the build writes exactly these columns.
+    """
+    reg = registry or load()
+    spec = reg.tables[table]
+    cols: list[dict[str, str]] = []
+    for c in spec["columns"]:
+        if "from_fields" not in c:
+            cols.append(c)
+            continue
+        if table == "voyages_wide":
+            fields = [f for f in reg.fields if f.table != "estimates"]
+        else:
+            fields = list(reg.for_table(table))
+        for f in fields:
+            if f.name == "voyage_id":  # already the key column
+                continue
+            cols.append({"name": f.name, "dtype": f.dtype, "description": f.label})
+            if table == "voyages_wide" and f.reference:
+                cols.append(
+                    {
+                        "name": f"{f.name}_name",
+                        "dtype": "string",
+                        "description": f"{f.label} (decoded from reference {f.reference})",
+                    }
+                )
+    return cols
+
+
+def arrow_schema(table: str, registry: Registry | None = None):
+    """pyarrow schema for a Parquet table, from the registry."""
+    import pyarrow as pa
+
+    types = {
+        "int8": pa.int8(),
+        "int16": pa.int16(),
+        "int32": pa.int32(),
+        "float64": pa.float64(),
+        "string": pa.string(),
+        "bool": pa.bool_(),
+        "date32": pa.date32(),
+    }
+    return pa.schema(
+        [
+            pa.field(c["name"], types[c["dtype"]], metadata={"description": c["description"]})
+            for c in table_columns(table, registry)
+        ]
+    )

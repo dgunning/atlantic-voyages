@@ -77,6 +77,16 @@ coordinates at all.
 
 ## Open questions
 
+- **The website shows newer data than `tastdb-exp-2020.sav`.** Checked
+  2026-10-19 on https://legacy.slavevoyages.org/voyage/<id>/variables for
+  12 voyages. 10 agree with the 2020 file on vessel, captain, year and
+  imputed totals. 2 differ: voyage 17223 (site 361 embarked / 319
+  disembarked, file 273 / 236; the site also has a recorded 319 landed that
+  the file lacks) and voyage 11408 (site 333 / 291, file 303 / 279). Place
+  names on the site also follow the Oct 2023 recode ("Luanda" for "St. Paul
+  de Loanda", "place unspecified" for "port unspecified"). Our build matches
+  the file exactly. Is there a newer bulk download than the 2020 .sav?
+
 - Licence for the SlaveVoyages fixture coordinates (ask the project team).
 - 14 place codes used by 30 Trans-Atlantic voyages have no label in any
   source file (e.g. 60628, 41252, 21013). They stay in places.csv with an

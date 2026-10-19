@@ -235,10 +235,7 @@ class Query:
             col = MEASURES.get(m, m)
             self._column(col)
             aggs.append(f'sum("{col}")::BIGINT AS "{m}"')
-            try:
-                provenance[m] = schema.load()[col].provenance
-            except KeyError:
-                provenance[m] = "derived"
+            provenance[m] = column_provenance(col) or "derived"
         # Positional keys: an output name like "decade" can shadow a column.
         key_list = ", ".join(str(i + 1) for i in range(len(select)))
         sql = (
@@ -266,6 +263,29 @@ class Query:
         if not codes:
             raise ValueError("give at least one value")
         return self._where(f"{column} IN ({', '.join('?' for _ in codes)})", *codes)
+
+
+# --------------------------------------------------------------- provenance
+_POINT_SUFFIXES = ("_lat", "_lon", "_precision", "_map_code")
+
+
+def column_provenance(name: str) -> str | None:
+    """Provenance of a query column: recorded, imputed, derived, or None if unknown.
+
+    Voyage fields come from the registry (never the Estimates fields, some of
+    which share names). Endpoint places and regions are ``imputed``, the more
+    restrictive class: each row's ``*_provenance`` column says which rows were
+    recorded. Map points and ``drawable`` are ``derived``.
+    """
+    if name.startswith(SIDES) or name == "drawable":
+        if name == "drawable" or name.endswith(_POINT_SUFFIXES):
+            return "derived"
+        return None if name.endswith("_provenance") else "imputed"
+    base = name[: -len("_name")] if name.endswith("_name") else name
+    for f in schema.load().fields:
+        if f.name in (name, base) and f.table != "estimates":
+            return f.provenance
+    return None
 
 
 # ------------------------------------------------------------------ lookups

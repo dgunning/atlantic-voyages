@@ -46,6 +46,15 @@ record is silent, as on the site. Totals are the imputed totals; `df.attrs["prov
 says so. `v.transatlantic.disembarked_in("Jamaica").endpoints()` gives the points to
 draw each voyage on a map, and `v.sql("...")` runs any SQL over the tables.
 
+The same filters work from the command line. Output is CSV on stdout, or a CSV or
+Parquet file with `-o`; the citation and licence note go to stderr, and Parquet files
+carry them in their metadata:
+
+```bash
+voyages query -d transatlantic -e "Bight of Biafra" -l Jamaica --from 1700 --to 1800 --by decade
+voyages query -l Jamaica --by endpoints --drawable-only -o jamaica.parquet
+```
+
 ## Data and license
 
 The library code is Apache-2.0. The data belongs to SlaveVoyages: records

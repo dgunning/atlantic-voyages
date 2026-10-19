@@ -1,4 +1,4 @@
-"""Command-line entry point: ``voyages fetch``, ``voyages verify``, ``voyages build``."""
+"""Command-line entry point: ``voyages fetch``, ``verify``, ``build`` and ``query``."""
 
 from __future__ import annotations
 
@@ -7,6 +7,7 @@ import typer
 from voyages import __version__, citation
 from voyages import fetch as _fetch
 from voyages.config import data_dir, raw_dir
+from voyages.query_cli import query
 
 app = typer.Typer(help="Tools for the SlaveVoyages databases.", no_args_is_help=True)
 
@@ -55,6 +56,9 @@ def build() -> None:
         for table, path in ingest.build().items():
             typer.echo(f"ok  {table}/{path.name}  {pq.read_metadata(path).num_rows} rows")
     typer.echo(f"\nbuilt dir: {built_dir()}")
+
+
+app.command()(query)
 
 
 if __name__ == "__main__":

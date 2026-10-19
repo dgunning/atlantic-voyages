@@ -288,6 +288,101 @@ fig.tight_layout()
 fig.savefig("figures/01_jamaica_by_region.png", dpi=150)
 
 # %% [markdown]
+# ## Before 1700
+#
+# Jamaica was Spanish until the English conquest of 1655. The voyage database has a handful of
+# voyages to Spanish Jamaica; the Estimates show almost none. After 1655 the numbers grow, but
+# stay small next to the eighteenth century.
+
+# %%
+early = (
+    by_decade.loc[:1690]
+    .astype(int)
+    .join(imputed.groupby("decade").voyages.sum().rename("imputed voyages").astype(int))
+)
+early
+
+# %% [markdown]
+# ## How the regions of embarkation changed
+#
+# Shares of the people disembarked in Jamaica by region, in five periods. For the voyage
+# data, shares are of the people whose region is known; the last column says how many are
+# not. The four regions that supplied most people are charted, one panel each.
+
+# %%
+PERIODS = [(1650, 1699), (1700, 1729), (1730, 1759), (1760, 1789), (1790, 1809)]
+
+
+def period_label(decade):
+    for lo, hi in PERIODS:
+        if lo <= decade <= hi:
+            return f"{lo}-{hi}"
+    return None
+
+
+periods = long.assign(period=long.decade.map(period_label)).dropna(subset=["period"])
+known = periods[periods.region != UNKNOWN]
+shares = (
+    known.pivot_table(
+        index=["source", "period"], columns="region", values="people", aggfunc="sum", fill_value=0
+    )
+    .pipe(lambda t: t.div(t.sum(axis=1), axis=0) * 100)
+    .reindex(columns=list(REGIONS.region))
+)
+unknown_share = (
+    periods.assign(unknown=periods.region == UNKNOWN)
+    .groupby(["source", "period"])
+    .apply(lambda g: g.people[g.unknown].sum() / g.people.sum() * 100, include_groups=False)
+)
+people = periods.groupby(["source", "period"]).people.sum()
+
+estimates_shares = (
+    shares.loc["Estimates"].round(0).astype(int).assign(people=people.loc["Estimates"])
+)
+estimates_shares
+
+# %%
+comparison = pd.concat(
+    {
+        source: shares.loc[source]
+        .round(0)
+        .astype(int)
+        .assign(**{"region not known (%)": unknown_share.loc[source].round(0).astype(int)})
+        for source in ["Imputed", "Recorded"]
+    }
+)
+comparison
+
+# %%
+MAIN = ["Gold Coast", "Bight of Benin", "Bight of Biafra", "West Central Africa"]
+labels = [f"{lo}-{hi}" for lo, hi in PERIODS]
+fig, axes = plt.subplots(1, 4, figsize=(12, 3.6), sharey=True)
+for ax, region in zip(axes, MAIN, strict=True):
+    for source in ["Estimates", "Imputed", "Recorded"]:
+        y = shares.loc[source][region].reindex(labels)
+        ax.plot(
+            range(len(labels)), y.values, STYLES[source], color=COLORS[source],
+            linewidth=2 if source != "Recorded" else 1.6, marker="o", markersize=4, label=source,
+        )  # fmt: skip
+    ax.set_title(region, loc="left", fontsize=10, color=INK)
+    ax.set_xticks(range(len(labels)), [lab.replace("-", "-\n") for lab in labels], fontsize=8)
+    ax.set_ylim(0, 55)
+axes[0].set_ylabel("% of people (known regions)")
+axes[1].legend(frameon=False, fontsize=8, loc="upper right")
+fig.suptitle(
+    "Share of people disembarked in Jamaica, by African region of embarkation",
+    x=0.01, ha="left", color=INK,
+)  # fmt: skip
+fig.tight_layout()
+fig.savefig("figures/01_jamaica_region_shares.png", dpi=150)
+
+# %% [markdown]
+# The voyage data and the Estimates tell the same story, and not by accident alone: the
+# Estimates are built from the voyage data, so their agreement is partly by construction.
+# Where half the voyage data has no known region (1700-1729), the Estimates' split leans on
+# their model.
+
+# %% [markdown]
 # ## What the voyage records cover
 #
 # The imputed voyage totals as a share of the Estimates, by decade: how much of the modelled
@@ -319,6 +414,23 @@ assert set(by_region["Recorded"].drop(["Total", UNKNOWN]).nlargest(2).index) == 
 ratios = (main.Imputed / main.Estimates).loc[1700:1800]
 assert 0.84 <= ratios.min() < 0.85 and 0.99 <= ratios.max() < 0.995
 
+# %%
+# Figures quoted below about periods.
+assert early.loc[1580:1610, "imputed voyages"].sum() == 12
+assert early.loc[1580:1610, "Imputed"].sum() == 3_105
+assert people.loc[("Estimates", "1650-1699")] == 82_056
+est_pct = shares.loc["Estimates"].round(0)
+assert est_pct.loc["1700-1729", ["Gold Coast", "Bight of Benin"]].tolist() == [45, 30]
+assert est_pct.loc["1730-1759", "Bight of Benin"] == 5
+assert est_pct.loc["1790-1809", "Bight of Biafra"] == 45
+assert (
+    est_pct.loc["1650-1699", ["Bight of Benin", "West Central Africa", "Bight of Biafra"]].min()
+    >= 22
+)
+gap = (shares.loc["Imputed"] - shares.loc["Estimates"])[MAIN].abs().max().max()
+assert gap < 8, gap  # "within a few points"
+assert round(unknown_share.loc[("Imputed", "1700-1729")]) == 50
+
 # %% [markdown]
 # ## Reading the results
 #
@@ -330,6 +442,14 @@ assert 0.84 <= ratios.min() < 0.85 and 0.99 <= ratios.max() < 0.995
 #   85,011 people, is the trade the Estimates add for voyages missing from the database.
 # - In each decade from 1700 to 1809, the peak of the trade into Jamaica, voyages in the
 #   database account for 84 to 99 per cent of the Estimates; the gap is widest before 1700.
+# - The regions changed over time. Before 1700 no single region dominated: the Bight of Benin,
+#   West Central Africa and the Bight of Biafra each supplied over a fifth. In 1700-1729 the
+#   Gold Coast (45 per cent) and the Bight of Benin (30 per cent) supplied three quarters.
+#   From the 1730s the Bight of Benin fell to 5 per cent and the Bight of Biafra rose; in the
+#   last decades before the British trade ended in 1807 it was the largest single region, at
+#   45 per cent. The voyage data gives the same shares within a few points.
+# - Before 1700: 12 voyages carried 3,105 people to Spanish Jamaica (1580s-1610s) in the
+#   voyage data; after the English conquest of 1655 the Estimates count 82,056 people to 1699.
 # - The recorded column is a floor, not an estimate: it counts only voyages with a transcribed
 #   number of captives arriving at the first landing, and that number survives unevenly (35 of
 #   307 voyages in the 1730s). Its regions follow the recorded place of purchase, which is

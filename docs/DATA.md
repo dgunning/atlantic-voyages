@@ -26,14 +26,14 @@ https://www.slavevoyages.org/blog/faqs
 
 | File | Dataset | Description | Downloaded | SHA-256 |
 |---|---|---|---|---|
-| `tastdb-exp-2020.sav` | transatlantic | Expanded dataset, 2020 (SPSS) | — | — |
-| `tastdb-exp-2019.csv` | transatlantic | Expanded dataset, Dec 2019 (CSV; 36,108 voyages) | — | — |
-| `I-Am1.0.sav` | intraamerican | Intra-American v1.0 (SPSS) | — | — |
-| `I-Am1.0.csv` | intraamerican | Intra-American v1.0 (CSV) | — | — |
-| `2010-estimates-SPSS.sav` | estimates | Estimates, 2010 (SPSS); CC BY-NC | — | — |
-| `2010-estimates-excel.xlsx` | estimates | Estimates, 2010 (Excel); CC BY-NC | — | — |
-| `SPSS_Codebook_2023-11-06.pdf` | codebook | Codebook, 6 Nov 2023 edition | — | — |
-| `2010estimates-method.pdf` | codebook | Estimates methodology essay | — | — |
+| `tastdb-exp-2020.sav` | transatlantic | Expanded dataset, 2020 (SPSS) | 2026-10-19 | `39585586cb7b17cdd38cd20a1ac77fea109f7855f5ae76df19a0708a65e5bc21` |
+| `tastdb-exp-2019.csv` | transatlantic | Expanded dataset, Dec 2019 (CSV; 36,108 voyages) | 2026-10-19 | `3fbad142356e30a4662c7f455321d19b70d79770cfa0397278894bb9ae36096f` |
+| `I-Am1.0.sav` | intraamerican | Intra-American v1.0 (SPSS) | 2026-10-19 | `7750dcd15454fd171d129ff2d96daa6dba3843f1a9fa2011094ecadb383d01e4` |
+| `I-Am1.0.csv` | intraamerican | Intra-American v1.0 (CSV) | 2026-10-19 | `d9a4ebf7d2e0082948682ffba1ea9db315216401dcef9444bc491337fc30b47d` |
+| `2010-estimates-SPSS.sav` | estimates | Estimates, 2010 (SPSS); CC BY-NC | 2026-10-19 | `e49ec2b12d39b82ad0f3ba15705ac0223581bd558785ab416977c99bd6171e3d` |
+| `2010-estimates-excel.xlsx` | estimates | Estimates, 2010 (Excel); CC BY-NC | 2026-10-19 | `4d73f41c5d48f578f5ede82a6a41e15a97b7936d17509fcc5c78f1c9e0205292` |
+| `SPSS_Codebook_2022.pdf` | codebook | Codebook, 2022 edition | 2026-10-19 | `fff98c12c8e3e11e398a53c128c5a017bd2b4ac9631ffd28ab120c374d26a83a` |
+| `2010estimates-method.pdf` | codebook | Estimates methodology essay | 2026-10-19 | `57f28971d407314af43eeff5eb9c24cba41ce33f6e4ce7abe65adc07dee44b9b` |
 
 Fill in the `Downloaded` and `SHA-256` columns after the first verified
 fetch (`voyages fetch`, then `sha256sum` or `voyages verify`), and copy
@@ -44,10 +44,14 @@ the hashes into `MANIFEST` in `fetch.py`.
 Listed on the Trans-Atlantic downloads page, same base URL: `tastdb-exp-2019.sav`,
 `tastdb-exp-2016.sav`, `tastdb-2016.sav`, `tastdb-exp-2010.sav`, `tastdb-2010.sav`,
 `tastdb-2010.csv`, `tastdb-exp-2008.sav`, `tastdb-1999.sav` (original CD-ROM),
-`SPSS_Codebook_2022.pdf`, `SPSS_Codebook_2019.pdf`. Useful for reproducing
+`SPSS_Codebook_2019.pdf`. Useful for reproducing
 published analyses that cite a specific version.
 
 ## Open questions
+
+- The 6 Nov 2023 codebook (`SPSS_Codebook_2023-11-06.pdf`) returns 404 on
+  the legacy site (checked 2026-10-19). The manifest uses the 2022 edition
+  until a source for the 2023 edition is found.
 
 - The 2020 `.sav` exists but no 2020 `.csv` is listed; the newest CSV is Dec 2019.
   Confirm whether the main site's "download" button produces a newer CSV export,

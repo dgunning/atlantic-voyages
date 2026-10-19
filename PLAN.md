@@ -1,6 +1,6 @@
 # PLAN.md
 
-Status: Phase 0 — scaffold done; raw data not yet fetched (blocked: no network from the cloud workspace). Next: run `uv sync && uv run voyages fetch` locally, record SHA-256s in docs/DATA.md and fetch.py, then Phase 1 plan mode.
+Status: Phase 0 done — all raw files fetched and checksummed (2026-10-19); `voyages verify` reports ok for every file. Next: Phase 1 plan mode (inspect .sav variable and value labels plus the codebook, propose fields.yaml).
 
 ## Goal
 
@@ -41,7 +41,7 @@ Download URLs, dates, and checksums go in `docs/DATA.md` as each is added.
 
 - [x] `uv init`, package skeleton (`src/voyages/`), `pyproject.toml`, ruff, pytest
 - [x] `CLAUDE.md`, `PLAN.md`, `NOTICE`, `LICENSE` (Apache-2.0), `docs/DATA.md`
-- [ ] Download the Trans-Atlantic and Intra-American `.sav` + `.csv` and the codebook into `$VOYAGES_DATA_DIR`; record provenance in `docs/DATA.md` (manifest + `voyages fetch` written; run locally, then fill in checksums)
+- [x] Download the Trans-Atlantic and Intra-American `.sav` + `.csv` and the codebook into `$VOYAGES_DATA_DIR`; record provenance in `docs/DATA.md` (fetched and checksummed 2026-10-19; codebook is the 2022 edition, 2023 edition 404s)
 - [x] `voyages/citation.py`
 - [ ] Decide the final package name (check PyPI); update CLAUDE.md
 

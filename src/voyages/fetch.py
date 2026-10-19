@@ -44,41 +44,51 @@ MANIFEST: tuple[RawFile, ...] = (
         "tastdb-exp-2020.sav",
         "transatlantic",
         "Trans-Atlantic Slave Trade Database, expanded dataset, 2020 (SPSS)",
+        sha256="39585586cb7b17cdd38cd20a1ac77fea109f7855f5ae76df19a0708a65e5bc21",
     ),
     RawFile(
         "tastdb-exp-2019.csv",
         "transatlantic",
         "Trans-Atlantic Slave Trade Database, expanded dataset, Dec 2019 (CSV, 36,108 voyages)",
+        sha256="3fbad142356e30a4662c7f455321d19b70d79770cfa0397278894bb9ae36096f",
     ),
     RawFile(
         "I-Am1.0.sav",
         "intraamerican",
         "Intra-American Slave Trade Database v1.0 (SPSS)",
+        sha256="7750dcd15454fd171d129ff2d96daa6dba3843f1a9fa2011094ecadb383d01e4",
     ),
     RawFile(
         "I-Am1.0.csv",
         "intraamerican",
         "Intra-American Slave Trade Database v1.0 (CSV)",
+        sha256="d9a4ebf7d2e0082948682ffba1ea9db315216401dcef9444bc491337fc30b47d",
     ),
     RawFile(
         "2010-estimates-SPSS.sav",
         "estimates",
         "Estimates of the size and direction of the trade, 2010 (SPSS); CC BY-NC",
+        sha256="e49ec2b12d39b82ad0f3ba15705ac0223581bd558785ab416977c99bd6171e3d",
     ),
     RawFile(
         "2010-estimates-excel.xlsx",
         "estimates",
         "Estimates of the size and direction of the trade, 2010 (Excel); CC BY-NC",
+        sha256="4d73f41c5d48f578f5ede82a6a41e15a97b7936d17509fcc5c78f1c9e0205292",
     ),
     RawFile(
-        "SPSS_Codebook_2023-11-06.pdf",
+        # The 2023-11-06 edition is no longer served by the legacy site (404 as
+        # of 2026-10-19); 2022 is the newest edition still available there.
+        "SPSS_Codebook_2022.pdf",
         "codebook",
-        "SPSS codebook, 6 November 2023 edition",
+        "SPSS codebook, 2022 edition",
+        sha256="fff98c12c8e3e11e398a53c128c5a017bd2b4ac9631ffd28ab120c374d26a83a",
     ),
     RawFile(
         "2010estimates-method.pdf",
         "codebook",
         "Estimates methodology essay, 2010",
+        sha256="57f28971d407314af43eeff5eb9c24cba41ce33f6e4ce7abe65adc07dee44b9b",
     ),
 )
 

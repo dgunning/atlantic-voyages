@@ -50,16 +50,19 @@ NAMED = {
         100034,
     ],  # fmt: skip
 }
-YEAR_COL = {"transatlantic": "YEARAM", "intraamerican": "yearam"}
+YEAR_COL = {"transatlantic": "YEARAM", "intraamerican": "yearam", "estimates": "yearam"}
 
 
 def make(dataset: str) -> Path:
     src = raw_dir() / SAV_FILES[dataset]
     df, meta = pyreadstat.read_sav(src, apply_value_formats=False)
-    id_col = next(c for c in df.columns if c.upper() == "VOYAGEID")
-    named = df[df[id_col].isin(NAMED[dataset])]
-    if len(named) != len(NAMED[dataset]):
-        raise SystemExit(f"named voyages missing from {src.name}")
+    id_col = next((c for c in df.columns if c.upper() == "VOYAGEID"), None)
+    if id_col is None:  # Estimates: no IDs; keep source order
+        named = df.iloc[0:0]
+    else:
+        named = df[df[id_col].isin(NAMED[dataset])]
+        if len(named) != len(NAMED[dataset]):
+            raise SystemExit(f"named voyages missing from {src.name}")
     rest = df.drop(named.index)
     decade = (rest[YEAR_COL[dataset]] // 10).fillna(-1)
     per = max(1, (SAMPLE_SIZE - len(named)) // decade.nunique())
@@ -69,7 +72,8 @@ def make(dataset: str) -> Path:
     top_up = SAMPLE_SIZE - len(named) - len(drawn)
     if top_up > 0:
         drawn = pd.concat([drawn, rest.drop(drawn.index).sample(top_up, random_state=SEED)])
-    sample = pd.concat([named, drawn]).sort_values(id_col)
+    sample = pd.concat([named, drawn])
+    sample = sample.sort_values(id_col) if id_col else sample.sort_index()
 
     # A date column that is empty in the sample comes back as object dtype;
     # pyreadstat would write it as a string with a date format. Keep it numeric.
@@ -93,10 +97,10 @@ def make(dataset: str) -> Path:
         variable_measure=meta.variable_measure,
         compress=True,
     )
-    print(f"{out}: {len(sample)} voyages, {sample.shape[1]} columns")
+    print(f"{out}: {len(sample)} rows, {sample.shape[1]} columns")
     return out
 
 
 if __name__ == "__main__":
-    for ds in sys.argv[1:] or ["transatlantic", "intraamerican"]:
+    for ds in sys.argv[1:] or ["transatlantic", "intraamerican", "estimates"]:
         make(ds)

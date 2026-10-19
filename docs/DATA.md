@@ -85,6 +85,13 @@ rounded. Any unlisted bad value fails the build.
   (0.2 boys, 0.5 infants, 0.556 boys, 0.2 girls, 0.333 females). The site
   shows shares for both that cannot add up.
 
+The Estimates `.sav` rounds each row to whole people, so totals can differ
+slightly from the site, which sums unrounded values. Embarked by national
+carrier (`totexports`) is within 15 people of
+https://legacy.slavevoyages.org/assessment/estimates (checked 2026-10-19;
+Netherlands exact; total 12,521,352 vs 12,521,337). The rows have no natural
+key, so the table carries `row`, the row number in the source file.
+
 The Intra-American site pages agree with `I-Am1.0.sav` for all 14
 voyages checked (2026-10-19), unlike the Trans-Atlantic pages (below).
 

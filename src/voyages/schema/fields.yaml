@@ -237,10 +237,15 @@ tables:
       dtype: string
       description: Dataset of the linked voyage
   estimates:
-    grain: one row per year, national carrier and route
-    description: 2010 Estimates database. Whole table CC BY-NC 4.0.
-    key: null
+    grain: one row per estimation cell in the source file (year, national carrier, route, coverage tier)
+    description: '2010 Estimates database. Whole table CC BY-NC 4.0. Rows have no natural key: the same
+      year, carrier and route can repeat (post-1830 carrier reassignment, coverage tiers).'
+    key:
+    - row
     columns:
+    - name: row
+      dtype: int32
+      description: Row number in 2010-estimates-SPSS.sav (1-based)
     - from_fields: estimates
   voyages_wide:
     grain: one row per voyage
@@ -6411,7 +6416,9 @@ fields:
   - estimates
   table: estimates
   codebook: null
-  notes: 'Methodology: 2010estimates-method.pdf. Whole table is CC BY-NC 4.0.'
+  notes: 'Methodology: 2010estimates-method.pdf. Whole table is CC BY-NC 4.0. Closest to the site''s published
+    totals: by carrier within 0.005% of https://legacy.slavevoyages.org/assessment/estimates (checked
+    2026-10-19); the .sav rounds each row to whole people.'
 - name: disembarked_documented_route
   spss_name: slamimp_sum
   label: Documented disembarked, summed by carrier, year and route
@@ -6573,4 +6580,6 @@ fields:
   - estimates
   table: estimates
   codebook: null
-  notes: 'Methodology: 2010estimates-method.pdf. Whole table is CC BY-NC 4.0.'
+  notes: 'Methodology: 2010estimates-method.pdf. Whole table is CC BY-NC 4.0. Closest to the site''s published
+    totals: by carrier within 0.005% of https://legacy.slavevoyages.org/assessment/estimates (checked
+    2026-10-19); the .sav rounds each row to whole people.'

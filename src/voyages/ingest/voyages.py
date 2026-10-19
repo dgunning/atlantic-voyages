@@ -72,7 +72,9 @@ def read_sav(path: Path) -> pd.DataFrame:
 def coerce(raw: pd.DataFrame, dataset: str, reg: schema.Registry) -> pd.DataFrame:
     """One column per registry field, named by ``name``, typed by ``dtype``."""
     cols = {c.upper(): c for c in raw.columns}
-    ids = raw[cols["VOYAGEID"]]
+    ids = (
+        raw[cols["VOYAGEID"]] if "VOYAGEID" in cols else pd.Series(index=raw.index, dtype="float64")
+    )
     out = {}
     for f in reg.for_dataset(dataset):
         src = cols.get(f.spss_name_in(dataset).upper())

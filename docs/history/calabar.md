@@ -17,8 +17,20 @@ sources listed at the end. Points the sources do not settle are marked **unverif
 - **New Calabar is a different place.** It is Elem Kalabari, an Ijaw (Ijo) kingdom on the
   New Calabar River near Bonny, in Rivers State. It was also a slave-trading port, selling
   mainly people taken from Igboland.
-- The Wikipedia article on Calabar High School says the name comes from the "Kalabari
-  Kingdom." That mixes the two up. The Jamaican institutions are named after Old Calabar.
+- New Calabar lies roughly 150 km **west** of Old Calabar. Wikipedia's Calabar article and
+  the summary of the 1911 Britannica both put it "to the east," which is wrong.
+- **The two names are probably the same word.** The places differ, but "Calabar" looks like
+  a European spelling of "Kalabari":
+  - Wikipedia's Kalabari article says the Portuguese wrote the Kalabari name as "Calabar."
+  - The Nigerian historian Nkparom Ejituwu (1998) argues that European, probably Dutch,
+    mapmakers misapplied the name to the Efik capital. In his account, that is how it became
+    "Old Calabar," and the Kalabari port then needed the label "New Calabar." I have this
+    argument only second-hand, through Victor Manfredi's summary.
+  - The Efik themselves say the name came from Europeans. Where "Calabar" comes from is
+    **unverified**.
+- The Wikipedia article on Calabar High School says the school is named after the "Kalabari
+  Kingdom." That is half right. The word may go back to Kalabari, but the place the Baptists
+  had in mind, and the port that shipped people to Jamaica, was Old Calabar.
 - In the voyage database, Old Calabar is place 60608 (shown as "Calabar") and New Calabar is
   place 60622.
 
@@ -145,6 +157,9 @@ Nigerian Baptist work did not come from Jamaica.
 
 ## Open questions
 
+- Where does the word "Calabar" come from? Start with Nkparom Ejituwu's 1998 paper on the
+  name, which this page knows only through Victor Manfredi's summary.
+
 - When did the Calabar district in Trelawny get its name, and who gave it? Places to look:
   the Jamaica slave registers (1817–1832), estate maps, and B. W. Higman and B. J. Hudson,
   *Jamaican Place Names*.
@@ -161,6 +176,9 @@ Nigerian Baptist work did not come from Jamaica.
 Old Calabar and New Calabar
 - [Calabar (Wikipedia)](https://en.wikipedia.org/wiki/Calabar)
 - [Kalabari Kingdom (Wikipedia)](https://en.wikipedia.org/wiki/Kalabari_Kingdom)
+- [Kalabari tribe (Wikipedia)](https://en.wikipedia.org/wiki/Kalabari_tribe)
+- [1911 Encyclopædia Britannica: Calabar](https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Calabar)
+- [AfroCubaWeb: Old Calabar, with Manfredi's summary of Ejituwu](https://afrocubaweb.com/oldcalabar.html)
 - [Eyamba V (Wikipedia)](https://en.wikipedia.org/wiki/Eyamba_V)
 - [Smithsonian: Letter to William Turner from Eyo Honesty II](https://transcription.si.edu/project/38337)
 

@@ -75,6 +75,19 @@ These two sources are the one exception to "raw data comes only from
 slavevoyages.org", agreed 2026-10-19 because the downloads have no
 coordinates at all.
 
+## Corrections applied at ingest
+
+Values that cannot be right are listed one by one in `KNOWN_BAD_VALUES`
+in `src/voyages/ingest/voyages.py`, set to null with a warning, and never
+rounded. Any unlisted bad value fails the build.
+
+- Intra-American voyages 105238 and 105990: fractional people counts
+  (0.2 boys, 0.5 infants, 0.556 boys, 0.2 girls, 0.333 females). The site
+  shows shares for both that cannot add up.
+
+The Intra-American site pages agree with `I-Am1.0.sav` for all 14
+voyages checked (2026-10-19), unlike the Trans-Atlantic pages (below).
+
 ## Open questions
 
 - **The website shows newer data than `tastdb-exp-2020.sav`.** Checked

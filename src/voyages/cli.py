@@ -47,14 +47,15 @@ def build() -> None:
     import pyarrow.parquet as pq
 
     from voyages.config import built_dir
-    from voyages.ingest import reference, transatlantic
+    from voyages.ingest import intraamerican, reference, transatlantic
 
     for table, n in reference.build().items():
         typer.echo(f"ok  reference/{table}.csv  {n} rows")
-    for table, path in transatlantic.build().items():
-        typer.echo(f"ok  {table}/{path.name}  {pq.read_metadata(path).num_rows} rows")
+    for ingest in (transatlantic, intraamerican):
+        for table, path in ingest.build().items():
+            typer.echo(f"ok  {table}/{path.name}  {pq.read_metadata(path).num_rows} rows")
     typer.echo(f"\nbuilt dir: {built_dir()}")
-    typer.echo("Intra-American and Estimates tables are not built yet (Phase 1, see PLAN.md).")
+    typer.echo("Estimates tables are not built yet (Phase 1, see PLAN.md).")
 
 
 if __name__ == "__main__":

@@ -29,8 +29,28 @@ SAMPLE_SIZE = 300
 # Voyages that tests check against slavevoyages.org. Keep in step with tests.
 NAMED = {
     "transatlantic": [1, 113, 3844, 5096, 7557, 8110, 9727, 10390, 11502, 91000],
+    # 12 site-checked voyages, 2 with known bad counts, 2 with links to
+    # Trans-Atlantic voyages (111086 lists two).
+    "intraamerican": [
+        100008,
+        100030,
+        100037,
+        101481,
+        101547,
+        101747,
+        101756,
+        103577,
+        103706,
+        105692,
+        108699,
+        112742,
+        105238,
+        105990,
+        111086,
+        100034,
+    ],  # fmt: skip
 }
-YEAR_COL = {"transatlantic": "YEARAM"}
+YEAR_COL = {"transatlantic": "YEARAM", "intraamerican": "yearam"}
 
 
 def make(dataset: str) -> Path:
@@ -78,5 +98,5 @@ def make(dataset: str) -> Path:
 
 
 if __name__ == "__main__":
-    for ds in sys.argv[1:] or ["transatlantic"]:
+    for ds in sys.argv[1:] or ["transatlantic", "intraamerican"]:
         make(ds)

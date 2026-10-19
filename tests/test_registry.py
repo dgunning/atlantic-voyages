@@ -63,6 +63,7 @@ def test_long_fields_carry_the_keys_their_table_needs():
         "voyage_crew": {"measure", "stage"},
         "voyage_sources": {"seq"},
         "voyage_enslavers": {"role", "seq"},
+        "voyage_links": {"relation"},
     }
     for f in REG.fields:
         if f.table in needs:

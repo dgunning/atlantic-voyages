@@ -15,6 +15,8 @@ decision about names, types, provenance and destination table comes from
 from __future__ import annotations
 
 import datetime as dt
+import re
+import warnings
 from pathlib import Path
 
 import numpy as np
@@ -27,6 +29,7 @@ from voyages.ingest import reference
 
 PANDAS_INT = {"int8": "Int8", "int16": "Int16", "int32": "Int32"}
 LONG_TABLES = (
+    "voyage_links",
     "voyage_places",
     "voyage_people_counts",
     "voyage_people_shares",
@@ -41,6 +44,23 @@ class IngestError(ValueError):
     """The raw data does not fit the registry."""
 
 
+# Values in the source that cannot be right, listed one by one. Each is set
+# to null with a warning; anything not listed still fails the build.
+# (dataset, voyage_id, field name): reason
+KNOWN_BAD_VALUES = {
+    ("intraamerican", 105238, "boys_landed_first_place"): "0.2 boys",
+    ("intraamerican", 105238, "boys_departure_or_arrival_imputed"): "0.2 boys",
+    ("intraamerican", 105238, "infants_landed_first_place"): "0.5 infants",
+    ("intraamerican", 105238, "infants_departure_or_arrival_imputed"): "0.5 infants",
+    ("intraamerican", 105990, "boys_landed_first_place"): "0.556 boys",
+    ("intraamerican", 105990, "boys_departure_or_arrival_imputed"): "0.556 boys",
+    ("intraamerican", 105990, "girls_landed_first_place"): "0.2 girls",
+    ("intraamerican", 105990, "girls_departure_or_arrival_imputed"): "0.2 girls",
+    ("intraamerican", 105990, "females_departure_or_arrival_imputed"): "0.333 females",
+    ("intraamerican", 105990, "females_landed_first_place_imputed"): "0.333 females",
+}
+
+
 # ------------------------------------------------------------------ reading
 def read_sav(path: Path) -> pd.DataFrame:
     import pyreadstat
@@ -52,16 +72,40 @@ def read_sav(path: Path) -> pd.DataFrame:
 def coerce(raw: pd.DataFrame, dataset: str, reg: schema.Registry) -> pd.DataFrame:
     """One column per registry field, named by ``name``, typed by ``dtype``."""
     cols = {c.upper(): c for c in raw.columns}
+    ids = raw[cols["VOYAGEID"]]
     out = {}
     for f in reg.for_dataset(dataset):
         src = cols.get(f.spss_name_in(dataset).upper())
         if src is None:
             raise IngestError(f"{dataset}: column {f.spss_name_in(dataset)} ({f.name}) missing")
-        out[f.name] = _coerce_column(raw[src], f)
+        out[f.name] = _coerce_column(_drop_known_bad(raw[src], ids, dataset, f.name), f)
     return pd.DataFrame(out)
 
 
+def _drop_known_bad(s: pd.Series, ids: pd.Series, dataset: str, name: str) -> pd.Series:
+    for (ds, vid, field_name), reason in KNOWN_BAD_VALUES.items():
+        if ds == dataset and field_name == name:
+            hit = ids == vid
+            if hit.any() and s[hit].notna().any():
+                warnings.warn(
+                    f"{dataset} voyage {vid}: {name} set to null ({reason})", stacklevel=2
+                )
+                s = s.mask(hit)
+    return s
+
+
 def _coerce_column(s: pd.Series, f: schema.Field) -> pd.Series:
+    if f.kind == "id_list":
+        # IDs stored as text, sometimes several ("10275, 10157") -> "10275;10157"
+        def norm(v):
+            if not isinstance(v, str) or not v.strip():
+                return None
+            parts = re.split(r"[,;\s]+", v.strip())
+            if not all(p.isdigit() for p in parts):
+                raise IngestError(f"{f.name}: not a list of IDs: {v!r}")
+            return ";".join(parts)
+
+        return s.map(norm).astype("object")
     if f.dtype == "string":
         s = s.astype("object").map(lambda v: v.strip() if isinstance(v, str) else v)
         return s.where(s.notna() & (s != ""), None)
@@ -113,6 +157,34 @@ def _long(typed, dataset, fields, value_col, extra, table_cols):
             )
         )
     return pd.concat(parts, ignore_index=True) if parts else pd.DataFrame()
+
+
+def _links(typed: pd.DataFrame, dataset: str, fields) -> pd.DataFrame:
+    """One row per link from an ID-list field."""
+    parts = []
+    for f in fields:
+        s = typed[f.name]
+        m = s.notna()
+        linked = s[m].str.split(";")
+        df = pd.DataFrame(
+            {"voyage_id": typed.loc[m, "voyage_id"].to_numpy(), "ids": linked.to_numpy()}
+        ).explode("ids")
+        parts.append(
+            pd.DataFrame(
+                {
+                    "voyage_id": df["voyage_id"].to_numpy(),
+                    "dataset": dataset,
+                    "relation": f.long["relation"],
+                    "linked_voyage_id": df["ids"].astype("int64").to_numpy(),
+                    "linked_dataset": "transatlantic",
+                }
+            )
+        )
+    if not parts:
+        return pd.DataFrame()
+    return pd.concat(parts, ignore_index=True).drop_duplicates(
+        ["voyage_id", "relation", "linked_voyage_id"]
+    )
 
 
 def _dates(typed: pd.DataFrame, dataset: str, fields) -> pd.DataFrame:
@@ -212,6 +284,7 @@ def build_tables(dataset: str, sav_path: Path) -> dict[str, pa.Table]:
         "voyage_sources": ("reference", ["seq"]),
         "voyage_enslavers": ("name", ["role", "seq"]),
     }
+    frames["voyage_links"] = _links(typed, dataset, in_ds("voyage_links"))
     for table, (col, keys) in value_col.items():
         table_cols = {c["name"] for c in schema.table_columns(table, reg)}
         frames[table] = _long(typed, dataset, in_ds(table), col, keys, table_cols)

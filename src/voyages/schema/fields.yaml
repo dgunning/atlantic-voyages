@@ -212,6 +212,30 @@ tables:
     - name: name
       dtype: string
       description: Name, verbatim
+  voyage_links:
+    grain: one row per voyage and linked voyage
+    description: Links between voyages, e.g. an Intra-American voyage carrying captives from a Trans-Atlantic
+      voyage
+    key:
+    - voyage_id
+    - relation
+    - linked_voyage_id
+    columns:
+    - name: voyage_id
+      dtype: int32
+      description: Voyage ID (unique across both voyage datasets)
+    - name: dataset
+      dtype: string
+      description: transatlantic | intraamerican
+    - name: relation
+      dtype: string
+      description: 'transatlantic_voyage: the earlier trans-Atlantic voyage of the same captives'
+    - name: linked_voyage_id
+      dtype: int32
+      description: ID of the linked voyage
+    - name: linked_dataset
+      dtype: string
+      description: Dataset of the linked voyage
   estimates:
     grain: one row per year, national carrier and route
     description: 2010 Estimates database. Whole table CC BY-NC 4.0.
@@ -256,23 +280,27 @@ fields:
   codebook:
     section: Technical variables
     page: 4
-- name: transatlantic_voyage_id
+- name: transatlantic_voyage_ids
   spss_name: voyageID2
-  label: Trans-Atlantic voyage ID of the captives' earlier voyage
+  label: Trans-Atlantic voyage ID(s) of the captives' earlier voyage
   source_label:
     intraamerican: VoyageID of captive's transatlantic voyage
-  dtype: int32
-  kind: id
+  dtype: string
+  kind: id_list
   provenance: derived
   provenance_evidence: Technical variable assigned by the database compilers, not transcribed (codebook
     p.3)
   datasets:
   - intraamerican
-  table: voyages
+  table: voyage_links
   codebook:
     section: Technical variables
     page: 4
-  notes: Links Intra-American voyages to Trans-Atlantic voyage IDs
+  notes: Stored as text in the source; one voyage lists two IDs ('10275, 10157'). voyages_wide keeps the
+    IDs as text joined with ';'; voyage_links has one row per link. 11850 and 96007 are not in the 2020
+    Trans-Atlantic file.
+  long:
+    relation: transatlantic_voyage
 - name: in_1999_cdrom
   spss_name: EVGREEN
   label: Voyage was in the 1999 CD-ROM edition
@@ -2194,9 +2222,9 @@ fields:
   provenance: recorded
   provenance_evidence: 'Listed under codebook ''2. DATA VARIABLES'' (Voyage Dates, p.17); intro p.3: data
     variables ''come directly from historical records'''
-  provenance_note: 'TODO(field): Intra-American .sav label (''Day departed first port of embarkation'')
-    names a different event from the codebook (''Day that slave purchase began''). Using the codebook
-    meaning.'
+  provenance_note: 'Resolved: the Intra-American .sav label (''Day departed first port of embarkation'')
+    differs, but the site shows this field as ''Date trade began in Africa'' for Intra-American voyages
+    too, matching the codebook (https://legacy.slavevoyages.org/voyage/105238/variables, checked 2026-10-19).'
   datasets:
   - transatlantic
   - intraamerican
@@ -2218,9 +2246,9 @@ fields:
   provenance: recorded
   provenance_evidence: 'Listed under codebook ''2. DATA VARIABLES'' (Voyage Dates, p.17); intro p.3: data
     variables ''come directly from historical records'''
-  provenance_note: 'TODO(field): Intra-American .sav label (''Month departed first port of embarkation'')
-    names a different event from the codebook (''Month that slave purchase began''). Using the codebook
-    meaning.'
+  provenance_note: 'Resolved: the Intra-American .sav label (''Month departed first port of embarkation'')
+    differs, but the site shows this field as ''Date trade began in Africa'' for Intra-American voyages
+    too, matching the codebook (https://legacy.slavevoyages.org/voyage/105238/variables, checked 2026-10-19).'
   datasets:
   - transatlantic
   - intraamerican
@@ -2242,9 +2270,9 @@ fields:
   provenance: recorded
   provenance_evidence: 'Listed under codebook ''2. DATA VARIABLES'' (Voyage Dates, p.17); intro p.3: data
     variables ''come directly from historical records'''
-  provenance_note: 'TODO(field): Intra-American .sav label (''Year departed first port of embarkation'')
-    names a different event from the codebook (''Year that slave purchase began''). Using the codebook
-    meaning.'
+  provenance_note: 'Resolved: the Intra-American .sav label (''Year departed first port of embarkation'')
+    differs, but the site shows this field as ''Date trade began in Africa'' for Intra-American voyages
+    too, matching the codebook (https://legacy.slavevoyages.org/voyage/105238/variables, checked 2026-10-19).'
   datasets:
   - transatlantic
   - intraamerican
@@ -2288,9 +2316,10 @@ fields:
   provenance: recorded
   provenance_evidence: 'Listed under codebook ''2. DATA VARIABLES'' (Voyage Dates, p.17); intro p.3: data
     variables ''come directly from historical records'''
-  provenance_note: 'TODO(field): Intra-American .sav label (''Day departed last (or only) port of slave
-    embarkation'') names a different event from the codebook (''Day that vessel left last slaving port'').
-    Using the codebook meaning.'
+  provenance_note: 'Resolved: the Intra-American .sav label (''Day departed last (or only) port of slave
+    embarkation'') differs, but the site shows this field as ''Date vessel departed Africa'' for Intra-American
+    voyages too, matching the codebook (https://legacy.slavevoyages.org/voyage/105238/variables, checked
+    2026-10-19).'
   datasets:
   - transatlantic
   - intraamerican
@@ -2312,9 +2341,10 @@ fields:
   provenance: recorded
   provenance_evidence: 'Listed under codebook ''2. DATA VARIABLES'' (Voyage Dates, p.17); intro p.3: data
     variables ''come directly from historical records'''
-  provenance_note: 'TODO(field): Intra-American .sav label (''Month departed last (or only) port of slave
-    embarkation'') names a different event from the codebook (''Month that vessel left last slaving port'').
-    Using the codebook meaning.'
+  provenance_note: 'Resolved: the Intra-American .sav label (''Month departed last (or only) port of slave
+    embarkation'') differs, but the site shows this field as ''Date vessel departed Africa'' for Intra-American
+    voyages too, matching the codebook (https://legacy.slavevoyages.org/voyage/105238/variables, checked
+    2026-10-19).'
   datasets:
   - transatlantic
   - intraamerican
@@ -2336,9 +2366,10 @@ fields:
   provenance: recorded
   provenance_evidence: 'Listed under codebook ''2. DATA VARIABLES'' (Voyage Dates, p.17); intro p.3: data
     variables ''come directly from historical records'''
-  provenance_note: 'TODO(field): Intra-American .sav label (''Year departed last (or only) port of slave
-    embarkation'') names a different event from the codebook (''Year that vessel left last slaving port'').
-    Using the codebook meaning.'
+  provenance_note: 'Resolved: the Intra-American .sav label (''Year departed last (or only) port of slave
+    embarkation'') differs, but the site shows this field as ''Date vessel departed Africa'' for Intra-American
+    voyages too, matching the codebook (https://legacy.slavevoyages.org/voyage/105238/variables, checked
+    2026-10-19).'
   datasets:
   - transatlantic
   - intraamerican

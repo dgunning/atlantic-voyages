@@ -170,6 +170,13 @@ voyages checked (2026-10-19), unlike the Trans-Atlantic pages (below).
   voyages. Kept as in the source, since regions are never recomputed (found
   2026-10-19). Worth raising with the SlaveVoyages team; check whether the Oct
   2023 recode moved it.
+- Cape Lopez (Gabon) has two place codes in different regions: "Cap Lopez" (60612) under
+  the Bight of Biafra (60600) and "Cabo Lopo Gonçalves" (60712, the Portuguese name) under
+  West Central Africa (60700). Same headland; map points under 1 km apart. 60612 is the principal
+  place of purchase for 44 Trans-Atlantic voyages; 60712 for one (voyage 11986, *Jonge
+  Moor*, Dutch, 1731) and an intended place of purchase for 5 Portuguese or Brazilian
+  voyages, 1815–1827. So that voyage counts as West Central Africa. Kept as in the source,
+  as for Dixcove (found 2026-10-20). Worth raising with the SlaveVoyages team.
 
 - The 6 Nov 2023 codebook (`SPSS_Codebook_2023-11-06.pdf`) returns 404 on
   the legacy site (checked 2026-10-19). The manifest uses the 2022 edition

@@ -396,7 +396,7 @@ def _voyage_field(name: str) -> schema.Field | None:
     """The voyage field for a column, or for the code column behind a ``*_name`` column."""
     base = name[: -len("_name")] if name.endswith("_name") else name
     for f in schema.load().fields:
-        if f.name in (name, base) and f.table != "estimates":
+        if f.name in (name, base) and f.is_voyage_field:
             return f
     return None
 

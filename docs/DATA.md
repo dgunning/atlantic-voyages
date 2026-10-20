@@ -71,9 +71,61 @@ missing. GeoNames points are used only when a reviewer accepted the
 match. Every row records `coord_source` and `coord_ref`. Regions and broad
 regions have no point coordinates.
 
-These two sources are the one exception to "raw data comes only from
-slavevoyages.org", agreed 2026-10-19 because the downloads have no
-coordinates at all.
+These two sources were added on 2026-10-19 because the downloads have no
+coordinates at all. They are curated into a committed reference table, unlike
+the supplementary sources below, which are fetched and built.
+
+## Supplementary sources
+
+Data published by other projects, which complements SlaveVoyages. Allowed since
+2026-10-20 under these rules (also in `CLAUDE.md`):
+
+1. **A bulk file** published by a research or archival project. No scraping, no
+   login, no live API at runtime.
+2. **A stated licence** that allows research use, kept per record where the source
+   gives one. Any limit on redistribution is noted here.
+3. **Pinned.** Listed in `MANIFEST` in `fetch.py` and in the table below with URL,
+   date and SHA-256. A newer upload fails the checksum on purpose: update the file
+   name, hash and this page together, and re-check the tests against the source.
+4. **Opt-in.** Not fetched by default (`voyages fetch -d <source>`), built by
+   `voyages build` only when fetched. Everything else works without it.
+5. **Kept apart.** Its own tables, prefixed with the source name, marked `optional`
+   in `fields.yaml`, every column registered with its provenance. Never merged into
+   the SlaveVoyages tables. Links to SlaveVoyages only through keys the source
+   itself provides.
+6. **Credited.** A citation in `voyages.citation(<source>)`, an entry in `NOTICE`,
+   and its contributing datasets credited where it has them.
+
+| File | Source | Description | Downloaded | Size | SHA-256 |
+|---|---|---|---|---|---|
+| `enslaved-wikibase-2026-03-31.json.gz` | Enslaved.org | Wikibase JSON dump, last modified 2026-03-31, from `https://manta.matrix.msu.edu/msumatrix/public/exports/wikibase/2bde7b5b/latest.wikibase.dump.json.gz` | 2026-10-20 | 464,379,438 bytes | `0eaf2c8dd6b000d4f10ab6fb90d8deaee9aab68f063af517dad8ba7fdd286c09` |
+
+### Enslaved.org
+
+*Enslaved: Peoples of the Historical Slave Trade* (Michigan State University, Matrix
+Center), https://enslaved.org. A linked-data hub for records of people from about 40
+contributed datasets, including SlaveVoyages' own (African Names, voyages) and the
+Jamaican runaway notices compiled by Douglas Chambers ("Fugitives from Slavery in
+Jamaica"). Documentation of the data model: https://docs.enslaved.org/lod/.
+
+- **Licence.** Every source record in the dump states one; in the 2026-03-31 dump all
+  3,940 are CC BY 4.0. The tables keep it per source (`enslaved_sources.licence`), and
+  `enslaved_record_sources` links each person and event to its sources, so a record's
+  licence is always recoverable. Credit both Enslaved.org and the contributed dataset
+  (`enslaved_projects` has its journal article DOI).
+- **Tables.** `enslaved_people`, `enslaved_roles`, `enslaved_events`,
+  `enslaved_event_places`, `enslaved_places`, `enslaved_sources`, `enslaved_projects`,
+  `enslaved_record_sources`. Built by `src/voyages/ingest/enslaved.py` in about two
+  minutes, with a peak of about 3 GB of memory.
+- **Checked** against the counts on https://enslaved.org (2026-10-20): 731,500
+  people, 474,012 events, 10,381 places, 3,940 sources.
+- **No voyage IDs.** Its voyage events (22,875) carry ship names but no SlaveVoyages
+  voyage ID, so there is no key to join them to the voyage tables; they are not
+  linked.
+- **Overlap.** Some contributed datasets come from SlaveVoyages (project
+  "SlaveVoyages"). Do not add their counts to the voyage tables' counts.
+- **Person records, not persons.** One historical person can have several records,
+  from different contributed datasets. The tables keep records as published.
 
 ## Corrections applied at ingest
 

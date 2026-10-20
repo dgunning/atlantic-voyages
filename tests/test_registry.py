@@ -14,7 +14,11 @@ import pytest
 from voyages import schema
 
 REG = schema.load()
-VOYAGE_TABLES = {t for t in REG.tables if t not in ("estimates", "voyages_wide")}
+VOYAGE_TABLES = {
+    t
+    for t in REG.tables
+    if t not in ("estimates", "voyages_wide") and not t.startswith("enslaved_")
+}
 
 
 def test_registry_loads_every_field():
@@ -23,12 +27,26 @@ def test_registry_loads_every_field():
 
 
 def test_names_are_unique_snake_case():
+    # Voyage fields and each supplementary source share one namespace (names are
+    # looked up across both); the Estimates fields have their own.
     names = [f.name for f in REG.fields if f.table != "estimates"]
     assert len(names) == len(set(names))
     est = [f.name for f in REG.fields if f.table == "estimates"]
     assert len(est) == len(set(est))
     for n in names + est:
         assert re.fullmatch(r"[a-z][a-z0-9_]*", n), n
+
+
+def test_supplementary_fields_stay_in_their_own_tables():
+    for f in REG.fields:
+        supplementary = set(f.datasets) & set(schema.SUPPLEMENTARY_DATASETS)
+        if supplementary:
+            assert len(f.datasets) == 1, f.name  # never mixed with SlaveVoyages datasets
+            assert f.table.startswith(f"{f.datasets[0]}_"), f.name
+            assert REG.tables[f.table].get("optional"), f.table
+            assert not f.is_voyage_field, f.name
+    wide = {c["name"] for c in schema.table_columns("voyages_wide")}
+    assert not wide & {f.name for f in REG.fields if f.datasets == ("enslaved",)}
 
 
 def test_provenance_is_always_set_and_valid():

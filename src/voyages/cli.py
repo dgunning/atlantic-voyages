@@ -22,7 +22,10 @@ def version() -> None:
 @app.command()
 def fetch(
     dataset: list[str] = typer.Option(  # noqa: B008
-        list(_fetch.DEFAULT_DATASETS), "--dataset", "-d", help="Datasets to fetch."
+        list(_fetch.DEFAULT_DATASETS),
+        "--dataset",
+        "-d",
+        help="Datasets to fetch. Supplementary sources are opt-in, e.g. -d enslaved.",
     ),
     force: bool = typer.Option(False, help="Re-download even if the file exists."),
 ) -> None:
@@ -48,13 +51,19 @@ def build() -> None:
     import pyarrow.parquet as pq
 
     from voyages.config import built_dir
-    from voyages.ingest import estimates, intraamerican, reference, transatlantic
+    from voyages.ingest import enslaved, estimates, intraamerican, reference, transatlantic
 
     for table, n in reference.build().items():
         typer.echo(f"ok  reference/{table}.csv  {n} rows")
     for ingest in (transatlantic, intraamerican, estimates):
         for table, path in ingest.build().items():
             typer.echo(f"ok  {table}/{path.name}  {pq.read_metadata(path).num_rows} rows")
+    # Supplementary sources: built when fetched, skipped otherwise.
+    if enslaved.available():
+        for table, path in enslaved.build().items():
+            typer.echo(f"ok  {table}/{path.name}  {pq.read_metadata(path).num_rows} rows")
+    else:
+        typer.echo("skip  enslaved_* (supplementary; fetch with `voyages fetch -d enslaved`)")
     typer.echo(f"\nbuilt dir: {built_dir()}")
 
 

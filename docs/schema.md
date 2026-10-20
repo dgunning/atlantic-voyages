@@ -40,6 +40,15 @@ Long tables (where the wide file encodes a repeated structure)
 Estimates
 - `estimates` — its own table, its own region codes (they don't use the place hierarchy). Whole table is CC BY-NC; every field provenance = derived/imputed per codebook.
 
+Supplementary: Enslaved.org (added 2026-10-20; opt-in, tables marked `optional: true`)
+- `enslaved_people` (one row per person record), `enslaved_roles` (person, event, role),
+  `enslaved_events`, `enslaved_event_places` (event, seq, place), `enslaved_places`,
+  `enslaved_sources` (with `licence` and `project_id`), `enslaved_projects` (contributed
+  datasets, with DOI), `enslaved_record_sources` (which sources each person or event cites).
+- Keys are Enslaved.org item numbers (the Q-number without the Q). `spss_name` in the
+  registry holds the Wikibase property (e.g. `P46`). Multi-valued fields are joined with
+  `"; "`. No column is shared with the voyage tables, and nothing joins to `voyage_id`.
+
 Reference (schema/reference/*.csv, generated from value labels, committed for diffability)
 - `places.csv` — code, name, level (place/region/broad_region), region_code, broad_region_code, alt_names (IA spellings), lat, lon, coord_source, coord_precision, coord_ref, and map_lat, map_lon, map_precision, map_code.
   - `coord_precision`: `place` (the place itself), `representative` (a "port unspecified" code drawn at the principal port), `region` (a region's centre).

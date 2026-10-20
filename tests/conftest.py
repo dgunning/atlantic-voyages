@@ -1,4 +1,4 @@
-"""Shared fixtures: Parquet built from the committed sample .sav files."""
+"""Shared fixtures: Parquet built from the committed samples (.sav, and the Enslaved.org dump)."""
 
 import warnings
 from pathlib import Path
@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 
 from voyages import Voyages
-from voyages.ingest import estimates, intraamerican, transatlantic
+from voyages.ingest import enslaved, estimates, intraamerican, transatlantic
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -19,6 +19,7 @@ def built(tmp_path_factory) -> Path:
         transatlantic.build(FIXTURES / "transatlantic_sample.sav", out)
         intraamerican.build(FIXTURES / "intraamerican_sample.sav", out)
         estimates.build(FIXTURES / "estimates_sample.sav", out)
+    enslaved.build(FIXTURES / "enslaved_sample.json.gz", out)
     return out
 
 

@@ -87,7 +87,7 @@ def lookup(name: str, dataset: str | None = None) -> schema.Field:
     if dataset:
         found = [f for f in found if dataset in f.datasets]
     if len(found) > 1:  # a readable name beats an SPSS name, then voyage beats Estimates
-        found.sort(key=lambda f: (f.name.lower() != key, f.table == "estimates"))
+        found.sort(key=lambda f: (f.name.lower() != key, not f.is_voyage_field))
     if not found:
         names = [f.name for f in schema.load().fields] + [f.spss_name for f in schema.load().fields]
         close = difflib.get_close_matches(name, names, n=5)
@@ -136,12 +136,12 @@ class FieldDescription:
 def describe(con: duckdb.DuckDBPyConnection, name: str, dataset: str | None = None):
     """Describe a field: registry entry, coverage per dataset, values."""
     f = lookup(name, dataset)
-    source = "estimates" if f.table == "estimates" else "voyages_wide"
+    source = "voyages_wide" if f.is_voyage_field else f.table
     col = f'"{f.name}"'
-    if source == "estimates":
+    if source != "voyages_wide":
         coverage = con.sql(
-            f"SELECT 'estimates' AS dataset, count(*) AS rows, count({col}) AS with_value "
-            f"FROM estimates"
+            f"SELECT '{f.datasets[0]}' AS dataset, count(*) AS rows, count({col}) AS with_value "
+            f"FROM {source}"
         ).df()
         where = "TRUE"
     else:

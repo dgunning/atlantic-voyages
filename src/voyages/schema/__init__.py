@@ -2,7 +2,8 @@
 
 ``fields.yaml`` next to this file is authoritative. Each field has a
 readable ``name`` (its column in ``voyages_wide`` and its identifier in
-the API), the ``spss_name`` it comes from, a ``label`` in project
+the API), the ``spss_name`` it comes from (for a supplementary source, the
+source's own variable, e.g. a Wikibase property such as ``P46``), a ``label`` in project
 language, the original ``source_label`` verbatim, and a ``provenance``
 of recorded, imputed or derived. ``table`` and ``long`` say where the
 value lands in the normalized Parquet tables.
@@ -20,7 +21,11 @@ import yaml
 REGISTRY_PATH = Path(__file__).with_name("fields.yaml")
 
 PROVENANCE = ("recorded", "imputed", "derived")
-DATASETS = ("transatlantic", "intraamerican", "estimates")
+DATASETS = ("transatlantic", "intraamerican", "estimates", "enslaved")
+# Supplementary sources: published by other projects, opt-in, kept in their own
+# tables and never merged into the SlaveVoyages tables. See docs/DATA.md.
+SUPPLEMENTARY_DATASETS = ("enslaved",)
+VOYAGE_DATASETS = ("transatlantic", "intraamerican")
 
 
 @dataclass(frozen=True)
@@ -42,6 +47,11 @@ class Field:
     notes: str | None = None
     spss_name_by_dataset: dict[str, str] = field(default_factory=dict)
     derived_from: tuple[str, ...] = ()
+
+    @property
+    def is_voyage_field(self) -> bool:
+        """A field of the voyage datasets (a column of ``voyages_wide``)."""
+        return any(d in VOYAGE_DATASETS for d in self.datasets)
 
     def spss_name_in(self, dataset: str) -> str:
         """SPSS variable name for this field in a given dataset's file."""
@@ -100,7 +110,6 @@ def load(path: Path = REGISTRY_PATH) -> Registry:
 
 
 # ------------------------------------------------------------ table schemas
-VOYAGE_DATASETS = ("transatlantic", "intraamerican")
 
 
 def table_columns(table: str, registry: Registry | None = None) -> list[dict[str, str]]:
@@ -119,7 +128,7 @@ def table_columns(table: str, registry: Registry | None = None) -> list[dict[str
             cols.append(c)
             continue
         if table == "voyages_wide":
-            fields = [f for f in reg.fields if f.table != "estimates"]
+            fields = [f for f in reg.fields if f.is_voyage_field]
         else:
             fields = list(reg.for_table(table))
         for f in fields:

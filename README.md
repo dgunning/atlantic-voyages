@@ -60,6 +60,40 @@ voyages query -d transatlantic -e "Bight of Biafra" -l Jamaica --from 1700 --to 
 voyages query -l Jamaica --by endpoints --drawable-only -o jamaica.parquet
 ```
 
+## Supplementary sources
+
+Data from other projects can be added alongside, opt-in and in tables of its own; nothing
+is merged into the SlaveVoyages tables. The first is
+[Enslaved.org](https://enslaved.org): 731,500 person records from about 40 contributed
+datasets, with names, roles, ethnonyms, places and the sources each record cites.
+
+```bash
+voyages fetch -d enslaved   # 464 MB dump, checksummed
+voyages build               # adds the enslaved_* tables
+```
+
+```python
+import voyages
+from voyages import Voyages
+
+v = Voyages()
+runaways = v.sql("""
+    SELECT p.person_name, p.ethnonym, p.ethnonym_as_written, s.source_title AS newspaper
+    FROM enslaved_people p
+    JOIN enslaved_record_sources rs ON rs.record_id = p.person_id
+    JOIN enslaved_sources s USING (source_id)
+    JOIN enslaved_projects USING (project_id)
+    JOIN enslaved_roles r ON r.person_id = p.person_id
+    WHERE project_code = 'FSJ'   -- Fugitives from Slavery in Jamaica
+      AND r.participant_role = 'Runaway'
+      AND s.source_title NOT LIKE 'Chambers%'
+""").to_pandas()
+print(voyages.citation("enslaved"))
+```
+
+Every source record carries its licence (`enslaved_sources.licence`) and its contributing
+dataset (`enslaved_projects`, with the dataset's DOI); credit both. See `docs/DATA.md`.
+
 ## Worked analyses
 
 Notebooks in `notebooks/`, each a `.py` source paired with an executed `.ipynb`

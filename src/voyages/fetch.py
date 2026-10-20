@@ -6,6 +6,10 @@ verified, its SHA-256. Keep ``docs/DATA.md`` in step with this file.
 
 Downloads come from the legacy site, which still serves the static
 files (the main site is a single-page app and does not expose them).
+
+Supplementary sources (``SUPPLEMENTARY_DATASETS``) are files published by
+other projects, such as the Enslaved.org dump. They are opt-in: not fetched by
+``voyages fetch`` unless asked for with ``-d``. See docs/DATA.md for the rules.
 """
 
 from __future__ import annotations
@@ -27,7 +31,7 @@ LEGACY_BASE = "https://legacy.slavevoyages.org/documents/download/"
 @dataclass(frozen=True)
 class RawFile:
     name: str
-    dataset: str  # transatlantic | intraamerican | estimates | codebook
+    dataset: str  # transatlantic | intraamerican | estimates | codebook | enslaved
     description: str
     sha256: str | None = None  # filled in after first verified download
     url: str | None = None
@@ -90,9 +94,21 @@ MANIFEST: tuple[RawFile, ...] = (
         "Estimates methodology essay, 2010",
         sha256="57f28971d407314af43eeff5eb9c24cba41ce33f6e4ce7abe65adc07dee44b9b",
     ),
+    # Supplementary. The project serves only a "latest" dump, so a newer upload
+    # fails the checksum: update the name, hash and docs/DATA.md together.
+    RawFile(
+        "enslaved-wikibase-2026-03-31.json.gz",
+        "enslaved",
+        "Enslaved.org Wikibase JSON dump, last modified 2026-03-31 (1,223,416 entities); "
+        "licence per contributed dataset",
+        sha256="0eaf2c8dd6b000d4f10ab6fb90d8deaee9aab68f063af517dad8ba7fdd286c09",
+        url="https://manta.matrix.msu.edu/msumatrix/public/exports/wikibase/2bde7b5b/"
+        "latest.wikibase.dump.json.gz",
+    ),
 )
 
 DEFAULT_DATASETS = ("transatlantic", "intraamerican", "estimates", "codebook")
+SUPPLEMENTARY_DATASETS = ("enslaved",)  # opt-in: voyages fetch -d enslaved
 
 
 def sha256_of(path: Path, chunk: int = 1 << 20) -> str:
@@ -118,7 +134,12 @@ def fetch_one(entry: RawFile, dest_dir: Path | None = None, *, force: bool = Fal
     digest = sha256_of(tmp)
     if entry.sha256 and digest != entry.sha256:
         tmp.unlink()
-        raise RuntimeError(f"checksum mismatch for {entry.name}: got {digest}")
+        hint = (
+            " (the source may have published a newer file; see docs/DATA.md)"
+            if entry.dataset in SUPPLEMENTARY_DATASETS
+            else ""
+        )
+        raise RuntimeError(f"checksum mismatch for {entry.name}: got {digest}{hint}")
     tmp.replace(dest)
     return dest
 
@@ -136,14 +157,16 @@ def verify(dest_dir: Path | None = None) -> dict[str, str]:
     """Return ``{filename: status}`` for every manifest entry.
 
     Status is one of ``ok``, ``missing``, ``mismatch`` or ``unverified``
-    (present, but the manifest has no checksum for it yet).
+    (present, but the manifest has no checksum for it yet). A supplementary
+    file that has not been fetched is ``not fetched (optional)``.
     """
     dest_dir = dest_dir or raw_dir()
     out: dict[str, str] = {}
     for e in MANIFEST:
         p = dest_dir / e.name
         if not p.exists():
-            out[e.name] = "missing"
+            optional = e.dataset in SUPPLEMENTARY_DATASETS
+            out[e.name] = "not fetched (optional)" if optional else "missing"
         elif e.sha256 is None:
             out[e.name] = "unverified"
         elif sha256_of(p) == e.sha256:

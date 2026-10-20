@@ -26,6 +26,21 @@ come from two sources, recorded per row in coord_source / coord_ref:
 - GeoNames (https://www.geonames.org), licensed under Creative Commons
   Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/).
 
+SUPPLEMENTARY SOURCES
+
+Enslaved.org (Enslaved: Peoples of the Historical Slave Trade, Michigan
+State University, Matrix Center for Digital Humanities & Social Sciences,
+https://enslaved.org). The library can fetch and build its published data
+dump on request (`voyages fetch -d enslaved`); it does not redistribute the
+dump. Each contributed dataset in it states its licence (CC BY 4.0 for all
+sources in the 2026-03-31 dump). The test fixture
+tests/fixtures/enslaved_sample.json.gz is a sample of the dataset "Fugitives
+from Slavery in Jamaica" (Anthony W. Wood and Billy G. Smith, from Douglas B.
+Chambers, "Jamaica Runaway Slaves: 18th Century", 2013;
+https://doi.org/10.25971/a7na-ky57), licensed CC BY 4.0
+(https://creativecommons.org/licenses/by/4.0/). Cite with
+`voyages.citation("enslaved")`.
+
 Recommended citation:
 
   SlaveVoyages, Trans-Atlantic Slave Trade Database,

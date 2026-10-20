@@ -25,13 +25,29 @@ code, docs, tests, and commit messages should reflect that.
 
 ## Data provenance and licensing (non-negotiable)
 
-- Raw downloads come only from slavevoyages.org (the `.sav` and `.csv`
+- The core data comes from slavevoyages.org (the `.sav` and `.csv`
   files and the PDF codebook). Record file name, URL, download date, and
   SHA-256 in `docs/DATA.md` whenever a raw file is added or refreshed.
-  One exception: place coordinates (absent from the downloads) come from
-  the SlaveVoyages legacy repo fixture and GeoNames (CC BY 4.0), curated
-  by `tools/place_coordinates.py`, with a source and reference on every
-  row. See `docs/DATA.md`.
+  Place coordinates (absent from the downloads) come from the SlaveVoyages
+  legacy repo fixture and GeoNames (CC BY 4.0), curated by
+  `tools/place_coordinates.py`, with a source and reference on every row.
+- Supplementary sources from other projects are allowed when all of
+  these hold (see "Supplementary sources" in `docs/DATA.md`):
+  1. A bulk file published by a research or archival project. No
+     scraping, no login, no live API at runtime.
+  2. A stated licence that allows research use, kept per record where the
+     source gives one. Note any limit on redistribution.
+  3. Pinned: listed in `MANIFEST` in `fetch.py` and in `docs/DATA.md` with
+     URL, date and SHA-256.
+  4. Opt-in: not fetched by default (`voyages fetch -d <source>`); built
+     only if fetched; the library works without it.
+  5. Kept apart: its own tables, prefixed with the source name (e.g.
+     `enslaved_*`), marked `optional` in `fields.yaml`, with every column
+     registered. Never merged into the SlaveVoyages tables. Links to
+     SlaveVoyages only through keys the source itself provides.
+  6. Credited: a citation in `voyages.citation(<source>)`, an entry in
+     `NOTICE`, and its contributing datasets credited where it has them.
+  Current supplementary sources: Enslaved.org.
 - Data transcribed from historical documents is public domain. Imputed
   fields (marked `*` on the site) and the entire Estimates database are
   CC BY-NC 4.0. Every field in the registry carries `provenance:
@@ -48,6 +64,7 @@ code, docs, tests, and commit messages should reflect that.
 ```
 raw downloads (.sav/.csv, cached outside the repo, never committed)
   -> ingest/   pyreadstat load, type coercion, code decoding
+               (plus one module per supplementary source, e.g. enslaved.py)
   -> schema/   fields.yaml registry + reference tables (places, flags, rigs, outcomes)
   -> data/     typed Parquet, long-format where it makes sense
   -> api/      DuckDB-backed query layer and a thin fluent Python API
@@ -92,7 +109,7 @@ raw downloads (.sav/.csv, cached outside the repo, never committed)
 - When unsure about a field's meaning, read the codebook in
   `docs/codebook/` before guessing; if still unsure, leave a `TODO(field)`
   in `fields.yaml` and open an issue rather than inventing a label.
-- Don't call the live SlaveVoyages API from library code. It's useful
+- Don't call the live SlaveVoyages API (or any source's live API) from library code. It's useful
   for reading their models (`rice-crc/voyages-api` on GitHub) and for
   spot-checking values, not as a runtime dependency.
 - Keep notebooks in `notebooks/` executable top to bottom with

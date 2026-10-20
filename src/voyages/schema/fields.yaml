@@ -363,6 +363,112 @@ tables:
     - name: drawable
       dtype: bool
       description: Both endpoints have a point
+  enslaved_people:
+    grain: one row per person record
+    description: 'Enslaved.org people (supplementary source; licence per source, see enslaved_sources). One person
+      record per contributed record: the same historical person can appear in several.'
+    key:
+    - person_id
+    optional: true
+    columns:
+    - name: person_id
+      dtype: int32
+      description: 'Person: Enslaved.org item number (the Q-number without the Q), stable within a dump'
+    - from_fields: enslaved_people
+  enslaved_roles:
+    grain: one row per person, event and role
+    description: The role a person had in an event (Enslaved.org hasParticipantRole, P17, with its event qualifier)
+    key:
+    - person_id
+    - event_id
+    - participant_role
+    optional: true
+    columns:
+    - name: person_id
+      dtype: int32
+      description: 'Person: Enslaved.org item number (the Q-number without the Q), stable within a dump'
+    - name: event_id
+      dtype: int32
+      description: 'Event: Enslaved.org item number (the Q-number without the Q), stable within a dump'
+    - from_fields: enslaved_roles
+  enslaved_events:
+    grain: one row per event record
+    description: 'Enslaved.org events: voyages, sales, legal proceedings, advertisements, births, deaths and
+      others'
+    key:
+    - event_id
+    optional: true
+    columns:
+    - name: event_id
+      dtype: int32
+      description: 'Event: Enslaved.org item number (the Q-number without the Q), stable within a dump'
+    - from_fields: enslaved_events
+  enslaved_event_places:
+    grain: one row per event and place
+    description: Places of an event (atPlace, P27), in source order
+    key:
+    - event_id
+    - seq
+    optional: true
+    columns:
+    - name: event_id
+      dtype: int32
+      description: 'Event: Enslaved.org item number (the Q-number without the Q), stable within a dump'
+    - name: seq
+      dtype: int8
+      description: Order of the place in the record, from 1
+    - name: place_id
+      dtype: int32
+      description: 'Place: Enslaved.org item number (the Q-number without the Q), stable within a dump'
+  enslaved_places:
+    grain: one row per place record
+    description: Enslaved.org places, with the place each is located in
+    key:
+    - place_id
+    optional: true
+    columns:
+    - name: place_id
+      dtype: int32
+      description: 'Place: Enslaved.org item number (the Q-number without the Q), stable within a dump'
+    - from_fields: enslaved_places
+  enslaved_sources:
+    grain: one row per source record
+    description: Sources cited by Enslaved.org records (Entity with Provenance), with licence and contributing
+      project
+    key:
+    - source_id
+    optional: true
+    columns:
+    - name: source_id
+      dtype: int32
+      description: 'Source: Enslaved.org item number (the Q-number without the Q), stable within a dump'
+    - from_fields: enslaved_sources
+  enslaved_projects:
+    grain: one row per contributed dataset
+    description: Research projects that contributed data to Enslaved.org, for attribution
+    key:
+    - project_id
+    optional: true
+    columns:
+    - name: project_id
+      dtype: int32
+      description: 'Project: Enslaved.org item number (the Q-number without the Q), stable within a dump'
+    - from_fields: enslaved_projects
+  enslaved_record_sources:
+    grain: one row per record and source
+    description: Which sources each person and event record cites (statement references, P6). Join to enslaved_sources
+      for the licence.
+    key:
+    - record_id
+    - source_id
+    optional: true
+    columns:
+    - name: record_id
+      dtype: int32
+      description: 'Person or event: Enslaved.org item number (the Q-number without the Q), stable within a dump'
+    - name: source_id
+      dtype: int32
+      description: 'Source: Enslaved.org item number (the Q-number without the Q), stable within a dump'
 dropped:
 - spss_name: FILTER_$
   reason: SPSS filter left in the file (label is a filter expression), not data
@@ -6701,3 +6807,618 @@ fields:
   notes: 'Methodology: 2010estimates-method.pdf. Whole table is CC BY-NC 4.0. Closest to the site''s published
     totals: by carrier within 0.005% of https://legacy.slavevoyages.org/assessment/estimates (checked
     2026-10-19); the .sav rounds each row to whole people.'
+- name: person_record_id
+  spss_name: description
+  label: Record identifier in the contributing project (e.g. FSJ-R-PER-00005)
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+  notes: The item's English description in the dump; its prefix names the contributed dataset.
+- name: person_name
+  spss_name: P20
+  label: Name as recorded
+  source_label:
+    enslaved: hasName
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Transcribed from the contributed historical record, as published by Enslaved.org
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+- name: first_name
+  spss_name: P73
+  label: First name as recorded
+  source_label:
+    enslaved: hasFirstName
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Transcribed from the contributed historical record, as published by Enslaved.org
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+  notes: Several values are joined with '; '.
+- name: surname
+  spss_name: P72
+  label: Surname as recorded
+  source_label:
+    enslaved: hasSurname
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Transcribed from the contributed historical record, as published by Enslaved.org
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+  notes: Several values are joined with '; '.
+- name: alternate_names
+  spss_name: P71
+  label: Other names as recorded
+  source_label:
+    enslaved: hasAlternateName
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Transcribed from the contributed historical record, as published by Enslaved.org
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+  notes: Several values are joined with '; '.
+- name: sex
+  spss_name: P31
+  label: Sex
+  source_label:
+    enslaved: hasSex
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Enslaved.org controlled vocabulary term assigned to the contributed record
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+  notes: Several values are joined with '; '.
+- name: age
+  spss_name: P42
+  label: Age as recorded (vocabulary term, e.g. 'Age 50')
+  source_label:
+    enslaved: hasAge
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Enslaved.org controlled vocabulary term assigned to the contributed record
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+  notes: Several values are joined with '; '.
+- name: age_category
+  spss_name: P4
+  label: Age category (e.g. child, adult)
+  source_label:
+    enslaved: hasAgeCategory
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Enslaved.org controlled vocabulary term assigned to the contributed record
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+  notes: Several values are joined with '; '.
+- name: race_or_color
+  spss_name: P32
+  label: Race or colour as described in the record
+  source_label:
+    enslaved: hasRaceorColor
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Transcribed from the contributed historical record, as published by Enslaved.org
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+  notes: Several values are joined with '; '. The record's own term, kept verbatim.
+- name: ethnonym
+  spss_name: P46
+  label: Ethnonym, standardised by Enslaved.org (e.g. Igbo, Congo, Creole)
+  source_label:
+    enslaved: hasEthnolinguisticDescriptor
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Enslaved.org controlled vocabulary term assigned to the contributed record; Enslaved.org
+    maps the record's term to a standard ethnonym
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+  notes: Several values are joined with '; '. Ethnonyms are the record-keeper's labels, not self-descriptions.
+- name: ethnonym_place_of_origin
+  spss_name: P47
+  label: Place of origin the ethnonym refers to (e.g. Bight of Biafra for Igbo, Brazil for Crioulo)
+  source_label:
+    enslaved: referstoPlaceofOrigin (qualifier on hasEthnolinguisticDescriptor)
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Qualifier on the ethnonym statement, assigned by Enslaved.org
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+  notes: Several values are joined with '; '. Not a SlaveVoyages region; mixes African regions, ports,
+    countries and American places.
+- name: ethnonym_as_written
+  spss_name: P77
+  label: Ethnonym as written in the record, where it has no standard term (e.g. Coromantee, Moco, Chamba)
+  source_label:
+    enslaved: hasDescriptiveEthnonym
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Transcribed from the contributed historical record, as published by Enslaved.org
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+  notes: Several values are joined with '; '.
+- name: occupation
+  spss_name: P22
+  label: Occupation, standardised
+  source_label:
+    enslaved: hasOccupation
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Enslaved.org controlled vocabulary term assigned to the contributed record
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+  notes: Several values are joined with '; '.
+- name: occupation_as_written
+  spss_name: P78
+  label: Occupation as written in the record
+  source_label:
+    enslaved: hasDescriptiveOccupation
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Transcribed from the contributed historical record, as published by Enslaved.org
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+  notes: Several values are joined with '; '.
+- name: person_statuses
+  spss_name: P33
+  label: Statuses the person had in the record (e.g. Enslaved Person, Liminal Status Person)
+  source_label:
+    enslaved: hasPersonStatus
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Enslaved.org controlled vocabulary term assigned to the contributed record
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+  notes: Several values are joined with '; '.
+- name: person_description
+  spss_name: P66
+  label: Notes from the record and the contributor
+  source_label:
+    enslaved: hasDescription
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Transcribed from the contributed historical record, as published by Enslaved.org
+  datasets:
+  - enslaved
+  table: enslaved_people
+  codebook: null
+  notes: Several notes are joined with ' | '.
+- name: participant_role
+  spss_name: P17
+  label: Role in the event (e.g. Runaway, Captured Person, Vessel Captain)
+  source_label:
+    enslaved: hasParticipantRole
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Enslaved.org controlled vocabulary term assigned to the contributed record
+  datasets:
+  - enslaved
+  table: enslaved_roles
+  codebook: null
+- name: event_record_id
+  spss_name: description
+  label: Record identifier in the contributing project
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_events
+  codebook: null
+- name: event_name
+  spss_name: P20
+  label: Name of the event (e.g. 'Disappearance of Abraham')
+  source_label:
+    enslaved: hasName
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_events
+  codebook: null
+- name: event_type
+  spss_name: P30
+  label: Event type (e.g. Voyage, Advertisement, Legal Proceeding)
+  source_label:
+    enslaved: hasEventType
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Enslaved.org controlled vocabulary term assigned to the contributed record
+  datasets:
+  - enslaved
+  table: enslaved_events
+  codebook: null
+  notes: Several values are joined with '; '.
+- name: event_date
+  spss_name: P28
+  label: Date of the event as ISO text, cut to its precision (YYYY, YYYY-MM or YYYY-MM-DD)
+  source_label:
+    enslaved: date
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Transcribed from the contributed historical record, as published by Enslaved.org
+  datasets:
+  - enslaved
+  table: enslaved_events
+  codebook: null
+  notes: First date only. Records with only occursAfter / occursBefore / circa have no date here.
+- name: event_year
+  spss_name: P28
+  label: Year of the event
+  dtype: int16
+  kind: year
+  provenance: derived
+  provenance_evidence: Year part of event_date
+  datasets:
+  - enslaved
+  table: enslaved_events
+  codebook: null
+  derived_from:
+  - event_date
+- name: event_description
+  spss_name: P66
+  label: Notes on the event
+  source_label:
+    enslaved: hasDescription
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Transcribed from the contributed historical record, as published by Enslaved.org
+  datasets:
+  - enslaved
+  table: enslaved_events
+  codebook: null
+  notes: Several notes are joined with ' | '.
+- name: place_label
+  spss_name: P20
+  label: Place name
+  source_label:
+    enslaved: hasName
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Transcribed from the contributed historical record, as published by Enslaved.org
+  datasets:
+  - enslaved
+  table: enslaved_places
+  codebook: null
+- name: place_type
+  spss_name: P8
+  label: Place type (e.g. Port, County or Parish, Country)
+  source_label:
+    enslaved: hasPlaceType
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Enslaved.org controlled vocabulary term assigned to the contributed record
+  datasets:
+  - enslaved
+  table: enslaved_places
+  codebook: null
+  notes: Several values are joined with '; '.
+- name: located_in_id
+  spss_name: P7
+  label: 'Place this place is in (first listed): Enslaved.org item number'
+  source_label:
+    enslaved: locatedIn
+  dtype: int32
+  kind: id
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_places
+  codebook: null
+- name: located_in
+  spss_name: P7
+  label: Names of the places this place is in
+  source_label:
+    enslaved: locatedIn
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_places
+  codebook: null
+  notes: Several values are joined with '; '.
+- name: latitude
+  spss_name: P59
+  label: Latitude
+  source_label:
+    enslaved: hasCoordinates
+  dtype: float64
+  kind: measure
+  provenance: derived
+  provenance_evidence: Coordinates assigned by Enslaved.org
+  datasets:
+  - enslaved
+  table: enslaved_places
+  codebook: null
+- name: longitude
+  spss_name: P59
+  label: Longitude
+  source_label:
+    enslaved: hasCoordinates
+  dtype: float64
+  kind: measure
+  provenance: derived
+  provenance_evidence: Coordinates assigned by Enslaved.org
+  datasets:
+  - enslaved
+  table: enslaved_places
+  codebook: null
+- name: geonames_id
+  spss_name: P36
+  label: GeoNames ID
+  source_label:
+    enslaved: Geonames ID
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_places
+  codebook: null
+- name: modern_country_code
+  spss_name: P9
+  label: Modern country code
+  source_label:
+    enslaved: modern country code
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_places
+  codebook: null
+- name: source_record_id
+  spss_name: description
+  label: Source identifier in the contributing project
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_sources
+  codebook: null
+- name: source_title
+  spss_name: P20
+  label: Source title or citation
+  source_label:
+    enslaved: hasName
+  dtype: string
+  kind: text
+  provenance: recorded
+  provenance_evidence: Transcribed from the contributed historical record, as published by Enslaved.org
+  datasets:
+  - enslaved
+  table: enslaved_sources
+  codebook: null
+- name: project_id
+  spss_name: P16
+  label: 'Contributing project: Enslaved.org item number (see enslaved_projects)'
+  source_label:
+    enslaved: generatedBy
+  dtype: int32
+  kind: id
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_sources
+  codebook: null
+- name: licence
+  spss_name: P15
+  label: Licence of the data from this source (e.g. CC BY 4.0)
+  source_label:
+    enslaved: hasLicenseInfo
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Licence stated by Enslaved.org for the contributed data
+  datasets:
+  - enslaved
+  table: enslaved_sources
+  codebook: null
+- name: source_type
+  spss_name: P23
+  label: Type of original source (e.g. Digital Data Repository)
+  source_label:
+    enslaved: hasOriginalSourceType
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Enslaved.org controlled vocabulary term assigned to the contributed record
+  datasets:
+  - enslaved
+  table: enslaved_sources
+  codebook: null
+  notes: Several values are joined with '; '.
+- name: source_url
+  spss_name: P21
+  label: Link to the source (first listed)
+  source_label:
+    enslaved: hasExternalReference
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_sources
+  codebook: null
+- name: source_year
+  spss_name: P28
+  label: Year of the source
+  source_label:
+    enslaved: date
+  dtype: int16
+  kind: year
+  provenance: derived
+  provenance_evidence: Year part of the source's date
+  datasets:
+  - enslaved
+  table: enslaved_sources
+  codebook: null
+- name: project_code
+  spss_name: description
+  label: Short code of the contributed dataset (e.g. FSJ); for a few datasets the dump has a sentence
+    here instead
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_projects
+  codebook: null
+- name: project_name
+  spss_name: P20
+  label: Name of the contributed dataset
+  source_label:
+    enslaved: hasName
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_projects
+  codebook: null
+- name: contributors
+  spss_name: P13
+  label: Contributors named by the project
+  source_label:
+    enslaved: hasContributor
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_projects
+  codebook: null
+  notes: Several values are joined with '; '.
+- name: start_year
+  spss_name: P82
+  label: First year the dataset covers
+  source_label:
+    enslaved: startsAt
+  dtype: int16
+  kind: year
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_projects
+  codebook: null
+- name: end_year
+  spss_name: P63
+  label: Last year the dataset covers
+  source_label:
+    enslaved: endsAt
+  dtype: int16
+  kind: year
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_projects
+  codebook: null
+- name: data_article_url
+  spss_name: P83
+  label: Link to the dataset's article in the Journal of Slavery and Data Preservation, where given
+  source_label:
+    enslaved: hasResource
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_projects
+  codebook: null
+- name: documentation_url
+  spss_name: P83
+  label: Link to the original data and documentation, where given
+  source_label:
+    enslaved: hasResource
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_projects
+  codebook: null
+- name: project_description
+  spss_name: P66
+  label: Description of the dataset
+  source_label:
+    enslaved: hasDescription
+  dtype: string
+  kind: text
+  provenance: derived
+  provenance_evidence: Technical value assigned by Enslaved.org or the contributing project, not transcribed
+  datasets:
+  - enslaved
+  table: enslaved_projects
+  codebook: null

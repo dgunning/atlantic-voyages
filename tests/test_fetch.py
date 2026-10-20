@@ -18,8 +18,18 @@ def test_manifest_names_are_unique():
 
 def test_download_urls_point_at_legacy_site():
     for e in MANIFEST:
+        if e.dataset in fetch.SUPPLEMENTARY_DATASETS:
+            continue
         assert e.download_url.startswith("https://legacy.slavevoyages.org/documents/download/")
         assert e.download_url.endswith(e.name)
+
+
+def test_supplementary_files_are_opt_in_and_pinned():
+    supp = [e for e in MANIFEST if e.dataset in fetch.SUPPLEMENTARY_DATASETS]
+    assert {e.dataset for e in supp} == set(fetch.SUPPLEMENTARY_DATASETS)
+    assert not set(fetch.SUPPLEMENTARY_DATASETS) & set(fetch.DEFAULT_DATASETS)
+    for e in supp:
+        assert e.sha256 and e.url and e.url.startswith("https://"), e.name
 
 
 def test_each_dataset_has_an_spss_file_except_codebook():
@@ -30,7 +40,9 @@ def test_each_dataset_has_an_spss_file_except_codebook():
 def test_verify_reports_missing_and_unverified(tmp_path: Path):
     status = verify(tmp_path)
     assert set(status) == {e.name for e in MANIFEST}
-    assert all(s == "missing" for s in status.values())
+    for e in MANIFEST:
+        optional = e.dataset in fetch.SUPPLEMENTARY_DATASETS
+        assert status[e.name] == ("not fetched (optional)" if optional else "missing")
 
     first = MANIFEST[0]
     (tmp_path / first.name).write_bytes(b"not real data")

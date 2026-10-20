@@ -44,6 +44,10 @@ def parquet_tables(registry: schema.Registry | None = None) -> list[str]:
     return [t for t, spec in reg.tables.items() if not spec.get("view")]
 
 
+def registry_table(table: str) -> dict:
+    return schema.load().tables[table]
+
+
 def connect(
     built: Path | None = None, reference: Path = REFERENCE_DIR
 ) -> duckdb.DuckDBPyConnection:
@@ -54,7 +58,8 @@ def connect(
     for table in parquet_tables():
         files = sorted((built / table).glob("*.parquet"))
         if not files:
-            missing.append(table)
+            if not registry_table(table).get("optional"):
+                missing.append(table)
             continue
         paths = ", ".join(_quote(str(p)) for p in files)
         con.execute(

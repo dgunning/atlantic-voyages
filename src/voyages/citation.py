@@ -20,16 +20,32 @@ DATASETS: dict[str, str] = {
 }
 
 
+# Supplementary sources cite their own project. Each contributed dataset inside
+# them should be cited too: see enslaved_projects (data_article_url).
+SUPPLEMENTARY: dict[str, str] = {
+    # Chicago form from https://enslaved.org/about (checked 2026-10-20).
+    "enslaved": (
+        "Hawthorne, Walter, Daryle Williams, and Dean Rehberger, dirs. Enslaved: Peoples of "
+        "the Historical Slave Trade (Enslaved.org), Version 2. Michigan State University: "
+        "Matrix Center for Digital Humanities & Social Sciences, 2024. https://enslaved.org/"
+    ),
+}
+
+
 def citation(dataset: str = "transatlantic", accessed: date | None = None) -> str:
     """Return the recommended citation string for a SlaveVoyages dataset.
 
     Args:
-        dataset: one of ``transatlantic``, ``intraamerican``, ``estimates``, ``people``.
+        dataset: one of ``transatlantic``, ``intraamerican``, ``estimates``, ``people``,
+            or a supplementary source (``enslaved``).
         accessed: access date to record; defaults to today.
     """
-    if dataset not in DATASETS:
-        raise ValueError(f"unknown dataset {dataset!r}; expected one of {sorted(DATASETS)}")
     accessed = accessed or date.today()
+    if dataset in SUPPLEMENTARY:
+        return f"{SUPPLEMENTARY[dataset]} (accessed {accessed:%B %d, %Y})."
+    if dataset not in DATASETS:
+        known = sorted([*DATASETS, *SUPPLEMENTARY])
+        raise ValueError(f"unknown dataset {dataset!r}; expected one of {known}")
     name = DATASETS[dataset]
     return f"SlaveVoyages, {name}, {SITE_URL} (accessed {accessed:%B %d, %Y})."
 

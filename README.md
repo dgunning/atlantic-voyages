@@ -94,6 +94,12 @@ Notebooks in `notebooks/`, each a `.py` source paired with an executed `.ipynb`
 
 ![Crossing length and deaths by route](notebooks/figures/05_routes.png)
 
+- [Landing ports in Jamaica](notebooks/06_jamaica_landing_ports.ipynb): Kingston and Montego Bay
+  compared over the same years, 1763–1808. About two-thirds of the people landed at Montego Bay
+  came from the Bight of Biafra, against about a third at Kingston.
+
+![African regions by Jamaican landing port](notebooks/figures/06_port_origins.png)
+
 ## Data and license
 
 The library code is Apache-2.0. The data belongs to SlaveVoyages: records

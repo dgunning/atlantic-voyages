@@ -19,3 +19,8 @@ data/
 !tests/fixtures/**
 !schema/reference/**
 .DS_Store
+
+# Private: email drafts and family-history research (kept local)
+docs/stories/*emails*.md
+reports/
+research_notes/Gunning family in Jamaica/

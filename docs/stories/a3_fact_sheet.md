@@ -78,6 +78,28 @@ are an estimate (F21), not a record. Print: "330 people were aboard when she lef
 coast; 214 were landed at Montego Bay." Don't print "116 died" without permission, and don't
 present the gap as a recorded death toll.
 
+## Prior work (checked 2026-10-20)
+
+- No published study found that compares African origins of people landed at Montego Bay
+  and Kingston, or runaway origins by newspaper against landings by port. Searches saw
+  mostly abstracts, so "not found" is not proof.
+- Wood and Smith, "Fugitives from Slavery in Jamaica, 1718–1795" (the article with the
+  dataset, https://jsdp.enslaved.org/assets/downloaded/40-59-23/FSJ-Article-Final-20220517.pdf):
+  read in full; no results tables, and no origins by newspaper or town. It reports women and
+  girls as about 20% of escapees (ours: 172 of 782, 22%), branding of at least 80%, and
+  discusses "Eboe" and "Coromantee" as unstable terms.
+- Still to read: Chambers, "Biafran African Runaways in 18th-Century Jamaica and
+  Saint-Domingue", *Igbo Studies Review* 2 (2014): the one likely overlap.
+- The north-west Igbo concentration is stated in secondary sources without figures; the
+  article's new contribution is the numbers. Say "the figures show", not "historians have
+  not noticed".
+
+**Wording for the runaway figures (F15, F16, F19):** the origins are the terms enslavers
+wrote in the notices ("Eboe", "Coromantee", "Congo"), matched to regions by Enslaved.org.
+Wood and Smith note that a term like "Eboe" was sometimes a place and sometimes a cultural
+label. Write "described as Eboe or Igbo" or "named with a term from the Bight of Biafra",
+not "born in the Bight of Biafra".
+
 ## History (not from the voyage data)
 
 Checked on 20 October 2026 against secondary sources. Use the article's own named sources;

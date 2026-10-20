@@ -88,6 +88,12 @@ Notebooks in `notebooks/`, each a `.py` source paired with an executed `.ipynb`
 
 ![Destinations by quarter-century](notebooks/figures/04_destinations_by_period.png)
 
+- [Deaths on the middle passage](notebooks/05_mortality_and_duration.ipynb): the share of people
+  who died at sea and the length of the crossing, by period, African region and route, on the
+  voyages whose deaths can be measured; and the same for voyages to Jamaica.
+
+![Crossing length and deaths by route](notebooks/figures/05_routes.png)
+
 ## Data and license
 
 The library code is Apache-2.0. The data belongs to SlaveVoyages: records

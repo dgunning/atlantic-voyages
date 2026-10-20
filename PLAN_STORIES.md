@@ -1,6 +1,6 @@
 # PLAN_STORIES.md
 
-Status: A3 in progress (2026-10-20): notebook 09 and fact sheet done; site checks done; historian review still to do. Companion to `PLAN.md`: that plan builds the
+Status: A3 in progress (2026-10-20): notebook 09, fact sheet and site checks done; historian review still to do. European migration layer started (S-5): notebook 15 and permission emails drafted. Companion to `PLAN.md`: that plan builds the
 library; this one adds the sources and analyses behind a series of newspaper articles on
 Jamaica and the slave trade (written with the *Jamaica Gleaner* in mind).
 
@@ -88,7 +88,9 @@ A3 fits the nearest date and needs no new source, so it should go first.
 - [x] Voyage 18129 (*African Queen*) checked on the site (2026-10-20); all recorded values agree
 - [x] Montego Bay totals on the site (2026-10-20): same 144 voyages, 40,050 recorded landed (exact); F7's 71% not recomputed there
 - [x] Runaway figure redrawn with recorded landings (`09_runaways_vs_landings_recorded.png`)
-- [ ] Historian review; then the article draft
+- [x] Article draft for review: `docs/stories/a3_draft.md`
+- [x] Emails drafted (SlaveVoyages, UWI Mona reviewer, Douglas Chambers); kept local, not in git
+- [ ] Send the emails (you); historian review; revise; send to editor
 
 ### S-2 — People (2–3 sessions)
 
@@ -109,6 +111,23 @@ A3 fits the nearest date and needs no new source, so it should go first.
 - [ ] Notebook 14: liberated Africans in Jamaica
 - [ ] A9 comparison table from published ancestry figures
 
+### S-5 — European migration (started 2026-10-20)
+
+Where Jamaican surnames came from. No open bulk dataset of European arrivals in Jamaica
+was found; candidates and verdicts against the supplementary-source rules are in
+`research_notes/European migration sources/`.
+
+- [x] Notebook 15: surname index of people named in Jamaica's compensation claims
+      (LBS via Enslaved.org): 13,182 claims, 12,217 people, 3,765 surnames; parish known
+      for 3,366 claims
+- [x] Permission emails drafted (LBS full export and Burnard's inventories; Virtual
+      Jamestown indentures; UK Data Service 1881 surname-by-county):
+      kept local, not in git. The LBS one replaces the S-0 LBS email
+- [ ] Send the emails (you); record the answers in `docs/DATA.md`
+- [ ] Decide whether tables transcribed from out-of-copyright books are allowed (also S-0);
+      if so, Matheson, *Surnames in Ireland* (1894), as an Ireland surname-by-county table
+- [ ] With permission: surname reference table (Britain 1881, Ireland), joined to the index
+
 ## Open questions
 
 - Who at the Gleaner is the contact, and do they want a fixed run (weekly) or pieces timed to dates?
@@ -124,3 +143,5 @@ A3 fits the nearest date and needs no new source, so it should go first.
 - 2026-10-20 — A3 follow-ups: region glossary (Cameroon is in the Bight of Biafra region, not West Central Africa); Montego Bay's Biafra voyages by today's country (Nigeria 76, Gabon 3, Cameroon 0); runaway chart redrawn on recorded landings (68% vs 27%, matching nb07's imputed 67% vs 28%); Cape Lopez double coding noted in DATA.md.
 - 2026-10-20 — *African Queen* (18129) checked on the legacy site: recorded values agree (330 aboard, 214 landed, 255 by age and sex, crew 37 to 18, three captains); the site's 116 deaths (35%) are imputed, so the article prints only 330 and 214.
 - 2026-10-20 — Montego Bay totals checked on the legacy site: same 144 voyage IDs, 133 recorded counts totalling 40,050 (exact), imputed embarked 47,563 (equal), imputed landed 43,261 vs 43,263. Next: historian review, then draft.
+- 2026-10-20 — A3 draft (about 1,150 words, every figure tagged to the fact sheet, review and check points marked) and three emails drafted, not sent. Next: send emails, historian review.
+- 2026-10-20 — S-5 started: family-history research (kept local); three source scouts found no open bulk data on European arrivals in Jamaica; notebook 15 (LBS claimant surname index, parish derived from estates for 26% of claims); three permission emails drafted, not sent. Next: send emails; decide on book-derived tables.

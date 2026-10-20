@@ -126,6 +126,15 @@ Jamaica"). Documentation of the data model: https://docs.enslaved.org/lod/.
   "SlaveVoyages"). Do not add their counts to the voyage tables' counts.
 - **Person records, not persons.** One historical person can have several records,
   from different contributed datasets. The tables keep records as published.
+- **LBS descriptions are cut short.** About a third of the Legacies of British Slavery
+  records with a description (6,192 of 18,844) end in `&hellip;` at about 200
+  characters; the full text is only on https://lbs.ucl.ac.uk. Example: Hugh Gunning's
+  will (`LBS-PER-2146663319`) stops at "namedly James…".
+- **LBS claims have no parish.** Jamaica claim names drop the parish ("Jamaica 429",
+  not "Jamaica Westmoreland 429"), so one number recurs across parishes. A parish can be
+  derived only when the claim links to an estate inside Jamaica: 3,366 of 13,182
+  Jamaica claims (checked 2026-10-20; notebook 15). Claim and person IDs match the LBS
+  site (`LBS-EVE-CLA-15709` is https://lbs.ucl.ac.uk/lbs/claim/view/15709).
 
 ## Corrections applied at ingest
 

@@ -1,6 +1,6 @@
 # PLAN.md
 
-Status: Phase 3 — notebooks 01 (Jamaica arrivals), 02 (Calabar to Jamaica), 03 (re-exports from Jamaica), 04 (three regions' destinations), 05 (deaths and crossing length) and 06 (Jamaican landing ports) done; background history in docs/history/. Supplementary source Enslaved.org added (opt-in `enslaved_*` tables). Next: runaway ethnonyms vs landings, then a map of flows for one decade. African Names (Phase 1) still to do.
+Status: Phase 3 — notebooks 01 (Jamaica arrivals), 02 (Calabar to Jamaica), 03 (re-exports from Jamaica), 04 (three regions' destinations), 05 (deaths and crossing length), 06 (Jamaican landing ports) and 07 (runaway notices vs landings) done; background history in docs/history/. Supplementary source Enslaved.org added (opt-in `enslaved_*` tables). Next: a map of flows for one decade. African Names (Phase 1) still to do.
 
 ## Goal
 
@@ -84,7 +84,7 @@ Each is a notebook under `notebooks/`, executed in CI, and the basis of a README
 - [x] Landing ports in Jamaica: Kingston vs Montego Bay by African region
 - [ ] A map of embarkation -> disembarkation flows for one decade (static, matplotlib or plotly)
 - [x] Supplementary sources: rules, and Enslaved.org as the first (`enslaved_*` tables)
-- [ ] Runaway notices (Enslaved.org, FSJ): ethnonyms by newspaper vs landings at Kingston and Montego Bay
+- [x] Runaway notices (Enslaved.org, FSJ): ethnonyms by newspaper vs landings at Kingston and Montego Bay
 
 ### Phase 4 — Release and follow-ons
 
@@ -122,3 +122,4 @@ Append one line per Claude Code session: date, phase, what landed, what's next.
 - 2026-10-19 — Phase 3 — notebook 05, deaths and crossing length (6,477 transatlantic voyages with measured deaths; pooled rates): 12.4% died, median crossing 50 days; Caribbean voyages 23% in 1676–1700 to 9.6% in 1776–1800, rising to 17–20% in the illegal trade after 1800; Brazil 8–13%; 6% on crossings of 30 days or less, 21% over 100; Bight of Biafra higher at every crossing length; Bight of Benin to Brazil 45 days and 6.5%, to the Caribbean 92 days and 16%; Jamaica 11.5%, 29% to 7%. Imputed rate checked against recorded counts (within one point per quarter-century). Next: flow map for one decade.
 - 2026-10-19 — Phase 3 — notebook 06, Jamaican landing ports: Kingston 1,622 voyages, Montego Bay 144 (1763–1808), nearly half name no port; 1763–1808 Montego Bay 68% Bight of Biafra (Bonny, New Calabar, Calabar) vs Kingston 35%, higher in each sub-period; Kingston 20% West Central Africa, Montego Bay none; recorded-only check 64% vs 34% of voyages. Landing port is not residence; parish-level sources evaluated separately. Next: flow map for one decade.
 - 2026-10-20 — Supplementary sources allowed (CLAUDE.md, docs/DATA.md: bulk file, stated licence, pinned checksum, opt-in, own optional tables, credited). Enslaved.org added: `voyages fetch -d enslaved` (464 MB Wikibase dump, 2026-03-31), `ingest/enslaved.py` writes 8 `enslaved_*` tables (people, roles, events, event places, places, sources with licence, projects with DOI, record-to-source links); registry entries for every column; db and fields API treat optional tables; `voyages.citation("enslaved")`; fixture of 60 FSJ (Jamaica runaway) people. Totals match enslaved.org (731,500 people, 474,012 events, 10,381 places, 3,940 sources). No SlaveVoyages voyage IDs in it, so no join to voyages. docs/jamaica-sources.md reviews parish-level sources. Next: runaway ethnonyms vs landings notebook; flow map.
+- 2026-10-20 — Phase 3 — notebook 07, runaway notices (Enslaved.org FSJ, 782 people) vs landings 1763–1795: Bight of Biafra 37% (95% CI 31–44) of African-born runaways with a region in the Cornwall Chronicle (Montego Bay, n=216) vs 17% (10–27) in the Kingston papers (n=77), same direction as landings (67% vs 28%) but weaker; a fifth of Montego Bay runaways from West Central Africa though none landed there; Kingston runaways over-represent West Central Africa and Upper Guinea. Origins as assigned by Enslaved.org (Soso to West Central Africa flagged). Next: flow map for one decade.

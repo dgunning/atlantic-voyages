@@ -134,6 +134,13 @@ Notebooks in `notebooks/`, each a `.py` source paired with an executed `.ipynb`
 
 ![African regions by Jamaican landing port](notebooks/figures/06_port_origins.png)
 
+- [Runaway notices and landings](notebooks/07_jamaica_runaways.ipynb): the African origins of
+  782 people whose escapes were advertised in Montego Bay and Kingston newspapers (Enslaved.org,
+  *Fugitives from Slavery in Jamaica*), set against the landings at each port. The Bight of
+  Biafra is 37% of African-born runaways in the Montego Bay paper and 17% in the Kingston papers.
+
+![Runaways and landings by port](notebooks/figures/07_runaways_vs_landings.png)
+
 ## Data and license
 
 The library code is Apache-2.0. The data belongs to SlaveVoyages: records

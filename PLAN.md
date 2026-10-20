@@ -1,6 +1,6 @@
 # PLAN.md
 
-Status: Phase 3 — notebooks 01 (Jamaica arrivals), 02 (Calabar to Jamaica), 03 (re-exports from Jamaica), 04 (three regions' destinations), 05 (deaths and crossing length), 06 (Jamaican landing ports) and 07 (runaway notices vs landings) done; background history in docs/history/. Supplementary source Enslaved.org added (opt-in `enslaved_*` tables). Next: a map of flows for one decade. African Names (Phase 1) still to do.
+Status: Phase 3 — notebooks 01 (Jamaica arrivals), 02 (Calabar to Jamaica), 03 (re-exports from Jamaica), 04 (three regions' destinations), 05 (deaths and crossing length), 06 (Jamaican landing ports), 07 (runaway notices vs landings) and 08 (flows in the 1790s) done: Phase 3 complete; background history in docs/history/. Supplementary source Enslaved.org added (opt-in `enslaved_*` tables). Next: Phase 4 (release). African Names (Phase 1) still to do.
 
 ## Goal
 
@@ -82,7 +82,7 @@ Each is a notebook under `notebooks/`, executed in CI, and the basis of a README
 - [x] Bight of Biafra vs Gold Coast vs Bight of Benin: destinations over time (`notebooks/04_three_regions_destinations`; added 2026-10-19)
 - [x] Mortality and voyage duration by route and period
 - [x] Landing ports in Jamaica: Kingston vs Montego Bay by African region
-- [ ] A map of embarkation -> disembarkation flows for one decade (static, matplotlib or plotly)
+- [x] A map of embarkation -> disembarkation flows for one decade (static, matplotlib or plotly)
 - [x] Supplementary sources: rules, and Enslaved.org as the first (`enslaved_*` tables)
 - [x] Runaway notices (Enslaved.org, FSJ): ethnonyms by newspaper vs landings at Kingston and Montego Bay
 
@@ -123,3 +123,4 @@ Append one line per Claude Code session: date, phase, what landed, what's next.
 - 2026-10-19 — Phase 3 — notebook 06, Jamaican landing ports: Kingston 1,622 voyages, Montego Bay 144 (1763–1808), nearly half name no port; 1763–1808 Montego Bay 68% Bight of Biafra (Bonny, New Calabar, Calabar) vs Kingston 35%, higher in each sub-period; Kingston 20% West Central Africa, Montego Bay none; recorded-only check 64% vs 34% of voyages. Landing port is not residence; parish-level sources evaluated separately. Next: flow map for one decade.
 - 2026-10-20 — Supplementary sources allowed (CLAUDE.md, docs/DATA.md: bulk file, stated licence, pinned checksum, opt-in, own optional tables, credited). Enslaved.org added: `voyages fetch -d enslaved` (464 MB Wikibase dump, 2026-03-31), `ingest/enslaved.py` writes 8 `enslaved_*` tables (people, roles, events, event places, places, sources with licence, projects with DOI, record-to-source links); registry entries for every column; db and fields API treat optional tables; `voyages.citation("enslaved")`; fixture of 60 FSJ (Jamaica runaway) people. Totals match enslaved.org (731,500 people, 474,012 events, 10,381 places, 3,940 sources). No SlaveVoyages voyage IDs in it, so no join to voyages. docs/jamaica-sources.md reviews parish-level sources. Next: runaway ethnonyms vs landings notebook; flow map.
 - 2026-10-20 — Phase 3 — notebook 07, runaway notices (Enslaved.org FSJ, 782 people) vs landings 1763–1795: Bight of Biafra 37% (95% CI 31–44) of African-born runaways with a region in the Cornwall Chronicle (Montego Bay, n=216) vs 17% (10–27) in the Kingston papers (n=77), same direction as landings (67% vs 28%) but weaker; a fifth of Montego Bay runaways from West Central Africa though none landed there; Kingston runaways over-represent West Central Africa and Upper Guinea. Origins as assigned by Enslaved.org (Soso to West Central Africa flagged). Next: flow map for one decade.
+- 2026-10-20 — Phase 3 — notebook 08, flows in the 1790s (2,916 voyages, 701,818 people landed; third-largest decade, Jamaica's largest): region-to-region flow map (flows >= 1,000, 80% of people drawn; Southeast Africa routed round the Cape) and Caribbean close-up. Top flows West Central Africa to south-east Brazil (84,099), Bight of Biafra to Jamaica (62,926), Bight of Benin to Bahia (51,157); Jamaica 150,536 (21%), 42% from the Bight of Biafra. Saint-Domingue arrivals mostly 1790-91. Phase 3 complete. Next: Phase 4.

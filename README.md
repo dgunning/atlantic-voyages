@@ -141,6 +141,12 @@ Notebooks in `notebooks/`, each a `.py` source paired with an executed `.ipynb`
 
 ![Runaways and landings by port](notebooks/figures/07_runaways_vs_landings.png)
 
+- [The trade in one decade, the 1790s](notebooks/08_flows_1790s.ipynb): flows from African
+  regions to the Americas, with a close-up of the Caribbean. Jamaica was the largest single
+  destination of the decade (150,536 people).
+
+![Flows, 1790s](notebooks/figures/08_flows_1790s.png)
+
 ## Data and license
 
 The library code is Apache-2.0. The data belongs to SlaveVoyages: records

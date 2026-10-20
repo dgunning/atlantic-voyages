@@ -1,6 +1,6 @@
 # PLAN.md
 
-Status: Phase 3 — notebooks 01 (Jamaica arrivals), 02 (Calabar to Jamaica) and 03 (re-exports from Jamaica) done; background history in docs/history/. Next: Bight of Biafra vs Gold Coast vs Bight of Benin destinations over time. African Names (Phase 1) still to do.
+Status: Phase 3 — notebooks 01 (Jamaica arrivals), 02 (Calabar to Jamaica) and 03 (re-exports from Jamaica) and 04 (three regions' destinations) done; background history in docs/history/. Next: mortality and voyage duration by route and period. African Names (Phase 1) still to do.
 
 ## Goal
 
@@ -79,7 +79,7 @@ Each is a notebook under `notebooks/`, executed in CI, and the basis of a README
 - [x] Arrivals into Jamaica by African embarkation region, by decade, recorded vs imputed vs Estimates (`notebooks/01_jamaica_arrivals`; Estimates Jamaica total 1,019,588 not yet checked against the site)
 - [x] Calabar to Jamaica: voyages, landing places, deaths at sea, maps (`notebooks/02_calabar_to_jamaica`; added 2026-10-19)
 - [x] Re-exports from Jamaica via the Intra-American data (`notebooks/03_jamaica_reexports`; added 2026-10-19)
-- [ ] Bight of Biafra vs Gold Coast vs Bight of Benin: destinations over time
+- [x] Bight of Biafra vs Gold Coast vs Bight of Benin: destinations over time (`notebooks/04_three_regions_destinations`; added 2026-10-19)
 - [ ] Mortality and voyage duration by route and period
 - [ ] A map of embarkation -> disembarkation flows for one decade (static, matplotlib or plotly)
 
@@ -115,3 +115,4 @@ Append one line per Claude Code session: date, phase, what landed, what's next.
 - 2026-10-19 — Phase 3 — notebook tooling: `.py` percent source paired with executed `.ipynb` (jupytext), `notebooks` dependency group, figures in notebooks/figures, `tests/test_notebooks.py` (fulldata). `by_decade(by=...)`. Notebook 1: Jamaica arrivals by region and decade from three sources; every figure quoted in the text asserted in a cell. Next: notebook 2.
 - 2026-10-19 — Phase 3 — notebook 02, Calabar to Jamaica: 185 voyages, 46,967 people landed 1663–1807; Kingston 103 voyages; 20% of Bight of Biafra arrivals; higher losses than Bonny on imputed and recorded figures; Atlantic route map and port maps (cartopy, Natural Earth). Ruff skips generated .ipynb. Next: re-exports from Jamaica.
 - 2026-10-19 — Phase 3 — notebook 03, re-exports from Jamaica (Intra-American): 2,934 voyages, 130,931 people embarked for other colonies 1652–1812; Spanish mainland 47% and Cuba 24% of people landed; peaks in the 1730s (asiento years, Portobelo and Cartagena) and 1780s–90s (Saint-Domingue and North America, then Cuba); about one in seven of those landed from Africa; 12 journeys traced from Africa via voyage_links; route map. Also docs/history/calabar.md and jamaican-words.md (background research, sources and confidence marked). Next: Bight of Biafra vs Gold Coast vs Bight of Benin destinations.
+- 2026-10-19 — Phase 3 — notebook 04, Bight of Biafra / Gold Coast / Bight of Benin destinations by quarter-century: Benin 55% to Brazil (Bahia 49%), Biafra and Gold Coast 55-56% to the British Caribbean with Jamaica the largest single destination for both; Jamaica's share peaks at about two-fifths in 1776-1800 for Biafra and Gold Coast; after 1826, Cuba, Brazil and people landed at Sierra Leone. Destination groups checked so nothing from Brazil or Spanish America falls into 'other'. Next: mortality and voyage duration.

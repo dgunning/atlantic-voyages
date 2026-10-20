@@ -82,6 +82,12 @@ Notebooks in `notebooks/`, each a `.py` source paired with an executed `.ipynb`
 
 ![Routes from Jamaica](notebooks/figures/03_reexport_routes.png)
 
+- [Bight of Biafra, Gold Coast, Bight of Benin](notebooks/04_three_regions_destinations.ipynb):
+  where people embarked on three neighbouring coasts were landed, quarter-century by
+  quarter-century, and Jamaica's share of each.
+
+![Destinations by quarter-century](notebooks/figures/04_destinations_by_period.png)
+
 ## Data and license
 
 The library code is Apache-2.0. The data belongs to SlaveVoyages: records
